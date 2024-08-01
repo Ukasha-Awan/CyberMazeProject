@@ -19,7 +19,7 @@
     <!-- Navbar -->
     <nav class="navbar">
         <div class="logo">
-            <img src="{% static '/assets/images/logo.png" alt="Logo">
+            <img src="{% static '/assets/images/logo.png}" alt="Logo">
             <h1>CyberMaze</h1>
         </div>
         <ul class="nav-links">
@@ -185,12 +185,28 @@
 </div>
 
 <script>
+
+let studentScore = 0;
+
+function updateScore(success) {
+    if (success) {
+        studentScore += 5; // Increase score by 5 if solved
+        alert("Congratulation you have pass this task So, add +5 Score: " + studentScore); // Notify student of their current score
+    } else {
+        studentScore -= 3; // Decrease score by 3 if not solved
+        alert("So,said You have Fail this task So, remove -3 Score: " + studentScore);
+    }
+    
+}
+
 function submitTask1() {
   var answer = document.getElementById('task1Answer').value;
   if (answer.toLowerCase() === 'open') {
     document.getElementById('task1Result').textContent = 'Solved';
+    updateScore(true); // Increase score
   } else {
     document.getElementById('task1Result').textContent = 'Try again';
+    updateScore(false); // Decrease score
   }
   checkMazeCompletion();
 }
@@ -200,8 +216,10 @@ function submitTask2() {
   // Use savory as the placeholder answer
   if (answer.toLowerCase() === 'ssh') {
     document.getElementById('task2Result').textContent = 'Solved';
+    updateScore(true); 
   } else {
     document.getElementById('task2Result').textContent = 'Try again';
+    updateScore(false);
   }
   checkMazeCompletion();
 }
@@ -211,8 +229,10 @@ function submitTask3() {
   // Placeholder for task 3, replace with actual logic
   if (answer === '7.4') {
     document.getElementById('task3Result').textContent = 'Solved';
+    updateScore(true);
   } else {
     document.getElementById('task3Result').textContent = 'Try again';
+    updateScore(false);
   }
   checkMazeCompletion();
 }
@@ -222,8 +242,10 @@ function submitTask4() {
   // Placeholder for task 4, replace with actual logic
   if (answer === '-iL') {
     document.getElementById('task4Result').textContent = 'Solved';
+    updateScore(true);
   } else {
     document.getElementById('task4Result').textContent = 'Try again';
+    updateScore(false);
   }
   checkMazeCompletion();
 }
@@ -233,8 +255,10 @@ function submitTask5a() {
   // Placeholder for task 5, replace with actual logic
   if (answer === '3306') {
     document.getElementById('task5aResult').textContent = 'Solved';
+    updateScore(true);
   } else {
     document.getElementById('task5aResult').textContent = 'Try again';
+    updateScore(false);
   }
   checkMazeCompletion();
 }
@@ -243,8 +267,10 @@ function submitTask5b() {
   // Placeholder for task 5, replace with actual logic
   if (answer === 'open') {
     document.getElementById('task5bResult').textContent = 'Solved';
+    updateScore(true);
   } else {
     document.getElementById('task5bResult').textContent = 'Try again';
+    updateScore(false);
   }
   checkMazeCompletion();
 }
@@ -253,8 +279,10 @@ function submitTask6() {
   // Placeholder for task 6, replace with actual logic
   if (answer === '-oX') {
     document.getElementById('task6Result').textContent = 'Solved';
+    updateScore(true);
   } else {
     document.getElementById('task6Result').textContent = 'Try again';
+    updateScore(false);
   }
   checkMazeCompletion();
 }
@@ -263,8 +291,10 @@ function submitTask7() {
   // Placeholder for task 7, replace with actual logic
   if (answer === 'xsltproc') {
     document.getElementById('task7Result').textContent = 'Solved';
+    updateScore(true);
   } else {
     document.getElementById('task7Result').textContent = 'Try again';
+    updateScore(false);
   }
   checkMazeCompletion();
 }
@@ -273,8 +303,10 @@ function submitTask8() {
   // Placeholder for task 8, replace with actual logic
   if (answer === 'file2.xml -o file5.html') {
     document.getElementById('task8Result').textContent = 'Solved';
+    updateScore(true);
   } else {
     document.getElementById('task8Result').textContent = 'Try again';
+    updateScore(false);
   }
   checkMazeCompletion();
 }
@@ -283,8 +315,10 @@ function submitTask9a() {
   // Placeholder for task 9a, replace with actual logic
   if (answer === '-sU') {
     document.getElementById('task9aResult').textContent = 'Solved';
+    updateScore(true); 
   } else {
     document.getElementById('task9aResult').textContent = 'Try again';
+    updateScore(false);
   }
   checkMazeCompletion();
 }
@@ -293,8 +327,10 @@ function submitTask9b() {
   // Placeholder for task 9b, replace with actual logic
   if (answer === '-sT') {
     document.getElementById('task9bResult').textContent = 'Solved';
+    updateScore(true);
   } else {
     document.getElementById('task9bResult').textContent = 'Try again';
+    updateScore(false); 
   }
   checkMazeCompletion();
 }
@@ -304,8 +340,10 @@ function submitTask10() {
   // Placeholder for task 10, replace with actual logic
   if (answer === '192.168.43.68,69,80' ) {
     document.getElementById('task10Result').textContent = 'Solved';
+    updateScore(true); 
   } else {
     document.getElementById('task10Result').textContent = 'Try again';
+    updateScore(false);
   }
   checkMazeCompletion();
 }
