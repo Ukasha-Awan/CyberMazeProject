@@ -1,0 +1,35 @@
+/* About section styles */
+
+#about{
+    background-image: url("pexels-paul-loh-233698.jpg");
+    background-size: cover; /* Cover the entire section */
+    background-position: center; /* Center the image */
+    position: relative;
+    height: 91vh;
+}
+#about h2{
+    text-align: left;
+}
+#about .container {
+    width: 55%; /* Half the width of the section */
+    background-color: rgba(69, 1, 42, 0.5); /* Background color with opacity */
+    position: absolute; /* Position relative to the .background-section */
+    right: 45%; /* Align to the horizontal center */
+    height: 100%;
+    padding: 170px 30px;
+}
+
+/* Media Queries */
+@media only screen and (max-width: 568px) {
+    #about{
+        
+    }
+    #about .container {
+        width: 75%; /* Half the width of the section */
+        background-color: rgba(69, 1, 42, 0.5); /* Background color with opacity */
+        position: absolute; /* Position relative to the .background-section */
+        right: 25%; /* Align to the horizontal center */
+        padding: 80px 20px;
+    }
+}
+

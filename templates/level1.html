@@ -1,0 +1,346 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CyberMaze - Learn Cyber Security Through Real-Time Simulations</title>
+    <link rel="stylesheet" href="{% static '/assets/css/contact.css' %}">
+    <link rel="stylesheet" href="{% static '/assets/css/styles.css' %}">
+    <script src="index.js"></script>
+    <!-- Google Font embed -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Protest+Guerrilla&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="logo">
+            <img src="{% static '/assets/images/logo.png" alt="Logo">
+            <h1>CyberMaze</h1>
+        </div>
+        <ul class="nav-links">
+          <li><a href="/">Home</a></li>
+          <li><a href="/domains">Domains</a></li>
+          <li><a href="/about">About</a></li>
+          <li><a href="/blog">Blogs</a></li>
+          <li><a href="/contact">Contact</a></li>
+        </ul>
+        <a href="#register" class="btn">Log In</a>
+        <!-- HTML for the hamburger menu -->
+        <button class="hamburger-menu-btn">&#9776;
+            <nav class="nav-links">
+            <!-- Your navigation links here -->
+            <a href="#">Link 1</a>
+            <a href="#">Link 2</a>
+            <a href="#">Link 3</a>
+            </nav>
+
+    </nav>
+    
+
+<!-- Navbar -->
+<nav class="navbar">
+    <div class="logo">
+        <img src="logo.png" alt="Logo">
+        <h1>CyberMaze</h1>
+    </div>
+    <ul class="nav-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/domains">Domains</a></li>
+      <li><a href="/about">About</a></li>
+      <li><a href="/blog">Blogs</a></li>
+      <li><a href="/contact">Contact</a></li>
+    </ul>
+    <a href="#register" class="btn">Log In</a>
+    <!-- HTML for the hamburger menu -->
+    <button class="hamburger-menu-btn">&#9776;
+        <nav class="nav-links">
+        <!-- Your navigation links here -->
+        <a href="#">Link 1</a>
+        <a href="#">Link 2</a>
+        <a href="#">Link 3</a>
+        </nav>
+
+</nav>
+
+<!-- Contact Section -->
+<section id="contact" class="contact">
+    <div class="container">
+    <h1>Welcome to Level 1 - Scanning the Network with Nmap</h1>
+<p>Are you ready to put your cybersecurity skills to the test? Follow the instructions below to complete the tasks.</p>
+<br>
+<p>Scan a network using nmap. Target website: <b> <span> certifiedhacker.com </span></b></p>
+
+<!-- Task 1: Port Status Check -->
+
+<h3>Task 1: Port Status Check</h3>
+<form id="task1Form">
+<label for="task1Answer">Is port <span>22</span> open/close/filtered?</label>
+<input type="text" id="task1Answer" name="task1Answer">
+<button type="button" onclick="submitTask1()">Submit</button>
+<span id="task1Result"></span>
+</form>
+
+<!-- Task 2: Service Identification -->
+<h3>Task 2: Service Identification</h3>
+<form id="task2Form">
+<label for="task2Answer">What service is running on <span>port 22</span>?</label>
+<input type="text" id="task2Answer" name="task2Answer">
+<button type="button" onclick="submitTask2()">Submit</button>
+<span id="task2Result"></span>
+</form>
+
+<!-- Task 3: Vulnerability Exploitation -->
+<h3>Task 3: Version Check</h3>
+<form id="task3Form">
+<label for="task3Answer">Enter your version:</label>
+<input type="text" id="task3Answer" name="task3Answer">
+<button type="button" onclick="submitTask3()">Submit</button>
+<span id="task3Result"></span>
+</form>
+
+<!-- Task 4: Create an IP list -->
+<h3>Task 4: Create an IP list</h3>
+<form id="task4Form">
+<label for="task4Answer">Now you have to create an IP list and save into a file iplisttxt. Enter the command to creat the list of IP:</label>
+<input type="text" id="task4Answer" name="task4Answer">
+<button type="button" onclick="submitTask4()">Submit</button>
+<span id="task4Result"></span>
+</form>
+
+<!-- Task 5: Service status check -->
+<h3>Task 5: Service status check</h3>
+<form id="task5Form">
+<label for="task5aAnswer">Write the port on which <span>mysql</span> service is running:</label>
+<input type="text" id="task5aAnswer" name="task5aAnswer">
+<button type="button" onclick="submitTask5a()">Submit</button>
+<span id="task5aResult"></span>
+</form>
+<br>
+<form id="task5Form">
+<label for="task5bAnswer">Is it open or close?</label>
+<input type="text" id="task5bAnswer" name="task5bAnswer">
+<button type="button" onclick="submitTask5b()">Submit</button>
+<span id="task5bResult"></span>
+</form>
+
+<!-- Task 6: Make a Report using nmap -->
+<h3>Task 6: Creating Report using nmap</h3>
+<form id="task6Form">
+<label for="task6Answer">Imagine you have to submit a report to your company for your previous scan. <br> Write the command for generating the report:</label>
+<input type="text" id="task6Answer" name="task6Answer">
+<button type="button" onclick="submitTask6()">Submit</button>
+<span id="task6Result"></span>
+</form>
+
+<!-- Task 7: Convert xml file report -->
+<h3>Task 7: Convert xml report into html</h3>
+<form id="task7Form">
+  <label for="task7Answer">The above command will generate a report in xml format. To submit it to the company<br>we will need to convert it into html file. Write the name of tool through which we can do this conversion.</label>
+  <input type="text" id="task7Answer" name="task7Answer">
+  <button type="button" onclick="submitTask7()">Submit</button>
+  <span id="task7Result"></span>
+</form>
+
+ <!-- Task 8: Command -->
+ <h3>Task 8: Command to convert</h3>
+ <form id="task8Form">
+   <label for="task8Answer">What is the command to convert the file format.</label>
+   <input type="text" id="task8Answer" name="task8Answer">
+   <button type="button" onclick="submitTask8()">Submit</button>
+   <span id="task8Result"></span>
+ </form>
+
+      <!-- Task 9: UDP and TCP scan -->
+      <h3>Task 9: UDP and TCP scan</h3>
+      <form id="task9aForm">
+        <label for="task9aAnswer">Write the command for UDP scan of certifiedhacker.com</label>
+        <input type="text" id="task9aAnswer" name="task9aAnswer">
+        <button type="button" onclick="submitTask9a()">Submit</button>
+        <span id="task9aResult"></span>
+      </form>
+      <br>
+      <form id="task9bForm">
+        <label for="task9bAnswer">Write the command for TCP scan of certifiedhacker.com</label>
+        <input type="text" id="task9bAnswer" name="task9bAnswer">
+        <button type="button" onclick="submitTask9b()">Submit</button>
+        <span id="task9bResult"></span>
+      </form>
+
+      <h3>Task 10: Advance Scan</h3>
+      <form id="task10Form">
+        <label for="task10Answer">write a one line command to scan all <span> 192.168.43.68 | 192.168.43.69 | 192.168.43.80</span></label>
+        <input type="text" id="task10Answer" name="task10Answer">
+        <button type="button" onclick="submitTask10()">Submit</button>
+        <span id="task10Result"></span>
+      </form>
+</div>
+<div id="mazeCompletion" style="display: none;">
+  <h3>Level completed!</h3>
+  <button style="width: fit-content;" onclick="goToNextMaze()"> Go to Next Level</button>
+</div>
+
+<script>
+function submitTask1() {
+  var answer = document.getElementById('task1Answer').value;
+  if (answer.toLowerCase() === 'open') {
+    document.getElementById('task1Result').textContent = 'Solved';
+  } else {
+    document.getElementById('task1Result').textContent = 'Try again';
+  }
+  checkMazeCompletion();
+}
+
+function submitTask2() {
+  var answer = document.getElementById('task2Answer').value;
+  // Use savory as the placeholder answer
+  if (answer.toLowerCase() === 'ssh') {
+    document.getElementById('task2Result').textContent = 'Solved';
+  } else {
+    document.getElementById('task2Result').textContent = 'Try again';
+  }
+  checkMazeCompletion();
+}
+
+function submitTask3() {
+  var answer = document.getElementById('task3Answer').value;
+  // Placeholder for task 3, replace with actual logic
+  if (answer === '7.4') {
+    document.getElementById('task3Result').textContent = 'Solved';
+  } else {
+    document.getElementById('task3Result').textContent = 'Try again';
+  }
+  checkMazeCompletion();
+}
+
+function submitTask4() {
+  var answer = document.getElementById('task4Answer').value;
+  // Placeholder for task 4, replace with actual logic
+  if (answer === '-iL') {
+    document.getElementById('task4Result').textContent = 'Solved';
+  } else {
+    document.getElementById('task4Result').textContent = 'Try again';
+  }
+  checkMazeCompletion();
+}
+
+function submitTask5a() {
+  var answer = document.getElementById('task5aAnswer').value;
+  // Placeholder for task 5, replace with actual logic
+  if (answer === '3306') {
+    document.getElementById('task5aResult').textContent = 'Solved';
+  } else {
+    document.getElementById('task5aResult').textContent = 'Try again';
+  }
+  checkMazeCompletion();
+}
+function submitTask5b() {
+  var answer = document.getElementById('task5bAnswer').value;
+  // Placeholder for task 5, replace with actual logic
+  if (answer === 'open') {
+    document.getElementById('task5bResult').textContent = 'Solved';
+  } else {
+    document.getElementById('task5bResult').textContent = 'Try again';
+  }
+  checkMazeCompletion();
+}
+function submitTask6() {
+  var answer = document.getElementById('task6Answer').value;
+  // Placeholder for task 6, replace with actual logic
+  if (answer === '-oX') {
+    document.getElementById('task6Result').textContent = 'Solved';
+  } else {
+    document.getElementById('task6Result').textContent = 'Try again';
+  }
+  checkMazeCompletion();
+}
+function submitTask7() {
+  var answer = document.getElementById('task7Answer').value;
+  // Placeholder for task 7, replace with actual logic
+  if (answer === 'xsltproc') {
+    document.getElementById('task7Result').textContent = 'Solved';
+  } else {
+    document.getElementById('task7Result').textContent = 'Try again';
+  }
+  checkMazeCompletion();
+}
+function submitTask8() {
+  var answer = document.getElementById('task8Answer').value;
+  // Placeholder for task 8, replace with actual logic
+  if (answer === 'file2.xml -o file5.html') {
+    document.getElementById('task8Result').textContent = 'Solved';
+  } else {
+    document.getElementById('task8Result').textContent = 'Try again';
+  }
+  checkMazeCompletion();
+}
+function submitTask9a() {
+  var answer = document.getElementById('task9aAnswer').value;
+  // Placeholder for task 9a, replace with actual logic
+  if (answer === '-sU') {
+    document.getElementById('task9aResult').textContent = 'Solved';
+  } else {
+    document.getElementById('task9aResult').textContent = 'Try again';
+  }
+  checkMazeCompletion();
+}
+function submitTask9b() {
+  var answer = document.getElementById('task9bAnswer').value;
+  // Placeholder for task 9b, replace with actual logic
+  if (answer === '-sT') {
+    document.getElementById('task9bResult').textContent = 'Solved';
+  } else {
+    document.getElementById('task9bResult').textContent = 'Try again';
+  }
+  checkMazeCompletion();
+}
+
+function submitTask10() {
+  var answer = document.getElementById('task10Answer').value;
+  // Placeholder for task 10, replace with actual logic
+  if (answer === '192.168.43.68,69,80' ) {
+    document.getElementById('task10Result').textContent = 'Solved';
+  } else {
+    document.getElementById('task10Result').textContent = 'Try again';
+  }
+  checkMazeCompletion();
+}
+function checkMazeCompletion() {
+  var task1Solved = document.getElementById('task1Result').dataset.solved === 'true';
+  var task2Solved = document.getElementById('task2Result').dataset.solved === 'true';
+  var task3Solved = document.getElementById('task3Result').dataset.solved === 'true';
+  var task4Solved = document.getElementById('task4Result').dataset.solved === 'true';
+  var task5aSolved = document.getElementById('task5aResult').dataset.solved === 'true';
+  var task5aSolved = document.getElementById('task5bResult').dataset.solved === 'true';
+  var task5bSolved = document.getElementById('task6Result').dataset.solved === 'true';
+  var task6Solved = document.getElementById('task7Result').dataset.solved === 'true';
+  var task7Solved = document.getElementById('task8Result').dataset.solved === 'true';
+  var task8Solved = document.getElementById('task9aResult').dataset.solved === 'true';
+  var task8Solved = document.getElementById('task9bResult').dataset.solved === 'true';
+  var task9aSolved = document.getElementById('task10Result').dataset.solved === 'true';
+
+  if (task1Solved && task2Solved && task3Solved && task4Solved && task5aSolved && task5bSolved && task6Solved && task7Solved && task8Solved && task9aSolved && task9bSolved && task210Solved) {
+      document.getElementById('mazeCompletion').style.display = 'block';
+  }
+}
+
+function goToNextMaze() {
+window.location.href = 'level2.html'; // Replace with the actual URL of the next maze
+}
+</script>
+</section>
+
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 CyberMaze. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,129 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CyberMaze - Learn Cyber Security Through Real-Time Simulations</title>
+    <link rel="stylesheet" href="{% static '/assets/css/domain.css' %}">
+    <link rel="stylesheet" href="{% static '/assets/css/styles.css' %}">
+    <script src="index.js"></script>
+    <!-- Google Font embed -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Protest+Guerrilla&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="logo">
+            <img src="{% static '/assets/images/logo.png' %}" alt="Logo">
+            <h1>CyberMaze</h1>
+        </div>
+        <ul class="nav-links">
+            <li><a href="/">Home</a></li>
+            <li><a href="/domains">Domains</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/blog">Blogs</a></li>
+            <li><a href="/contact">Contact</a></li>
+        </ul>
+        <a href="#register" class="btn">Log In</a>
+        <!-- HTML for the hamburger menu -->
+        <button class="hamburger-menu-btn">&#9776;
+            <nav class="nav-links">
+            <!-- Your navigation links here -->
+            <a href="#">Link 1</a>
+            <a href="#">Link 2</a>
+            <a href="#">Link 3</a>
+            </nav>
+    </nav>
+
+    <!-- Domains Section -->
+    <section id="domains" class="domains">
+        <div>
+            <h2>CHOOSE A DOMAIN</h2>
+            <div class="d-description"><p>CyberMaze offers comprehensive course materials and practical challenges across four essential cybersecurity domains. Dive into each domain to sharpen your skills and stay ahead in the ever-evolving world of cyber threats.</p></div>
+            <div class="cards-container">
+                <!-- Network Security Card -->
+                <div class="cards">
+                    <h3>Network Security</h3>
+                    <p>Develop the skills to secure and defend network infrastructure from malicious threats and attacks.</p>
+                    <div class="cards-buttons">
+                        <a href="/level1" >
+                        <button class="btns start-learning">
+                             Start Learning
+                        </button>
+                        </a>
+                        <a href="/level1">
+                        <button class="btns enter-maze">
+                             Beginner Maze 
+                        </button>
+                        </a>
+                    </div>
+                </div>
+                <!-- Cryptography Card -->
+                <div class="cards">
+                    <h3>Cryptography</h3>
+                    <p>Master the art of encryption and decryption to protect sensitive information and ensure data integrity.</p>
+                    <div class="cards-buttons">
+                    <a href="/crypt1">
+                        <button class="btns start-learning">
+                            Start Learning
+                        </button>
+                    </a>
+                    <a href="/crypt1">
+                        <button class="btns enter-maze">
+                            Beginner Maze 
+                        </button>
+                    </a>
+                    </div>
+                </div>
+                <!-- Secure Coding Card -->
+                <div class="cards">
+                    <h3>Secure Coding</h3>
+                    <p>Understand best practices for writing secure code to prevent vulnerabilities and safeguard applications.</p>
+                    <div class="cards-buttons">
+                    <a href="network.html">
+                        <button class="btns start-learning">
+                             Start Learning
+                        </button>
+                    </a>
+                    <a href="/domains">
+                        <button class="btns enter-maze">
+                            Beginner Maze 
+                        </button>
+                    </a>
+                    </div>
+                </div>
+                <!-- Social Engineering Card -->
+                <div class="cards">
+                    <h3>Social Engineering</h3>
+                    <p>Learn to recognize and thwart manipulation techniques used by attackers to exploit human psychology.</p>
+                    <div class="cards-buttons">
+                        <a href="/domains">
+                        <button class="btns start-learning">
+                             Start Learning
+                        </button>
+                    </a>
+                    <a href="network.html">
+                        <button class="btns enter-maze">
+                            Beginner Maze 
+                        </button>
+                    </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 CyberMaze. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+
+</html>

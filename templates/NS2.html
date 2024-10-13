@@ -1,0 +1,396 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-9b">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CyberMaze - Learn Cyber Security Through Real-Time Simulations</title>
+    <link rel="stylesheet" href="{% static '/assets/css/contact.css' %}">
+    <link rel="stylesheet" href="{% static '/assets/css/styles.css' %}">
+    <script src="index.js"></script>
+    <!-- Google Font embed -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Protest+Guerrilla&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="logo">
+            <img src="{% static '/assets/images/logo.png" alt="Logo">
+            <h1>CyberMaze</h1>
+        </div>
+        <ul class="nav-links">
+          <li><a href="/">Home</a></li>
+          <li><a href="/domains">Domains</a></li>
+          <li><a href="/about">About</a></li>
+          <li><a href="/blog">Blogs</a></li>
+          <li><a href="/contact">Contact</a></li>
+        </ul>
+        <a href="#register" class="btn">Log In</a>
+        <!-- HTML for the hamburger menu -->
+        <button class="hamburger-menu-btn">&#9b7b7b6a;
+            <nav class="nav-links">
+            <!-- Your navigation links here -->
+            <a href="#">Link 1</a>
+            <a href="#">Link 2</a>
+            <a href="#">Link 3</a>
+            </nav>
+
+    </nav>
+    
+
+<!-- Navbar -->
+<nav class="navbar">
+    <div class="logo">
+        <img src="logo.png" alt="Logo">
+        <h1>CyberMaze</h1>
+    </div>
+    <ul class="nav-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/domains">Domains</a></li>
+      <li><a href="/about">About</a></li>
+      <li><a href="/blog">Blogs</a></li>
+      <li><a href="/contact">Contact</a></li>
+    </ul>
+    <a href="#register" class="btn">Log In</a>
+    <!-- HTML for the hamburger menu -->
+    <button class="hamburger-menu-btn">&#9b7b7b6a;
+        <nav class="nav-links">
+        <!-- Your navigation links here -->
+        <a href="#">Link 1</a>
+        <a href="#">Link 2</a>
+        <a href="#">Link 3</a>
+        </nav>
+
+</nav>
+  
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+        <h1>Beginner Maze - Network Security</h1>
+        <h1>Level 2 - <span>Sql injection </span></h1>
+  <p>Are you ready to put your cybersecurity skills to the test? Follow the instructions below to complete the tasks.</p>
+  <p>Note: Access the mentioned website for educational purpose only.</p>
+  <br>
+  <p>Perform sql injection on vulnerable site. Target website: <b> <span> testphp.vulnweb.com </span></b></p>
+
+  <!-- Task 1: Port Status Check -->
+
+  <h3>Task 1: Vulnerable link</h3>
+  <form id="task1aForm">
+    <label for="task1aAnswer">Find <span>vulnerable link </span>to provide the path to enter in the <span>database </span>of the vulnerable website:-</label>
+    <input type="text" id="task1aAnswer" name="task1aAnswer">
+    <button type="button" onclick="submitTask1a()">Submit</button>
+    <span id="task1aResult"></span>
+  </form>
+  <br>
+  <form id="task1bForm">
+    <label for="task1bAnswer">Copy vulnerable link and post it. Which will help us to access database:</label>
+    <input type="text" id="task1bAnswer" name="task1bAnswer">
+    <button type="button" onclick="submitTask1b()">Submit</button>
+    <span id="task1bResult"></span>
+  </form>
+
+  <!-- Task 2: Service Identification -->
+  <h3>Task 2: Vulnerable ID's</h3>
+  <form id="task2aForm">
+    <label for="task2aAnswer">Write the command to find all the vulnerable IDs in the page?</label>
+    <input type="text" id="task2aAnswer" name="task2aAnswer">
+    <button type="button" onclick="submitTask2a()">Submit</button>
+    <span id="task2aResult"></span>
+  </form>
+  <br>
+  <form id="task2bForm">
+    <label for="task2bAnswer">Post vulnerable link. (artist=1)</label>
+    <input type="text" id="task2bAnswer" name="task2bAnswer">
+    <button type="button" onclick="submitTask2b()">Submit</button>
+    <span id="task2bResult"></span>
+  </form>
+
+  <!-- Task 3: Vulnerability Exploitation -->
+  <h3>Task 3: Auto-fill</h3>
+  <form id="task3Form">
+    <label for="task3Answer">What is command to Auto fill all requirements:-</label>
+    <input type="text" id="task3Answer" name="task3Answer">
+    <button type="button" onclick="submitTask3()">Submit</button>
+    <span id="task3Result"></span>
+  </form>
+
+  <!-- Task 4: Create an IP list -->
+  <h3>Task 4: Information about the database</h3>
+  <form id="task4aForm">
+    <label for="task4aAnswer">Find information about the database on this website. Write command that you have used:</label>
+    <input type="text" id="task4aAnswer" name="task4aAnswer">
+    <button type="button" onclick="submitTask4a()">Submit</button>
+    <span id="task4aResult"></span>
+  </form>
+  <br>
+  <form id="task4bForm">
+    <label for="task4b1Answer">First input (4b1):</label>
+    <input type="text" id="task4b1Answer" name="task4b1Answer">
+    <br>
+    <label for="task4b2Answer">Second input (4b2):</label>
+    <br>
+    <input type="text" id="task4b2Answer" name="task4b2Answer">
+    <br>
+    <button type="button" onclick="submitTask4b()">Submit</button>
+    <span id="task4bResult"></span>
+</form>
+
+  <!-- Task 5: Service status check -->
+  <h3>Task 5: Table Information</h3>
+  <form id="task5aForm">
+    <label for="task5aAnswer">Find tables information about the acurat database. Write the command:</label>
+    <input type="text" id="task5aAnswer" name="task5aAnswer">
+    <button type="button" onclick="submitTask5a()">Submit</button>
+    <span id="task5aResult"></span>
+  </form>
+  <br>
+  <form id="task5bForm">
+    <label for="task5bAnswer">How many tables shown in teh accurat database: </label>
+    <input type="text" id="task5bAnswer" name="task5bAnswer">
+    <button type="button" onclick="submitTask5b()">Submit</button>
+    <span id="task5bResult"></span>
+  </form>
+
+  <!-- Task 6a: Make a Report using nmap -->
+  <h3>Task 6a: Information about user table</h3>
+  <form id="task6aForm">
+    <label for="task6aAnswer">Write command to find columns information about the users table: </label>
+    <input type="text" id="task6aAnswer" name="task6aAnswer">
+    <button type="button" onclick="submitTask6a()">Submit</button>
+    <span id="task6aResult"></span>
+  </form>
+
+    <!-- Task 7b: Convert xml file report -->
+
+    <h3>Task 7: UserName</h3>
+    <form id="task7aForm">
+      <label for="task7aAnswer">What is the command  you used to get username in user table</label>
+      <input type="text" id="task7aAnswer" name="task7aAnswer">
+      <button type="button" onclick="submitTask7a()">Submit</button>
+      <span id="task7aResult"></span>
+    </form>
+<br>
+    <form id="task7bForm">
+      <label for="task7bAnswer">What is the username that is shown?</label>
+      <input type="text" id="task7bAnswer" name="task7bAnswer">
+      <button type="button" onclick="submitTask7b()">Submit</button>
+      <span id="task7bResult"></span>
+    </form>
+
+     <!-- Task 9b: Command -->
+     <h3>Task 8: User Password</h3>
+     <form id="task8aForm">
+       <label for="task8aAnswer">Write command to get user password:</label>
+       <input type="text" id="task8aAnswer" name="task8aAnswer">
+       <button type="button" onclick="submitTask8a()">Submit</button>
+       <span id="task8aResult"></span>
+     </form>
+     <br>
+     <form id="task8bForm">
+      <label for="task8bAnswer">Write the user password that is shown</label>
+      <input type="text" id="task8bAnswer" name="task8bAnswer">
+      <button type="button" onclick="submitTask8b()">Submit</button>
+      <span id="task8bResult"></span>
+    </form>
+
+     
+     <div id="mazeCompletion" style="display: none;">
+        <h3>Level completed!</h3>
+        <button style="width: fit-content;" onclick="goToNextMaze()"> Continue</button>
+    </div>
+
+    
+</div>
+<footer>
+  <div class="container">
+      <p>&copy; 2024 CyberMaze. All rights reserved.</p>
+  </div>
+</footer>
+  <script>
+    function submitTask1a() {
+      var answer = document.getElementById('task1aAnswer').value;
+      if (answer.toLowerCase=== 'sqlmap -u testphp.vulnweb.com') {
+        document.getElementById('task1aResult').textContent = 'Solved';
+      } else {
+        document.getElementById('task1aResult').textContent = 'Solved';
+      }
+            checkMazeCompletion();
+    }
+    function submitTask1b() {
+      var answer = document.getElementById('task1bAnswer').value;
+      if (answer=== 'www.site.com/index.php?id=1') {
+        document.getElementById('task1bResult').textContent = 'Solved';
+      } else {
+        document.getElementById('task1bResult').textContent = 'Try again';
+      }
+            checkMazeCompletion();
+    }
+
+    function submitTask2a() {
+      var answer = document.getElementById('task2aAnswer').value;
+      if (answer === '--crawl 2') {
+        document.getElementById('task2aResult').textContent = 'Solved';
+      } else {
+        document.getElementById('task2aResult').textContent = 'Try again';
+      }
+            checkMazeCompletion();
+    }
+    function submitTask2b() {
+      var answer = document.getElementById('task2bAnswer').value;
+      if (answer === 'http://testphp.vulnweb.com/artist.php?artist=1') {
+        document.getElementById('task2bResult').textContent = 'Solved';
+      } else {
+        document.getElementById('task2bResult').textContent = 'Try again';
+      }
+            checkMazeCompletion();
+    }
+
+    function submitTask3() {
+      var answer = document.getElementById('task3Answer').value;
+      // Placeholder for task 3, replace with actual logic
+      if (answer === '--batch') {
+        document.getElementById('task3Result').textContent = 'Solved';
+      } else {
+        document.getElementById('task3Result').textContent = 'Try again';
+      }
+            checkMazeCompletion();
+    }
+
+    function submitTask4a() {
+      var answer = document.getElementById('task4aAnswer').value;
+      if (answer === '--dbs') {
+        document.getElementById('task4aResult').textContent = 'Solved';
+      } else {
+        document.getElementById('task4aResult').textContent = 'Try again';
+      }
+            checkMazeCompletion();
+    }
+
+    function submitTask4b() {
+      var answer1 = document.getElementById('task4b1Answer').value;
+      var answer2 = document.getElementById('task4b2Answer').value;
+      var resultElement = document.getElementById('task4bResult');
+  
+      // Example validation logic
+      if (answer1 === 'accurat' && answer2 === 'information schema') {
+          resultElement.textContent = 'Solved';
+      } else {
+          resultElement.textContent = 'Try again';
+      }
+      checkMazeCompletion();
+  }
+
+    function submitTask5a() {
+      var answer = document.getElementById('task5aAnswer').value;
+      if (answer === '--tables') {
+        document.getElementById('task5aResult').textContent = 'Solved';
+      } else {
+        document.getElementById('task5aResult').textContent = 'Try again';
+      }
+            checkMazeCompletion();
+    }
+
+    function submitTask5b() {
+      var answer = document.getElementById('task5bAnswer').value;
+      if (answer === '8') {
+        document.getElementById('task5bResult').textContent = 'Solved';
+      } else {
+        document.getElementById('task5bResult').textContent = 'Try again';
+      }
+            checkMazeCompletion();
+    }
+
+    function submitTask6a() {
+      var answer = document.getElementById('task6aAnswer').value;
+      // Placeholder for task 6a, replace with actual logic
+      if (answer === '--columns') {
+        document.getElementById('task6aResult').textContent = 'Solved';
+      } else {
+        document.getElementById('task6aResult').textContent = 'Try again';
+      }
+            checkMazeCompletion();
+    }
+    
+    function submitTask7a() {
+      var answer = document.getElementById('task7aAnswer').value;
+      // Placeholder for task 7ba, replace with actual logic
+      if (answer === '-C uname --dump') {
+        document.getElementById('task7aResult').textContent = 'Solved';
+      } else {
+        document.getElementById('task7aResult').textContent = 'Try again';
+      }
+            checkMazeCompletion();
+    }
+
+    function submitTask7b() {
+      var answer = document.getElementById('task7bAnswer').value;
+      // Placeholder for task 7b, replace with actual logic
+      if (answer === 'test') {
+        document.getElementById('task7bResult').textContent = 'Solved';
+      } else {
+        document.getElementById('task7bResult').textContent = 'Try again';
+      }
+            checkMazeCompletion();
+    }
+
+    function submitTask8a() {
+      var answer = document.getElementById('task8aAnswer').value;
+      // Placeholder for task 18a, replace with actual logic
+      if (answer === '-c Pass --dump') {
+        document.getElementById('task8aResult').textContent = 'Solved';
+      } else {
+        document.getElementById('task8aResult').textContent = 'Try again';
+      }
+            checkMazeCompletion();
+    }
+    
+    function submitTask8b() {
+      var answer = document.getElementById('task8bAnswer').value;
+      // Placeholder for task 8b, replace with actual logic
+      if (answer === 'test') {
+        document.getElementById('task8bResult').textContent = 'Solved';
+      } else {
+        document.getElementById('task8bResult').textContent = 'Try again';
+      }
+            checkMazeCompletion();
+    }
+
+
+    function checkMazeCompletion() {
+
+  var task7bSolved = document.getElementById('task7bResult').dataset.solved === 'true';
+  var task8bSolved = document.getElementById('task8bResult').dataset.solved === 'true';
+
+  if (task8bSolved && task7bSolved) {
+      document.getElementById('mazeCompletion').style.display = 'block';
+  }
+}
+
+function goToNextMaze() {
+window.location.href = 'level2.html'; // Replace with the actual URL of the next maze
+}
+
+    
+        function checkMazeCompletion() {
+            var task1Solved = document.getElementById('task7bResult').dataset.solved === 'true';
+            var task2Solved = document.getElementById('task8bResult').dataset.solved === 'true';
+    
+            if (task7bSolved && task8bSolved) {
+                document.getElementById('mazeCompletion').style.display = 'block';
+            }
+        }
+
+
+    function goToNextMaze() {
+        window.location.href = 'crypt2.html'; // Replace with the actual URL of the next maze
+    }
+  </script>
+
+</body>
+
+</html>

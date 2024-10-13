@@ -1,0 +1,76 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CyberMaze - Learn Cyber Security Through Real-Time Simulations</title>
+    <link rel="stylesheet" href="{% static '/assets/css/contact.css' %}">
+    <link rel="stylesheet" href="{% static '/assets/css/styles.css' %}">
+    <script src="index.js"></script>
+    <!-- Google Font embed -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Protest+Guerrilla&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="logo">
+            <img src="{% static '/assets/images/logo.png" alt="Logo">
+            <h1>CyberMaze</h1>
+        </div>
+        <ul class="nav-links">
+            <li><a href="/">Home</a></li>
+            <li><a href="/domains">Domains</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/blog">Blogs</a></li>
+            <li><a href="/contact">Contact</a></li>
+        </ul>
+        <a href="#register" class="btn">Log In</a>
+        <!-- HTML for the hamburger menu -->
+        <button class="hamburger-menu-btn">&#9776;
+            <nav class="nav-links">
+            <!-- Your navigation links here -->
+            <a href="#">Link 1</a>
+            <a href="#">Link 2</a>
+            <a href="#">Link 3</a>
+            </nav>
+
+    </nav>
+    
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2>Contact Us</h2>
+            <form action="#" method="POST" class="contact-form">
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="subject">Subject:</label>
+                    <input type="text" id="subject" name="subject" required>
+                </div>
+                <div class="form-group">
+                    <label for="description">Description:</label>
+                    <textarea id="description" name="description" rows="10" required></textarea>
+                </div>
+                <button class="submit-btn" type="submit">Submit</button>
+            </form>
+        </div>
+    </section>
+
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 CyberMaze. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+
+</html>

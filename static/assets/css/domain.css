@@ -1,0 +1,104 @@
+/* Domains section styles */
+.domains {
+    background-color: rgba(0, 0, 0, 0.4);
+    margin: 55px 50px 20px 50px;
+    padding: 20px 0;
+}
+h2 {
+    font-family: "Protest Guerrilla", sans-serif;
+    font-weight: 400;
+    font-size: 2rem;
+    margin-bottom: 10px;
+    text-align: center;
+}
+.cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+.cards {
+    border-radius: 12px;
+    color: white;
+    padding: 20px;
+    min-width: 200px;
+    height: auto;
+    margin: 10px 30px;
+    border: 2px solid #67013e;
+    text-align: center;
+    align-items: center;
+    max-width: 200px;
+}
+
+.cards:hover{
+    border: 2px solid #e0dcdf;
+}
+.cards h3 {
+    font-size: 1.5rem;
+    margin-bottom: 18px;
+    color: aqua;
+}
+.cards p {
+    font-size: 1.1rem;
+}
+
+.cards-buttons {
+    display: block;
+    justify-content: space-between;
+    margin-top: 15px;
+    border-radius: 0;
+}
+
+.btns {
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    border-radius: 0%;
+}
+.btns:hover{
+    background-color: rgb(78, 78, 161);
+}
+.start-learning {
+    background-color: rgb(218, 217, 217);
+    color: black;
+    margin-bottom: 20px;
+}
+
+.enter-maze {
+    background-color: rgb(206, 158, 90);
+}
+
+.btn i {
+    margin-right: 8px;
+}
+
+.btn .fas.fa-arrow-right {
+    margin-right: 0;
+    margin-left: 8px;
+}
+
+/* Media Queries */
+@media only screen and (max-width: 568px) {
+    .domains{
+        margin: 55px 20px 20px 20px;
+        height: auto;
+    }
+    .domains h2 {
+        font-size: 1.6rem;
+        margin: 10px auto;
+    }
+    .card{
+        height: auto;
+        padding: 10px;
+        margin: 10px 40px;
+    }
+    .card h3{
+        font-size: 1.2rem;
+    }
+    .card p {
+        display: none;
+    }
+}

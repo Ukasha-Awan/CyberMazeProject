@@ -1,0 +1,86 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CyberMaze - Learn Cyber Security Through Real-Time Simulations</title>
+    <link rel="stylesheet" href="{% static '/assets/css/styles.css' %}">
+    <script src="{% static 'index.js' %}"></script>
+    <!-- Google Font embed -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Protest+Guerrilla&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="logo">
+            <img src="{% static '/assets/images/logo.png' %}" alt="Logo">
+            <h1>CyberMaze</h1>
+        </div>
+        <ul class="nav-links">
+            <li><a href="/">Home</a></li>
+            <li><a href="/domains">Domains</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/blog">Blogs</a></li>
+            <li><a href="/contact">Contact</a></li>
+        </ul>
+        <a href="/login" class="btn">Log In</a>
+        <!-- HTML for the hamburger menu -->
+        <button class="hamburger-menu-btn">&#9776;
+            <nav class="nav-links">
+            <!-- Your navigation links here -->
+            <a href="#">Link 1</a>
+            <a href="#">Link 2</a>
+            <a href="#">Link 3</a>
+            </nav>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div>
+            <h1>Unlock the secrets of <span class="first-letter">Cyber</span>Security</h1>
+            <div class="line"></div>
+            <p class="d-description">Your immersive cybersecurity training ground. Navigate realistic simulations and dynamic challenges to
+                master digital defense strategies. From novices to experts, enhance your skills in an engaging, hands-on
+                environment.</p>
+            <a href="{% url 'domains' %}" class="hero-btn">Get Started</a>
+        </div>
+    </section>
+
+    <!-- Domains Section -->
+    <section id="intro" class="intro">
+        <div>
+            <h2>AN INTRODUCTION TO THE SECURE WORLD</h2>
+            <div class="d-description"><p>Your ultimate training ground, offering realistic cyber threat simulations, hands-on experience, and engaging, gamified learning. Enhance your skills, stay updated with the latest threats, and measure your proficiency with our comprehensive assessments and course materials. Join us and become a part of a dynamic community dedicated to cybersecurity excellence.
+
+            </p></div>
+            <div class="intro-container">
+                <div id="card1" class="card">
+                    <img src="{% static '/assets/images/pexels-tima-miroshnichenko-5380664.jpg' %}"  alt="can't load image">
+                    <h3>Learn by doing</h3>
+                </div>
+                <div id="card2" class="card">
+                    <img src="{% static '/assets/images/pexels-devon-pankiw-4315997.jpg' %}"  alt="can't load image">
+                    <h3>Hands on experience</h3>
+                </div>
+                <div id="card3" class="card">
+                    <img src="{% static '/assets/images/pexels-tima-miroshnichenko-5380792.jpg' %}"  alt="can't load image">
+                    <h3>Be aware of the threats</h3>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 CyberMaze. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+
+</html>

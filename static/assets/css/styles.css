@@ -1,0 +1,260 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body styles */
+body {
+    background: linear-gradient(to bottom, #000000, #45012a);
+    color: rgb(245, 223, 234);
+}
+
+/* Navbar styles */
+.navbar {
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 10px 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /* Align items vertically */
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    width: 40px;
+    margin-right: 10px;
+}
+
+.logo h1 {
+    color: white;
+    font-size: 1.5rem;
+}
+
+.first-letter{
+    color: rgb(66, 66, 253);
+}
+
+.nav-links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center; /* Align items vertically */
+}
+
+.nav-links li {
+    margin-right: 10px;
+}
+
+.nav-links li:last-child {
+    margin-right: 0; /* Remove margin from the last link */
+}
+
+.nav-links li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 2px 8px;
+}
+
+.nav-links li a:hover {
+    color: #fff;
+    border: 2px solid #45012a;
+    border-radius: 9px;
+    padding: 2px 6px;
+}
+.btn{
+    background-color: rgb(201, 54, 1);
+    color: #f6e9e9;
+    padding: 3px 20px;
+    border-radius: 12px;
+    text-decoration: none;
+    font-size: 1.1rem;
+}
+.btn:hover {
+    background-color: rgb(64, 64, 250);
+}
+.hamburger-menu-btn {
+    display: none; /* Initially hide the button */
+  }
+
+/* Hero section styles */
+.hero {
+    background-image: url('../images/purple-black-texture-background-369600-pixahive.jpg');
+    text-align: center;
+    padding-top: 140px;
+    padding-bottom: 70px;
+    padding-left: 5px;
+}
+.hero h1 {
+    font-family: "Protest Guerrilla", sans-serif;
+    font-weight: 400;
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.d-description{
+    padding: 19px 20px;
+    text-align: center;
+    max-width: 690px;
+    margin: 0 auto;
+}
+.hero p{
+    font-size: 1.2rem;
+    padding-bottom: 33px;
+}
+.hero-btn{
+    background-color: rgb(64, 64, 250);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 12px;
+    text-decoration: none;
+    font-size: 1.1rem;
+}
+.hero-btn:hover {
+    background-color: rgb(43, 43, 253);
+}
+
+.line{
+    width: 330px;
+    max-width: 200px;
+    height: 3px;
+    margin: 9px auto;
+    background: #45012a;
+    border-radius: 10px;
+    box-shadow: 0 0 20px white, 0 0 40px white, 0 0 60px white, 0 0 80px #3d0526, 0 0 100px #3d0526, 0 0 150px #3d0526; /* Glowing effect */
+    animation: glow 1s infinite alternate;
+}
+ 
+/* secure world */
+.intro {
+    background-color: rgba(0, 0, 0, 0.4);
+    margin: 10px 30px;
+    padding: 20px 0;
+    border-radius: 20px;
+}
+h2 {
+    font-family: "Protest Guerrilla", sans-serif;
+    font-weight: 400;
+    font-size: 2rem;
+    margin-bottom: 10px;
+    text-align: center;
+}
+.intro-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+.card {
+    width: 300px;
+    height: 250px;
+    margin: 10px 20px;
+    text-align: center;
+}
+.card img{
+    position: relative;
+    height: 88%;
+    width: 100%;
+}
+
+.card h3 {
+    font-size: 1.5rem;
+    margin-top: 10px;
+    margin-bottom: 18px;
+}
+.card p {
+    font-size: 1.1rem;
+}
+
+a {
+    text-decoration: none; /* Remove underline */
+    color: inherit; /* Inherit color from parent */
+}
+
+
+/* footer */
+footer{
+    position: static;
+    bottom: 0;
+    width: 100%;
+    padding:14px 40px;
+    background-color: #02011a;
+}
+
+/* Media Queries */
+@media only screen and (max-width: 568px) {
+    .card-container {
+        justify-content: center;
+    }
+    .hero{
+        padding-bottom: 30px;
+        padding-top: 100px;
+    }
+    .hero h1 {
+        font-size: 1.6rem;
+    }
+    .hero p {
+        font-size: 0.9rem;
+        margin-top: 25px;
+        margin: 25px 22px;
+    }
+    .hero-btn {
+        padding: 9px 15px;
+        font-size: 1rem;
+;
+    }
+    .intro{
+        padding: 5px 0px;
+        margin: 10px 20px;
+    }
+    .intro h2 {
+        font-size: 1.3rem;
+        margin: 10px 20px;
+    }
+    .card{
+        height: 84%;
+    }
+    .card p {
+        display: none;
+    }    
+    .card h3{
+        font-size: 1.2rem;
+    }
+    p{
+        font-size: 0.9rem;;
+    }
+
+    footer{
+        padding:14px 10px;
+    }
+    .nav-links, .btn{
+        display: none; 
+      }
+    
+      .hamburger-menu-btn {
+        display: inline; 
+        margin-right: 2px;
+        font-size: 17px; 
+        color: white; 
+        border: #fff;
+        background-color: transparent;
+      }
+}
+
+@keyframes glow {
+    from {
+        opacity: 0.5;
+    }
+    to {
+        opacity: 1;
+    }
+}

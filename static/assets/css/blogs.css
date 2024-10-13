@@ -1,0 +1,23 @@
+main {
+    padding: 20px 60px;
+    text-align: center;
+  }
+  
+  article {
+    margin-bottom: 0px;
+  }
+  
+  article h2 {
+    margin-top: 55px;
+  }
+
+  /* Media Queries */
+@media only screen and (max-width: 568px) {
+  main {
+    height: auto;
+    padding: 20px 30px;
+  }
+  article h2 {
+    font-size: 1.6rem;
+}
+}
