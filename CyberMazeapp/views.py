@@ -1,4 +1,6 @@
 from django.shortcuts import render,redirect
+from .forms import ContactForm
+
 
 # Create your views here.
 def index(request):
@@ -9,8 +11,17 @@ def about(request):
     return render(request,"about.html")
 def domains(request):
     return render(request,"domains.html")
+
 def contact(request):
-    return render(request,"contact.html")
+    if request.method == 'POST':
+        form = ContactForm(request.POST)
+        if form.is_valid():
+            form.save()  # Save form data to the database
+            return redirect('contact')  # Redirect to a success page
+    else:
+        form = ContactForm()  # If the request is GET, render an empty form
+    return render(request, 'contact.html', {'form': form})
+
 def level1(request):
     return render(request,"level1.html")
 def crypt1(request):
@@ -19,3 +30,7 @@ def login(request):
     return render(request,"login.html")
 def NS2(request):
     return render(request,"NS2.html")
+
+
+
+

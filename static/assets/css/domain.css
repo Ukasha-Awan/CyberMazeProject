@@ -43,10 +43,11 @@ h2 {
 }
 
 .cards-buttons {
-    display: block;
+    display: flex;
     justify-content: space-between;
     margin-top: 15px;
     border-radius: 0;
+    margin-left: 10%;
 }
 
 .btns {
