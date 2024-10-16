@@ -17,7 +17,10 @@ h2 {
     align-items: center;
     justify-content: center;
 }
+
 .cards {
+    display: flex;
+    flex-direction: column;
     border-radius: 12px;
     color: white;
     padding: 20px;
@@ -52,15 +55,24 @@ h2 {
 
 .btns {
     padding: 10px 20px;
-    border: none;
+    /* border: none; */
     cursor: pointer;
     font-size: 16px;
-    display: flex;
+    /* display: flex; */
     align-items: center;
     border-radius: 0%;
+    margin-left: 25px;
 }
 .btns:hover{
     background-color: rgb(78, 78, 161);
+}
+.level-1 {
+ 
+    background-color: rgb(218, 217, 217);
+    color: black;
+    margin-bottom: 20px;
+    padding: 10%;
+    margin-left: 10px;
 }
 .start-learning {
     background-color: rgb(218, 217, 217);
@@ -70,6 +82,7 @@ h2 {
 
 .enter-maze {
     background-color: rgb(206, 158, 90);
+   
 }
 
 .btn i {
