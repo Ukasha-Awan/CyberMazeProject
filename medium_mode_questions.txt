@@ -1,0 +1,40 @@
+Level: 1
+Question: Please enter a valid email address and a password that meets the correct format criteria.
+Enter email:
+Enter password:
+
+Level: 2
+Question: Enter a valid username about the valid scenario.
+Enter:
+
+Level: 3
+Question: Enter a security answer.
+Enter:
+
+Level: 4
+Question: Imagine you are validating user input for a financial application's authentication system. Describe a scenario where user-provided answers must meet specific criteria to ensure security and functionality. Provide conditions or examples that illustrate the required criteria for user input.
+Enter: 
+
+Level: 5
+Question: You are developing a form for users to submit product reviews on your online shopping website. What type of input validation should you implement to prevent malicious SQL Injection attacks?
+Correct Answer: Input validation and parameterized queries
+
+Level: 6
+Question: When implementing input validation for user-generated content on your website, which approach is generally more secure?
+Correct Answer: Using a whitelist approach, validating inputs
+
+Level: 7
+Question: An attacker attempts to exploit your website's product review form by injecting malicious SQL code. How you can prevent it?
+Correct Answer: Use Prepared Statements and Parameterized Queries, Employ Input Validation
+
+Level: 8
+Question:What should happen if the username or password is empty?
+Correct Answer:  The function should return "Invalid input.
+
+Level: 9
+Question:What should the function return if the username and password are incorrect?
+Correct Answer: Login failed
+
+Level: 10
+Question: Add encryption on sensitive data in valid format.
+Enter: 
