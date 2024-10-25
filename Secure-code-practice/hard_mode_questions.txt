@@ -1,0 +1,174 @@
+Level: 1
+Question:  How can this vulnerable Python code be secured from SQL Injection? Copy paste this vulnerable Python codeuse paramterized statments to prevent SQL injection attack.
+Code: username = input("Enter your username: ")
+password = input("Enter your password: ")
+query = "SELECT * FROM users WHERE username=' username ' AND password=' password' ".
+
+Correct Answer: username = input("Enter your username: ")
+password = input("Enter your password: ")
+query = "SELECT * FROM users WHERE username=? AND password=? ",
+username = input("Enter your username: ")
+password = input("Enter your password: ")
+query = ("SELECT * FROM users WHERE username=? AND password=? "(username,password))   
+
+Level: 2
+Question: Which one of these two email validation pattern is correct? 
+Code: 1.import re
+def validate_email_format(email):
+    pattern = r'^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$'
+2.import re
+def validate_email_format(email):
+    pattern = r'^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\[a-zA-Z]{2,}$'
+
+Correct Answer: 1
+
+Level: 3
+Question: Suggest improvements in Pattern Matching .
+Code: import re
+def validate_email(email):
+    # Weak code using basic pattern matching
+    pattern = '^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$'
+    if re.match(pattern, email):
+        return True
+    else:
+        return False
+
+Correct Answer: import re
+def validate_email(email):
+    pattern = r'^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$'
+    if re.match(pattern, email):
+        return True
+    else:
+        return False
+
+Level: 4
+Question: Suggest some improvements in length checking code.
+Code: def weak_length_check(password):
+    # Weak code using simple length check
+    if len(password) >= 6 and len(password) <= 12:
+        return True
+    else:
+        return False
+
+Correct Answer: def improved_length_check(password):
+    if len(password) >= 8 and len(password) <= 20:
+        return True
+    else:
+        return False, def strong_length_check(password):
+    if len(password) >= 8 and len(password) <= 20:
+        return True
+    else:
+        return False,
+
+Level: 5
+Question: Suggest improvements in Pattern Matching (Regular Expressions).
+Code: import re
+def validate_email(email):
+    # Weak code using basic pattern matching
+    pattern = '^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$'
+    if re.match(pattern, email):
+        return True
+    else:
+        return False
+
+Correct Answer: import re
+def validate_email(email):
+    # Improved code using robust email validation with regular expressions
+    pattern = r'^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$'
+    return bool(re.match(pattern, email))
+
+Level: 6
+Question: Suggest some improvements in length checking code.
+Code: def weak_length_check(password):
+    # Weak code using simple length check
+    if len(password) >= 6 and len(password) <= 12:
+        return True
+    else:
+        return False
+
+Correct Answer: def improved_length_check(password):
+    # Improved code using a more flexible length range
+    MIN_LENGTH = 8
+    MAX_LENGTH = 20
+    if MIN_LENGTH <= len(password) <= MAX_LENGTH:
+        return True
+    else:
+        return False
+
+Level: 7
+Question: Find the attack vector in this vulnerable code.
+Code: def execute_query(query):
+    try:
+        connection = get_database_connection()
+        cursor = connection.cursor()
+        sql_query = "SELECT * FROM users WHERE username = '" + query + "'"
+        cursor.execute(sql_query)
+        results = cursor.fetchall()
+        for row in results:
+            print(row)
+    except Exception as e:
+        print("An error occurred:", str(e))
+
+Correct Answer: "SELECT * FROM users WHERE username = '" + query + "'"
+
+Level: 8
+Question: Find malicious activity in it.
+Code: <!DOCTYPE html>
+<html>
+<head>
+    <title>Malicious Page</title>
+</head>
+<body>
+    <h1>Welcome to Our Website</h1>
+    <p>Click <a href="#" id="malicious-link">here</a> to claim your prize!</p>
+    <script>
+        document.getElementById('malicious-link').addEventListener('click', function() {
+            var userInput = prompt("Please enter your username:");
+            var maliciousCode = '<script>alert("Hello, ' + userInput + '! You have been hacked.");</script>';
+            document.getElementById('malicious-link').innerHTML = maliciousCode;
+        });
+    </script>
+</body>
+</html>
+
+Correct Answer: Cross-Site Scripting (XSS).
+
+Level: 9
+Question: Identify is this code is weak or strong.
+Code: function calculateArea(length, width) {
+    if (typeof length !== 'number' || typeof width !== 'number') {
+        return null; // Not handling non-numeric inputs
+    }
+    return length * width;
+}
+// Example usage:
+console.log(calculateArea(5, '10')); // Output: null, should handle mixed types more robustly
+
+Correct Answer: weak
+
+Level: 10
+Question: Identify is this code is weak or strong.
+Code: function validateForm(formData) {
+    const requiredFields = ['username', 'password', 'email']; // Define required fields
+    for (let field of requiredFields) {
+        if (!formData[field]) {
+            return `${field} is required.`; // Return error message for missing field
+        }
+    }
+    return 'Validation passed.'; // All required fields are present
+}
+// Example usage:
+const formData1 = {
+    username: 'user123',
+    password: 'pass456',
+    email: 'user123@example.com'
+};
+const formData2 = {
+    username: 'user456',
+    password: '',
+    email: 'user456@example.com'
+};
+console.log(validateForm(formData1)); // Output: Validation passed.
+console.log(validateForm(formData2)); // Output: password is required.
+
+Correct Answer: Strong

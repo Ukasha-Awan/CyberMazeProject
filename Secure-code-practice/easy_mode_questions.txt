@@ -1,0 +1,79 @@
+Level: 1 
+Question: How can you prevent SQL injection in this scenario?
+Option a): Use string concatenation to build SQL queries.
+Option b): Use prepared statements or parameterized queries.
+Option c): Allow user input directly into SQL queries.
+Option d): Use client-side validation only.
+Correct Answer: Option b) Use prepared statements or parameterized queries.
+
+Level: 2 
+Question: How can you ensure these comments do not include malicious scripts?
+Option a): Encode output and use proper input validation.
+Option b): Allow all HTML tags in user comments.
+Option c): Only check for script tags.
+Option d): Use client-side validation only.
+Correct Answer: Option a) Encode output and use proper input validation.
+
+Level: 3
+Question: Based on the function validate_integer, which of the following statements is correct?
+Option a) validate_integer(42) returns True.
+Option b) validate_integer("42") returns True.
+Option c) Both validate_integer(42) and validate_integer("42") return True.
+Option d) Both validate_integer(42) and validate_integer("42") return False.
+Correct Answer: Option a) validate_integer(42) returns True.
+
+Level: 4 
+Question: How can you ensure this data is transmitted securely?
+Option a): Use HTTP.
+Option b): Use HTTPS.
+Option c): Send data in plain text.
+Option d): Use email to send sensitive data.
+Correct Answer: Option b) Use HTTPS.
+
+Level: 5 
+Question: What should be your approach to configuration management?
+Option a) Use secure defaults, remove unnecessary services, and apply the principle of least privilege.
+Option b) Enable all services by default.
+Option c) Use the default configuration without changes.
+Option d) Disable all security features for easier access.
+Correct Answer: Option a) Use secure defaults, remove unnecessary services, and apply the principle of least privilege.
+
+Level: 6
+Question: What is the primary purpose of range checking?
+Option a) Ensuring data is within expected numeric ranges.
+Option b) Checking for the presence of specific characters.
+Option c) Verifying the structure of data formats.
+Option d) Validating data against predefined formats.
+Correct Answer: Option a) Ensuring data is within expected numeric ranges.
+
+Level: 7 
+Question: What does input sanitization aim to prevent?
+Option a) Data duplication
+Option b) Cross-site scripting (XSS) attacks
+Option c) SQL injection attacks
+Option d) Data loss during transmission
+Correct Answer: Option b) Cross-site scripting (XSS) attacks
+
+Level: 8
+Question: How can you handle errors securely?
+Option a): Log detailed error information on the server but display generic error messages to the user.
+Option b): Display detailed error messages to users.
+Option c): Ignore errors.
+Option d): Log errors only when the application crashes.
+Correct Answer: Option a) Log detailed error information on the server but display generic error messages to the user.
+
+Level: 9
+Question: Which type of testing evaluates the security of wireless networks?
+Option a) Web Application Security Testing
+Option b) Static Application Security Testing (SAST)
+Option c) Wireless Security Testing
+Option d) Dynamic Application Security Testing (DAST)
+Correct Answer: Option c) Wireless Security Testing
+
+Level: 10
+Question: What vulnerability does "insecure direct object reference" refer to?
+Option a) Allowing unauthorized access to protected resources
+Option b) Failing to validate input properly
+Option c) Exposing sensitive data through logs
+Option d) Using weak cryptography methods
+Correct Answer: Option a) Allowing unauthorized access to protected resources
