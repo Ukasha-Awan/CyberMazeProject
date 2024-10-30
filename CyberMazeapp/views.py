@@ -30,6 +30,14 @@ def login(request):
     return render(request,"login.html")
 def NS2(request):
     return render(request,"NS2.html")
+def cloudrecon(request):
+    return render(request,"cloud-recon.html")
+def NS3(request):
+    return render(request,"NS3.html")
+def NS4(request):
+    return render(request,"NS4.html")
+def NS5(request):
+    return render(request,"NS5.html")
 
 
 

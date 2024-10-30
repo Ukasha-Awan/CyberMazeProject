@@ -18,7 +18,7 @@ from django.contrib import admin
 from django.urls import path,include
 admin.site.site_header = "CyberMaze"
 #admin.site.site_title = "classhhhgjkkgkgggkgkhgjh"
-admin.site.index_title = "WellCome To CyberMaze"
+admin.site.index_title = "WelCome To CyberMaze"
 urlpatterns = [
     path('admin/', admin.site.urls),
     

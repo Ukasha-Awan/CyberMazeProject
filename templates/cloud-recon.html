@@ -1,0 +1,119 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CyberMaze - Learn Cyber Security Through Real-Time Simulations</title>
+    <link rel="stylesheet" href="{% static '/assets/css/contact.css' %}">
+    <link rel="stylesheet" href="{% static '/assets/css/styles.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <script src="index.js"></script>
+    <!-- Google Font embed -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Protest+Guerrilla&display=swap" rel="stylesheet">
+    <link rel="icon" href="{% static 'assets/images/CM Logo 2.png' %}" type="image/png">
+</head>
+
+<body style="padding: 20px;">
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="logo">
+            <img src="{% static '/assets/images/CM Logo 2.png' %}" alt="Logo Image">
+            <h1>CyberMaze</h1>
+        </div>
+        <ul class="nav-links">
+            <li><a href="/">Home</a></li>
+            <li><a href="/domains">Domains</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/blog">Blogs</a></li>
+            <li><a href="/contact">Contact</a></li>
+        </ul>
+        <a href="#register" class="btn">Log In</a>
+        <!-- HTML for the hamburger menu -->
+        <button class="hamburger-menu-btn">&#9776;
+            <nav class="nav-links">
+            <!-- Your navigation links here -->
+            <a href="#">Link 1</a>
+            <a href="#">Link 2</a>
+            <a href="#">Link 3</a>
+            </nav>
+    </nav>
+
+
+    <h1 style="margin-top: 65px;">AWS level 1 - CLOUD RECON <hr> <br> Level 1: <span>Identify Vulnerabilities!</span></h1>
+    <p>This challenge focuses on understanding and identifying security vulnerabilities in an AWS Lambda function designed to create an S3 bucket. Users will explore common issues, best practices, and IAM policies related to AWS services.</p>
+    
+    <h3>Prerequisites</h3>
+    <ul>
+        <li>Basic AWS Knowledge: Familiarity with AWS services, particularly Lambda and S3.</li>
+        <li>IAM Understanding: Knowledge of Identity and Access Management (IAM) roles and policies.</li>
+        <li>Python Programming: Basic understanding of Python as the Lambda function is written in this language.</li>
+        <li>AWS Account: Access to an AWS account to deploy and test the Lambda function.</li>
+    </ul>
+
+    <h3>Tools Used</h3>
+    <ul>
+        <li>AWS Management Console: For deploying and managing AWS resources.</li>
+        <li>AWS CLI (Command Line Interface): Optional, for users who prefer command-line interactions.</li>
+        <li>Python Environment: Local environment for testing Python code (optional).</li>
+        <li>CloudTrail: To monitor and audit AWS account activity (optional).</li>
+    </ul>
+
+    <h3>Download the YAML File</h3>
+    <p>
+        Click the link below to download the <strong>cloud-recon.yaml</strong> file:
+        <a href="templates/cloud-recon.yaml" download>cloud-recon.yaml</a>
+    </p>
+    
+    <h3>Submit your flag</h3>
+    <form id="task1Form">
+      
+      <input type="text" id="task1Answer" name="task1Answer">
+      <button type="button" onclick="submitTask1()">Submit</button>
+      <span id="task1Result"></span>
+    </form>
+    <br>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 CyberMaze. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        function submitTask1() {
+            var answer = document.getElementById('task1Answer').value;
+            if (answer.toLowerCase() === 'flag{c!ou3-rec0n-leve!-c!eared}') {
+                document.getElementById('task1Result').textContent = 'Solved';
+                document.getElementById('task1Result').dataset.solved = 'true';
+            } else {
+                document.getElementById('task1Result').textContent = 'Solved';
+                document.getElementById('task1Result').dataset.solved = 'false';
+            }
+            checkMazeCompletion();
+        }
+    
+    
+        function checkMazeCompletion() {
+            var task1Solved = document.getElementById('task1Result').dataset.solved === 'true';
+    
+            if (task1Solved) {
+                document.getElementById('mazeCompletion').style.display = 'block';
+            }
+        }
+
+    function goToNextMaze() {
+        window.location.href = 'cloud-recon.html'; // Replace with the actual URL of the next maze
+    }
+
+
+</script>
+
+
+    
+</body>
+</html>

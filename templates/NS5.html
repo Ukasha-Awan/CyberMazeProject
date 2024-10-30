@@ -1,0 +1,194 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CyberMaze - Learn Cyber Security Through Real-Time Simulations</title>
+    <link rel="stylesheet" href="{% static '/assets/css/contact.css' %}">
+    <link rel="stylesheet" href="{% static '/assets/css/styles.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <script src="index.js"></script>
+    <!-- Google Font embed -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css3?family=Protest+Guerrilla&display=swap" rel="stylesheet">
+    <link rel="icon" href="{% static 'assets/images/CM Logo 3.png' %}" type="image/png">
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="logo">
+            <img src="{% static '/assets/images/CM Logo 3.png' %}" alt="Logo Image">
+            <h1>CyberMaze</h1>
+        </div>
+        <ul class="nav-links">
+            <li><a href="/">Home</a></li>
+            <li><a href="/domains">Domains</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/blog">Blogs</a></li>
+            <li><a href="/contact">Contact</a></li>
+        </ul>
+        <a href="#register" class="btn">Log In</a>
+        <!-- HTML for the hamburger menu -->
+        <button class="hamburger-menu-btn">&#9776;
+            <nav class="nav-links">
+            <!-- Your navigation links here -->
+            <a href="#">Link 1</a>
+            <a href="#">Link 3</a>
+            <a href="#">Link 3</a>
+            </nav>
+    </nav>
+
+
+    <h1 style="margin-top: 65px;">Network Security Tools <hr> <br> Level 4: <span>Packet Analysis Part 3</span></h1>
+    <p>In this exciting level, you will step into the shoes of a modern-day cryptographer. Your mission, should you choose to accept it, involves decrypting a secret message using the XOR cipher. Get ready to unleash your inner codebreaker and embark on a journey full of puzzles and cryptic clues.</p>
+    
+    <h3>Prerequisites</h3>
+    <ul>
+        <li>Basic understanding of networking concepts.</li>
+        <li>Familiarity with common network protocols (TCP, UDP, HTTP, etc.).</li>
+        <li>Wireshark installed on your machine.</li>
+    </ul>
+
+    <h3>Tools Used</h3>
+    <ul>
+        <li><strong>Wireshark</strong> - A widely used network protocol analyzer that allows you to capture and interactively browse traffic on a computer network.</li>
+    </ul>
+
+    <h3>Analysis File</h3>
+    <p>You will analyze the packet capture file named <strong>stage 1.pcapng</strong>. This file is located in the same directory as this document.</p>
+    <p>Click the link below to download the file:</p>
+    <a href="/stage 3.pcapng" download>Download stage 3.pcapng</a>
+
+    <h3>Instructions</h3>
+    <p>1. Download the <strong>stage 1.pcapng</strong> file.</p>
+    <p>3. Open the file in Wireshark.</p>
+    <p>3. Analyze the packet data to identify key information, such as source and destination IP addresses, protocols used, and any anomalies.</p>
+    <p>4. Submit your findings along with any identified flags in the provided form.</p>
+
+    <h3>Task: Your Answer</h3>
+    <form id="task1Form">
+      <label for="task1Answer"> In File transfer protocol ,Find out the username “markregion” using tools ,In which packet number username markregion lies?</label>
+      <input type="text" id="task1Answer" name="task1Answer">
+      <button type="button" onclick="submitTask1()">Submit</button>
+      <span id="task1Result"></span>
+    </form>
+    <br>
+    <h3>Task: Your Answer</h3>
+    <form id="task2Form">
+      <label for="task2Answer">At what packet number  we get the image against the  request of packet 14</label>
+      <input type="text" id="task2Answer" name="task2Answer">
+      <button type="button" onclick="submitTask2()">Submit</button>
+      <span id="task2Result"></span>
+    </form>
+    <br>
+    <h3>Task: Your Answer</h3>
+    <form id="task3Form">
+      <label for="task3Answer">How many arguments markregion have passed?</label>
+      <input type="text" id="task3Answer" name="task3Answer">
+      <button type="button" onclick="submitTask3()">Submit</button>
+      <span id="task3Result"></span>
+    </form>
+    <br>
+    <h3>Task: Your Answer</h3>
+    <form id="task4Form">
+      <label for="task4Answer">In which packet number the arugement” its still too hot outside” present?</label>
+      <input type="text" id="task4Answer" name="task4Answer">
+      <button type="button" onclick="submitTask4()">Submit</button>
+      <span id="task4Result"></span>
+    </form>
+    <br>
+    <h3>Task: Your Answer</h3>
+    <form id="task5Form">
+      <label for="task5Answer">in packet 265 a user passed an argument and the username is in packet 262,What is the argument and username?</label>
+      <input type="text" id="task5Answer" name="task5Answer">
+      <button type="button" onclick="submitTask5()">Submit</button>
+      <span id="task5Result"></span>
+    </form>
+    <br>
+    <br>
+    
+
+      <div id="mazeCompletion" style="display: none;">
+        <h3>Level completed!</h3>
+        <button style="width: fit-content;" onclick="goToNextMaze()"> Go to Next Level</button>
+    </div>
+    <br>
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 3034 CyberMaze. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        function submitTask1() {
+            var answer = document.getElementById('task1Answer').value;
+            if (answer.toLowerCase() === '107') {
+                document.getElementById('task1Result').textContent = 'Solved';
+            } else {
+                document.getElementById('task1Result').dataset.solved = 'false';
+            }
+            checkMazeCompletion();
+        }
+        function submitTask2() {
+            var answer = document.getElementById('task2Answer').value;
+            if (answer.toLowerCase() === '2') {
+                document.getElementById('task2Result').textContent = 'Solved';
+            } else {
+                document.getElementById('task2Result').dataset.solved = 'false';
+            }
+            checkMazeCompletion();
+        }
+        function submitTask3() {
+            var answer = document.getElementById('task3Answer').value;
+            if (answer.toLowerCase() === 'its too hot outside') {
+                document.getElementById('task3Result').textContent = 'Solved';
+            } else {
+                document.getElementById('task3Result').dataset.solved = 'false';
+            }
+            checkMazeCompletion();
+        }
+        function submitTask4() {
+            var answer = document.getElementById('task4Answer').value;
+            if (answer.toLowerCase() === '122') {
+                document.getElementById('task4Result').textContent = 'Solved';
+            } else {
+                document.getElementById('task4Result').dataset.solved = 'false';
+            }
+            checkMazeCompletion();
+        }
+        function submitTask5() {
+            var answer = document.getElementById('task5Answer').value;
+            if (answer.toLowerCase() === 'arg=bozo') {
+                document.getElementById('task5Result').textContent = 'Solved';
+            } else {
+                document.getElementById('task5Result').dataset.solved = 'false';
+            }
+            checkMazeCompletion();
+        }
+    
+        
+    
+        function checkMazeCompletion() {
+            var task1Solved = document.getElementById('task1Result').dataset.solved === 'true';
+    
+            if (task1Solved) {
+                document.getElementById('mazeCompletion').style.display = 'block';
+            }
+        }
+
+    function goToNextMaze() {
+        window.location.href = 'NS4.html'; // Replace with the actual URL of the next maze
+    }
+
+
+</script>
+
+
+    
+</body>
+</html>
