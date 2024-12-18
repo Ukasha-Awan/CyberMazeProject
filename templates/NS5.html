@@ -111,7 +111,7 @@
     <br>
     <h3>Task: Your Answer</h3>
     <form id="task5Form">
-      <label for="task5Answer">in packet 195 a user passed an argument and the username is in packet 192,What is the argument?</label>
+      <label for="task5Answer">in packet 195 a user passed an argument and the username is in packet 192,What is the argument and the username?</label>
       <input type="text" id="task5Answer" name="task5Answer">
       <button type="button" onclick="submitTask5()">Submit</button>
       <span id="task5Result"></span>
@@ -170,7 +170,7 @@
         }
         function submitTask5() {
             var answer = document.getElementById('task5Answer').value;
-            if (answer.toLowerCase() === 'bozo') {
+            if (answer.toLowerCase() === 'bozo anonymous') {
                 document.getElementById('task5Result').textContent = 'Solved';
             } else {
                 document.getElementById('task5Result').textContent = 'false';
