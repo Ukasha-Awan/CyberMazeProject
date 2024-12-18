@@ -1,0 +1,142 @@
+[
+  {
+    "eventVersion": "1.08",
+    "userIdentity": {
+      "type": "IAMUser",
+      "principalId": "MYUSERID",
+      "arn": "arn:aws:iam::123456789012:user/Alice",
+      "accountId": "123456789012",
+      "accessKeyId": "MYACCESSKEY",
+      "userName": "Ukasha"
+    },
+    "eventTime": "2024-12-18T15:00:00Z",
+    "eventSource": "iam.amazonaws.com",
+    "eventName": "CreateRole",
+    "awsRegion": "us-east-1",
+    "sourceIPAddress": "192.0.2.0",
+    "userAgent": "aws-cli/2.0.0 Python/3.7 Windows/10 botocore/2.0.0",
+    "requestParameters": {
+      "roleName": "TestRole",
+      "assumeRolePolicyDocument": "{\"Version\":\"2012-10-17\",\"Statement\":[{\"Effect\":\"Allow\",\"Principal\":{\"Service\":\"ec2.amazonaws.com\"},\"Action\":\"sts:AssumeRole\"}]}"
+    },
+    "responseElements": {
+      "role": {
+        "arn": "arn:aws:iam::123456789012:role/TestRole",
+        "createDate": "2024-12-18T15:00:00Z",
+        "roleName": "TestRole"
+      }
+    },
+    "eventID": "example-event-id-1",
+    "readOnly": false
+  },
+  {
+    "eventVersion": "1.08",
+    "userIdentity": {
+      "type": "Root",
+      "principalId": "ROOTUSERID",
+      "accountId": "123456789012"
+    },
+    "eventTime": "2024-12-18T15:30:00Z",
+    "eventSource": "s3.amazonaws.com",
+    "eventName": "ListBuckets",
+    "awsRegion": "us-west-2",
+    "sourceIPAddress": "203.0.113.25",
+    "userAgent": "Mozilla/5.0",
+    "requestParameters": {},
+    "responseElements": {
+      "buckets": ["example-bucket-1", "example-bucket-2"]
+    },
+    "eventID": "example-event-id-2",
+    "readOnly": true
+  },
+  {
+    "eventVersion": "1.08",
+    "userIdentity": {
+      "type": "AssumedRole",
+      "principalId": "EXAMPLEROLEID",
+      "arn": "arn:aws:sts::123456789012:assumed-role/ExampleRole/ExampleSession",
+      "accountId": "123456789012",
+      "sessionContext": {
+        "attributes": {
+          "mfaAuthenticated": "true",
+          "creationDate": "2024-12-18T16:00:00Z"
+        }
+      }
+    },
+    "eventTime": "2024-12-18T16:15:00Z",
+    "eventSource": "cloudtrail.amazonaws.com",
+    "eventName": "StopLogging",
+    "awsRegion": "eu-central-1",
+    "sourceIPAddress": "198.51.100.45",
+    "userAgent": "custom-agent",
+    "requestParameters": {
+      "trailName": "exampleTrail"
+    },
+    "responseElements": null,
+    "eventID": "example-event-id-3",
+    "readOnly": false
+  },
+  {
+    "eventVersion": "1.08",
+    "userIdentity": {
+      "type": "Root",
+      "principalId": "ROOTUSERID",
+      "accountId": "123456789012"
+    },
+    "eventTime": "2024-12-18T17:00:00Z",
+    "eventSource": "iam.amazonaws.com",
+    "eventName": "AttachUserPolicy",
+    "awsRegion": "ap-south-1",
+    "sourceIPAddress": "203.0.113.10",
+    "userAgent": "AWS Internal",
+    "requestParameters": {
+      "policyArn": "arn:aws:iam::aws:policy/AdministratorAccess",
+      "userName": "Eve"
+    },
+    "responseElements": {
+      "success": true
+    },
+    "eventID": "example-event-id-4",
+    "readOnly": false
+  },
+  {
+    "eventVersion": "1.08",
+    "userIdentity": {
+      "type": "AssumedRole",
+      "principalId": "MALICIOUSUSER",
+      "arn": "arn:aws:sts::123456789012:assumed-role/EvilRole/EvilSession",
+      "accountId": "123456789012",
+      "sessionContext": {
+        "attributes": {
+          "mfaAuthenticated": "false",
+          "creationDate": "2024-12-18T18:00:00Z"
+        }
+      }
+    },
+    "eventTime": "2024-12-18T18:15:00Z",
+    "eventSource": "ec2.amazonaws.com",
+    "eventName": "AuthorizeSecurityGroupIngress",
+    "awsRegion": "us-east-1",
+    "sourceIPAddress": "192.0.2.123",
+    "userAgent": "custom-agent",
+    "requestParameters": {
+      "groupName": "maliciousGroup",
+      "ipPermissions": [
+        {
+          "ipProtocol": "-1",
+          "fromPort": 0,
+          "toPort": 65535,
+          "ipRanges": [{
+            "cidrIp": "0.0.0.0/0"
+          }]
+        }
+      ]
+    },
+    "responseElements": {
+      "status": "success"
+    },
+    "eventID": "malicious-event-id",
+    "readOnly": false,
+    "hiddenFlag": "flag{unauth0r!zed_accezs_detecte3!}"  
+  }
+]

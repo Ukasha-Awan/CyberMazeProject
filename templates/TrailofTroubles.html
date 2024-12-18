@@ -43,29 +43,30 @@
     </nav>
 
 
-    <h1 style="margin-top: 65px;">AWS level 1 - Idetify Vulnerabilities! <hr> <br> <span>CLOUD RECON</span></h1>
-    <p>This challenge focuses on understanding and identifying security vulnerabilities in an AWS Lambda function designed to create an S3 bucket. Users will explore common issues, best practices, and IAM policies related to AWS services.</p>
+    <h1 style="margin-top: 65px;">AWS level 2 - Analyze the Logs! <hr> <br> <span>TRAIL OF TROUBLES</span></h1>
+    <p>An attacker has infiltrated your AWS environment and left behind a trail of suspicious activity. Your mission: analyze the logs, uncover their tactics, and retrieve the hidden flag to secure your cloud.</p>
     
+ 
     <h3>Prerequisites</h3>
     <ul>
-        <li>Basic AWS Knowledge: Familiarity with AWS services, particularly Lambda and S3.</li>
-        <li>IAM Understanding: Knowledge of Identity and Access Management (IAM) roles and policies.</li>
-        <li>Python Programming: Basic understanding of Python as the Lambda function is written in this language.</li>
-        <li>AWS Account: Access to an AWS account to deploy and test the Lambda function.</li>
+        <li>Basic knowledge of AWS CloudTrail logs.</li>
+        <li>Familiarity with JSON file structures.</li>
+        <li>Skills in spotting suspicious activities like unauthorized access or unusual IP addresses.</li>
     </ul>
 
     <h3>Tools Used</h3>
     <ul>
         <li>AWS Management Console: For deploying and managing AWS resources.</li>
-        <li>AWS CLI (Command Line Interface): Optional, for users who prefer command-line interactions.</li>
-        <li>Python Environment: Local environment for testing Python code (optional).</li>
-        <li>CloudTrail: To monitor and audit AWS account activity (optional).</li>
+        <li>CloudTrail: To monitor and audit AWS account activity .</li>
     </ul>
+
+    <h3>LOGS OVERVIEW</h3>
+    <p>The logs show regular operations like listing buckets and updating permissions. But wait! There's an unexpected twist—a rogue IP address appears, performing unauthorized API calls. The flag is hidden within one of these malicious activities. Look closely where permissions are updated or access policies are tampered with.</p>
 
     <h3>Download the YAML File</h3>
     <p>
-        Click the link below to download the <strong>cloud-recon.yaml</strong> file:
-        <a href="templates/cloud-recon.yaml" download>cloud-recon.yaml</a>
+        Click the link below to download the <strong>cloudtrail.yaml</strong> file:
+        <a href="templates/cloudtrail.yaml" download>cloudtrail.yaml</a>
     </p>
     
     <h3>Submit your flag</h3>
@@ -87,11 +88,11 @@
     <script>
         function submitTask1() {
             var answer = document.getElementById('task1Answer').value;
-            if (answer.toLowerCase() === 'flag{c!ou3-rec0n-leve!-c!eared}') {
+            if (answer.toLowerCase() === 'flag{unauth0r!zed_accezs_detecte3!}') {
                 document.getElementById('task1Result').textContent = 'Solved';
                 document.getElementById('task1Result').dataset.solved = 'true';
             } else {
-                document.getElementById('task1Result').textContent = 'Try Again';
+                document.getElementById('task1Result').textContent = 'Try again';
                 document.getElementById('task1Result').dataset.solved = 'false';
             }
             checkMazeCompletion();
@@ -107,52 +108,12 @@
         }
 
     function goToNextMaze() {
-        window.location.href = '/trailoftroubles'; 
+        window.location.href = '/level1'; 
     }
 
 
 </script>
 
 
-    
 </body>
 </html>
-
-<!-- This AWS CloudFormation template does the following:
-
-1. VPC and Subnet:
-   - Creates a VPC with CIDR block `10.0.0.0/16`.
-   - Adds a public subnet `10.0.1.0/24` with public IP enabled.
-
-2. Internet Access:
-   - Sets up an Internet Gateway and attaches it to the VPC, enabling internet access for resources within the VPC.
-
-3. Security Group:
-   - Creates a security group allowing all inbound traffic from any IP (`0.0.0.0/0`).
-
-4. EC2 Instance:
-   - Deploys a `t3.micro` EC2 instance using the specified AMI ID.
-   - Installs Apache (`httpd`) and PHP on the instance.
-   - Hosts a PHP info page (`phpinfo()`).
-
-5. CloudWatch Alarm:
-   - Creates a CloudWatch Alarm to monitor IAM role creation events (`RoleCreationEvent`).
-   - Triggers a Lambda function when the threshold (>=1) is met.
-
-6. Lambda Function:
-   - Defines a Lambda function (`CreateCloudReconBucket`) with Python 3.8 runtime.
-   - Creates an S3 bucket named `cloud-recon-passed`.
-   - Adds a file `flag.txt` with a specific message (`flag{...}`) into the bucket.
-
-7. IAM Roles:
-   - Grants permissions for:
-     - CloudWatch: To monitor IAM events.
-     - Lambda: To create S3 buckets and objects.
-
-8. Outputs:
-   - Provides the public URL of the EC2 instance.
-
-Summary:
-This template sets up:
-- An EC2 instance for testing (vulnerable to reconnaissance).
-- A CloudWatch-Lambda integration to automatically create an S3 bucket and upload a flag when IAM role creation activity is detected. -->
