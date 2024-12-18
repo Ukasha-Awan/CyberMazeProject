@@ -125,11 +125,11 @@
     <script>
         function submitTask1() {
             var answer = document.getElementById('task1Answer').value;
-            if (answer.toLowerCase() === 'meet me AT dawn.') {
+            if (answer.toLowerCase() === 'meet me at dawn') {
                 document.getElementById('task1Result').textContent = 'Solved';
                 document.getElementById('task1Result').dataset.solved = 'true';
             } else {
-                document.getElementById('task1Result').textContent = 'Solved';
+                document.getElementById('task1Result').textContent = 'Try again';
                 document.getElementById('task1Result').dataset.solved = 'false';
             }
             checkMazeCompletion();
@@ -157,7 +157,7 @@
         }
 
     function goToNextMaze() {
-        window.location.href = 'crypt2.html'; // Replace with the actual URL of the next maze
+        window.location.href = 'crypt2'; 
     }
 
     function showHint() {

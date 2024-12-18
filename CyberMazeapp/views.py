@@ -38,6 +38,8 @@ def NS4(request):
     return render(request,"NS4.html")
 def NS5(request):
     return render(request,"NS5.html")
+def crypt2(request):
+    return render(request,"crypt2.html")
 
 
 

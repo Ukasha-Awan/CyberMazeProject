@@ -178,10 +178,10 @@
         <button type="button" onclick="submitTask10()">Submit</button>
         <span id="task10Result"></span>
       </form>
-</div>
-<div id="mazeCompletion" style="display: none;">
-  <h3>Level completed!</h3>
-  <button style="width: fit-content;" onclick="goToNextMaze()"> Go to Next Level</button>
+
+<div id="mazeCompletion">
+  <h3>Level UP!</h3>
+  <button style="width: fit-content;"><a href="/NS2">Go to next level</a></button>
 </div>
 
 <script>
@@ -364,10 +364,6 @@ function checkMazeCompletion() {
   if (task1Solved && task2Solved && task3Solved && task4Solved && task5aSolved && task5bSolved && task6Solved && task7Solved && task8Solved && task9aSolved && task9bSolved && task210Solved) {
       document.getElementById('mazeCompletion').style.display = 'block';
   }
-}
-
-function goToNextMaze() {
-window.location.href = 'level2.html'; // Replace with the actual URL of the next maze
 }
 </script>
 </section>

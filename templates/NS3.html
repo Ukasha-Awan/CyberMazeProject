@@ -71,7 +71,7 @@
 
     <h3>Task: Your Answer</h3>
     <form id="task1Form">
-      <label for="task1Answer">Analyze this file and find out which http packet is containing  flag and what is that flag.</label>
+      <label for="task1Answer">Analyze this file and find out which http packet is containing  flag. Write the flag below:</label>
       <input type="text" id="task1Answer" name="task1Answer">
       <button type="button" onclick="submitTask1()">Submit</button>
       <span id="task1Result"></span>
@@ -79,11 +79,10 @@
     <br>
     <br>
     
-
-      <div id="mazeCompletion" style="display: none;">
-        <h3>Level completed!</h3>
-        <button style="width: fit-content;" onclick="goToNextMaze()"> Go to Next Level</button>
-    </div>
+    <div id="mazeCompletion">
+        <h3>Level UP!</h3>
+        <button style="width: fit-content;"><a href="/NS4">Go to next level</a></button>
+      </div>
     <br>
     <!-- Footer -->
     <footer>
@@ -98,7 +97,7 @@
             if (answer.toLowerCase() === 'use_ssl_dude') {
                 document.getElementById('task1Result').textContent = 'Solved';
             } else {
-                document.getElementById('task1Result').dataset.solved = 'false';
+                document.getElementById('task1Result').textContent = 'false';
             }
             checkMazeCompletion();
         }
@@ -112,11 +111,6 @@
                 document.getElementById('mazeCompletion').style.display = 'block';
             }
         }
-
-    function goToNextMaze() {
-        window.location.href = 'NS4.html'; 
-    }
-
 
 </script>
 

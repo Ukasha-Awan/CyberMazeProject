@@ -200,9 +200,9 @@
     </form>
 
      
-     <div id="mazeCompletion" style="display: none;">
-        <h3>Level completed!</h3>
-        <button style="width: fit-content;" onclick="goToNextMaze()"> Continue</button>
+    <div id="mazeCompletion">
+      <h3>Level UP!</h3>
+      <button style="width: fit-content;"><a href="/NS3">Go to next level</a></button>
     </div>
 
     
@@ -372,10 +372,6 @@
   }
 }
 
-function goToNextMaze() {
-window.location.href = 'level2.html'; // Replace with the actual URL of the next maze
-}
-
     
         function checkMazeCompletion() {
             var task1Solved = document.getElementById('task7bResult').dataset.solved === 'true';
@@ -385,11 +381,6 @@ window.location.href = 'level2.html'; // Replace with the actual URL of the next
                 document.getElementById('mazeCompletion').style.display = 'block';
             }
         }
-
-
-    function goToNextMaze() {
-        window.location.href = 'crypt2.html'; // Replace with the actual URL of the next maze
-    }
   </script>
 
 </body>

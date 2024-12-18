@@ -71,7 +71,7 @@
 
     <h3>Task: Your Answer</h3>
     <form id="task1Form">
-      <label for="task1Answer"> In File transfer protocol ,Find out the username “markregion” using tools ,In which packet number username markregion lies?</label>
+      <label for="task1Answer"> Find out the user “markregion” ,what is the packet number of markregion?</label>
       <input type="text" id="task1Answer" name="task1Answer">
       <button type="button" onclick="submitTask1()">Submit</button>
       <span id="task1Result"></span>
@@ -79,7 +79,7 @@
     <br>
     <h3>Task: Your Answer</h3>
     <form id="task2Form">
-      <label for="task2Answer">At what packet number  we get the image against the  request of packet 14</label>
+      <label for="task2Answer">How many arguments markregion have passed?</label>
       <input type="text" id="task2Answer" name="task2Answer">
       <button type="button" onclick="submitTask2()">Submit</button>
       <span id="task2Result"></span>
@@ -87,7 +87,7 @@
     <br>
     <h3>Task: Your Answer</h3>
     <form id="task3Form">
-      <label for="task3Answer">How many arguments markregion have passed?</label>
+      <label for="task3Answer">What are the arguments?</label>
       <input type="text" id="task3Answer" name="task3Answer">
       <button type="button" onclick="submitTask3()">Submit</button>
       <span id="task3Result"></span>
@@ -95,7 +95,7 @@
     <br>
     <h3>Task: Your Answer</h3>
     <form id="task4Form">
-      <label for="task4Answer">In which packet number the arugement” its still too hot outside” present?</label>
+      <label for="task4Answer">In which packet the argument” its still too hot outside”?</label>
       <input type="text" id="task4Answer" name="task4Answer">
       <button type="button" onclick="submitTask4()">Submit</button>
       <span id="task4Result"></span>
@@ -103,7 +103,7 @@
     <br>
     <h3>Task: Your Answer</h3>
     <form id="task5Form">
-      <label for="task5Answer">in packet 265 a user passed an argument and the username is in packet 262,What is the argument and username?</label>
+      <label for="task5Answer">in packet 195 a user passed an argument and the username is in packet 192,What is the argument?</label>
       <input type="text" id="task5Answer" name="task5Answer">
       <button type="button" onclick="submitTask5()">Submit</button>
       <span id="task5Result"></span>
@@ -111,11 +111,10 @@
     <br>
     <br>
     
-
-      <div id="mazeCompletion" style="display: none;">
-        <h3>Level completed!</h3>
-        <button style="width: fit-content;" onclick="goToNextMaze()"> Go to Next Level</button>
-    </div>
+    <div id="mazeCompletion">
+        <h3>Level UP!</h3>
+        <button style="width: fit-content;"><a href="/crypt1">Go to next level</a></button>
+      </div>
     <br>
     <!-- Footer -->
     <footer>
@@ -127,10 +126,10 @@
     <script>
         function submitTask1() {
             var answer = document.getElementById('task1Answer').value;
-            if (answer.toLowerCase() === '107') {
+            if (answer.toLowerCase() === '37') {
                 document.getElementById('task1Result').textContent = 'Solved';
             } else {
-                document.getElementById('task1Result').dataset.solved = 'false';
+                document.getElementById('task1Result').textContent = 'false';
             }
             checkMazeCompletion();
         }
@@ -139,7 +138,7 @@
             if (answer.toLowerCase() === '2') {
                 document.getElementById('task2Result').textContent = 'Solved';
             } else {
-                document.getElementById('task2Result').dataset.solved = 'false';
+                document.getElementById('task2Result').textContent = 'false';
             }
             checkMazeCompletion();
         }
@@ -148,42 +147,28 @@
             if (answer.toLowerCase() === 'its too hot outside') {
                 document.getElementById('task3Result').textContent = 'Solved';
             } else {
-                document.getElementById('task3Result').dataset.solved = 'false';
+                document.getElementById('task3Result').textContent = 'false';
             }
             checkMazeCompletion();
         }
         function submitTask4() {
             var answer = document.getElementById('task4Answer').value;
-            if (answer.toLowerCase() === '122') {
+            if (answer.toLowerCase() === '52') {
                 document.getElementById('task4Result').textContent = 'Solved';
             } else {
-                document.getElementById('task4Result').dataset.solved = 'false';
+                document.getElementById('task4Result').textContent = 'false';
             }
             checkMazeCompletion();
         }
         function submitTask5() {
             var answer = document.getElementById('task5Answer').value;
-            if (answer.toLowerCase() === 'arg=bozo') {
+            if (answer.toLowerCase() === 'bozo') {
                 document.getElementById('task5Result').textContent = 'Solved';
             } else {
-                document.getElementById('task5Result').dataset.solved = 'false';
+                document.getElementById('task5Result').textContent = 'false';
             }
             checkMazeCompletion();
         }
-    
-        
-    
-        function checkMazeCompletion() {
-            var task1Solved = document.getElementById('task1Result').dataset.solved === 'true';
-    
-            if (task1Solved) {
-                document.getElementById('mazeCompletion').style.display = 'block';
-            }
-        }
-
-    function goToNextMaze() {
-        window.location.href = 'NS4.html'; // Replace with the actual URL of the next maze
-    }
 
 
 </script>
