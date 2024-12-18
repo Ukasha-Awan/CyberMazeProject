@@ -1,5 +1,5 @@
 # This is the Solution of CyberMaze- Cryptography level 1
-# virtual machine | start machine | cloud | files | log in  |
+# virtual machine | start machine | 
 import itertools
 
 encrypted_message_hex = "2b0910124614541507185502070e5f1b"

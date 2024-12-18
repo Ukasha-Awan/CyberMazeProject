@@ -91,3 +91,42 @@ color: coral;
 span{
 color: aqua;
 }
+
+.download-box {
+  background-color: #f0f8ff; /* Light blue background */
+  border: 2px solid #007bff; /* Blue border */
+  border-radius: 10px; /* Rounded corners */
+  padding: 20px; /* Spacing inside the box */
+  text-align: center; /* Center the content */
+  max-width: 400px; /* Limit width for better visuals */
+  margin: 20px auto; /* Center the box horizontally */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+.download-box h3 {
+  color: #007bff; /* Blue color for the heading */
+  margin-bottom: 10px;
+  padding-top: 5px;
+}
+
+.download-box p {
+  color: #333; /* Neutral text color */
+  font-size: 16px;
+  margin-bottom: 15px;
+}
+
+.download-button {
+  display: inline-block;
+  text-decoration: none; /* Remove underline */
+  background-color: #007bff; /* Blue background */
+  color: #fff; /* White text */
+  padding: 10px 20px; /* Button padding */
+  border-radius: 5px; /* Rounded button corners */
+  font-size: 16px;
+  font-weight: bold;
+  transition: background-color 0.3s ease; /* Smooth hover effect */
+}
+
+.download-button:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+}

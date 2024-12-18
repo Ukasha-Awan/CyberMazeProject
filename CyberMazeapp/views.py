@@ -38,6 +38,8 @@ def NS4(request):
     return render(request,"NS4.html")
 def NS5(request):
     return render(request,"NS5.html")
+def NS6(request):
+    return render(request,"NS6.html")
 def crypt2(request):
     return render(request,"crypt2.html")
 def trailoftroubles(request):

@@ -16,5 +16,6 @@ urlpatterns = [
     path('NS3',views.NS3,name="NS3"),
     path('NS4',views.NS4,name="NS4"),
     path('NS5',views.NS5,name="NS5"),
+    path('NS6',views.NS6,name="NS6"),
     path('crypt2',views.crypt2,name="crypt2"),
 ]
