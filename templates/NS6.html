@@ -117,13 +117,13 @@
       <span id="task5Result"></span>
     </form>
     <br>
-    <br>
     
 
-      <div id="mazeCompletion" style="display: none;">
-        <h3>Level completed!</h3>
-        <button style="width: fit-content;" onclick="goToNextMaze()"> Go to Next Level</button>
-    </div>
+    <div id="mazeCompletion">
+        <h3>Level UP!</h3>
+        <button style="width: fit-content;"><a href="/NS5">Go to next level</a></button>
+      </div>
+    <br>
     <br>
     <!-- Footer -->
     <footer>
@@ -133,6 +133,7 @@
     </footer>
 
     <script>
+        
         function submitTask1() {
             var answer = document.getElementById('task1Answer').value;
             if (answer.toLowerCase() === '4 and 16') {
@@ -181,17 +182,11 @@
     
         
     
-        function checkMazeCompletion() {
-            var task1Solved = document.getElementById('task1Result').dataset.solved === 'true';
-    
-            if (task1Solved) {
-                document.getElementById('mazeCompletion').style.display = 'block';
-            }
-        }
+
 
     function goToNextMaze() {
         window.location.href = 'NS6.html';
-
+    }
 
 </script>
 
