@@ -1,0 +1,178 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CyberMaze - Learn Cyber Security Through Real-Time Simulations</title>
+    <link rel="stylesheet" href="{% static '/assets/css/contact.css' %}">
+    <link rel="stylesheet" href="{% static '/assets/css/styles.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <script src="index.js"></script>
+    <!-- Google Font embed -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Protest+Guerrilla&display=swap" rel="stylesheet">
+    <link rel="icon" href="{% static 'assets/images/CM Logo 2.png' %}" type="image/png">
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="logo">
+            <img src="{% static '/assets/images/CM Logo 2.png' %}" alt="Logo Image">
+            <h1>CyberMaze</h1>
+        </div>
+        <ul class="nav-links">
+            <li><a href="/">Home</a></li>
+            <li><a href="/domains">Domains</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/blog">Blogs</a></li>
+            <li><a href="/contact">Contact</a></li>
+        </ul>
+        <a href="#register" class="btn">Log In</a>
+        <!-- HTML for the hamburger menu -->
+        <button class="hamburger-menu-btn">&#9776;
+            <nav class="nav-links">
+            <!-- Your navigation links here -->
+            <a href="#">Link 1</a>
+            <a href="#">Link 2</a>
+            <a href="#">Link 3</a>
+            </nav>
+    </nav>
+
+
+    <h1 style="margin-top: 65px;">Cryptography Beginner Maze <hr> <br> Level 3: <span>The Substitution Cipher Mystery!</span></h1>
+    <p>In this thrilling entry-level mission, you will step into the shoes of an aspiring cryptographer. Your task is to decrypt a secret message encoded using a substitution Cipher. Can you decipher the mystery hidden behind a simple shift of letters? Channel your inner problem-solver and prepare to crack the code using logical thinking and cryptic clues.</p>
+    
+    <h3>Introduction:</h3>
+    <p>Alice and Bob are secret agents communicating in a secret code. They use a substitution cipher to ensure that Eve, the sneaky eavesdropper, can't read their messages.</p> <br>
+    
+    <br>
+
+    <h3>Cipher:</h3>
+    <p><strong>Encryption Method:</strong> Substitution Cipher</p>
+
+    <h3>Encrypted Message:</h3>
+    <p><strong>Message :</strong> OLSSV TL HZWL</p>
+
+    <h3>Objective:</h3>
+    <p>Your objective is to learn about the Substitution ciphers and its types.By completing this challenge, you will enhance your understanding of basic cryptographic techniques and skills.</p>
+
+    <h3>Prerequisites:</h3>
+    <ul>
+        <li>Understanding of ciphers and basic cryptographic techniques</li>
+    </ul>
+
+    <h3>Assignment:</h3>
+    <ol>
+        <li><strong>Understand the Substitution Cipher</strong>: Learn how these cipher works and how it can be used for encryption and decryption.</li>
+        <li>Find out the Key </li>
+        <li><strong>Decrypt the Message</strong>: Use the keys to attempt decrypting the encrypted message.</li>
+    </ol>
+    <br>
+    <hr> <br>
+    <button style="width: fit-content; background-color: yellowgreen; color: black;" onclick="showHint()">
+         Show Hint </button>
+         <i onclick="showHint()" style="color: yellow;" class="fas fa-lightbulb"></i>
+    <p id="hintMessage"></p>
+
+    <h3>Task: Your Answer</h3>
+    <form id="task1Form">
+      <label for="task1Answer">Write the <span>decrypted message</span> that the Eve found?</label>
+      <input type="text" id="task1Answer" name="task1Answer">
+      <button type="button" onclick="submitTask1()">Submit</button>
+      <span id="task1Result"></span>
+    </form>
+    <br>
+    <br>
+    <form id="task2Form">
+        <label for="task2Answer">What is the <span>key</span> that Eve used to encrypt the message?</label>
+        <input type="text" id="task2Answer" name="task2Answer">
+        <button type="button" onclick="submitTask2()">Submit</button>
+        <span id="task2Result"></span>
+      </form>
+      <br>
+      <form id="task3Form">
+          <label for="task3Answer">What is the <span>name</span> of this Substitution Cipher?</label>
+          <input type="text" id="task3Answer" name="task3Answer">
+          <button type="button" onclick="submitTask3()">Submit</button>
+          <span id="task3Result"></span>
+        </form>
+  
+      <br>
+      <button onclick="startMachine()">Start Machine</button>
+      <br>
+
+
+      <div id="mazeCompletion" style="display: none;">
+        <h3>Level completed!</h3>
+        <button style="width: fit-content;" onclick="goToNextMaze()"> Go to Next Level</button>
+    </div>
+    <br>
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 CyberMaze. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        function submitTask1() {
+            var answer = document.getElementById('task1Answer').value;
+            if (answer.toLowerCase() === 'HELLO MY FRIEND') {
+                document.getElementById('task1Result').textContent = 'Solved';
+                document.getElementById('task1Result').dataset.solved = 'true';
+            } else {
+                document.getElementById('task1Result').textContent = 'Try again';
+                document.getElementById('task1Result').dataset.solved = 'false';
+            }
+            checkMazeCompletion();
+        }
+    
+        function submitTask2() {
+            var answer = document.getElementById('task2Answer').value;
+            if (answer.toLowerCase() === '7') {
+                document.getElementById('task2Result').textContent = 'Solved';
+                document.getElementById('task2Result').dataset.solved = 'true';
+            } else {
+                document.getElementById('task2Result').textContent = 'Try again';
+                document.getElementById('task2Result').dataset.solved = 'false';
+            }
+            checkMazeCompletion();
+        }
+        function submitTask3() {
+            var answer = document.getElementById('task3Answer').value;
+            if (answer.toLowerCase() === 'Ceaser Cipher') {
+                document.getElementById('task3Result').textContent = 'Solved';
+                document.getElementById('task3Result').dataset.solved = 'true';
+            } else {
+                document.getElementById('task3Result').textContent = 'Try again';
+                document.getElementById('task3Result').dataset.solved = 'false';
+            }
+            checkMazeCompletion();
+        }
+    
+        function checkMazeCompletion() {
+            var task1Solved = document.getElementById('task1Result').dataset.solved === 'true';
+            var task2Solved = document.getElementById('task2Result').dataset.solved === 'true';
+            var task3Solved = document.getElementById('task3Result').dataset.solved === 'true';
+
+            if (task1Solved && task2Solved) {
+                document.getElementById('mazeCompletion').style.display = 'block';
+            }
+        }
+
+    function goToNextMaze() {
+        window.location.href = 'cryptB'; 
+    }
+
+    function showHint() {
+            document.getElementById('hintMessage').textContent = '     || Alice send to Bob a message: Eve Intercept and found this Encrypted Message: PHHW DW GDZQ. Eve tried Multiple Shift and Modular Methods finally, When he used a key "3" he Got this Message :MEET AT DAWN || ';
+        }
+
+</script>
+ 
+</body>
+</html>

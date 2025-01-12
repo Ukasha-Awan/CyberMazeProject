@@ -26,8 +26,6 @@ def level1(request):
     return render(request,"level1.html")
 def crypt1(request):
     return render(request,"crypt1.html")
-def cryptA(request):
-    return render(request,"cryptA.html")
 def login(request):
     return render(request,"login.html")
 def NS2(request):
@@ -44,6 +42,8 @@ def NS6(request):
     return render(request,"NS6.html")
 def crypt2(request):
     return render(request,"crypt2.html")
+def crypt3(request):
+    return render(request,"crypt3.html")
 def trailoftroubles(request):
     return render(request,"trailoftroubles.html")
 
