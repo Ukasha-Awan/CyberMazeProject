@@ -72,6 +72,8 @@ def NS6(request):
     return render(request,"NS6.html")
 def crypt2(request):
     return render(request,"crypt2.html")
+def crypt3(request):
+    return render(request,"crypt3.html")
 def trailoftroubles(request):
     return render(request,"trailoftroubles.html")
 
