@@ -26,6 +26,8 @@ def level1(request):
     return render(request,"level1.html")
 def crypt1(request):
     return render(request,"crypt1.html")
+def cryptA(request):
+    return render(request,"cryptA.html")
 def login(request):
     return render(request,"login.html")
 def NS2(request):
