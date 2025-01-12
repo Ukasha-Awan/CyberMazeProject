@@ -8,3 +8,10 @@ class Contact(models.Model):
 
     def __str__(self):
         return self.subject
+
+# class User(models.Model):
+#     username = models.CharField(max_length=50, unique=True)
+#     password = models.CharField(max_length=60)  # Consider hashing passwords for security
+
+#     def __str__(self):
+#         return self.username

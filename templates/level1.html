@@ -14,6 +14,56 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Protest+Guerrilla&display=swap" rel="stylesheet">
     <link rel="icon" href="{% static 'assets/images/CM Logo 2.png' %}" type="image/png">
+
+    <style>
+      body {
+          font-family: Arial, sans-serif;
+          background-color: #f3f4f6;
+          text-align: center;
+          padding: 20px;
+          
+      }
+      .score-container {
+          background-color: #ffffff;
+          padding: 20px;
+          border-radius: 10px;
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+          display: inline-block;
+      }
+      .score {
+          font-size: 24px;
+          color: #4caf50;
+          margin: 10px 0;
+      }
+      .message {
+          font-size: 18px;
+          margin: 10px 0;
+      }
+      .button-container button {
+          padding: 10px 20px;
+          margin: 10px;
+          font-size: 16px;
+          border: none;
+          border-radius: 5px;
+          cursor: pointer;
+          transition: background-color 0.3s ease;
+      }
+      .success-btn {
+          background-color: #4caf50;
+          color: white;
+      }
+      .success-btn:hover {
+          background-color: #45a049;
+      }
+      .fail-btn {
+          background-color: #f44336;
+          color: white;
+      }
+      .fail-btn:hover {
+          background-color: #e53935;
+      }
+  </style> 
+
 </head>
 
 <body>
@@ -41,6 +91,13 @@
           </nav>
   </nav>
 
+{% comment %} ===================================================================== {% endcomment %}
+<div class="score-container">
+  <h1>{{ username }} Score</h1>
+  <p class="score">Current Score: <span id="studentScore">0</span></p>
+  <p class="message" id="message">Solve a task to update your score!</p>
+</div> 
+
 <!-- Contact Section -->
 <section id="contact" class="contact">
     <div class="container">
@@ -48,6 +105,8 @@
 <p>Are you ready to put your cybersecurity skills to the test? Follow the instructions below to complete the tasks.</p>
 <br>
 <p>Scan a network using nmap. Target website: <b> <span> certifiedhacker.com </span></b></p>
+
+
 
 <!-- Task 1: Port Status Check -->
 <h3>Task 1: Port Status Check</h3>
@@ -159,18 +218,24 @@
 
 <script>
 
-let studentScore = 0;
+  let studentScore = 0;
 
-function updateScore(success) {
-    if (success) {
-        studentScore += 5; // Increase score by 5 if solved
-        alert("Congratulation you have pass this task So, add +5 Score: " + studentScore); // Notify student of their current score
-    } else {
-        studentScore -= 3; // Decrease score by 3 if not solved
-        alert("So,said You have Fail this task So, remove -3 Score: " + studentScore);
-    }
-    
-}
+  function updateScore(success) {
+      const scoreElement = document.getElementById('studentScore');
+      const messageElement = document.getElementById('message');
+
+      if (success) {
+          studentScore += 5;
+          messageElement.textContent = "🎉 Congratulations! You passed the task. +5 points added.";
+          messageElement.style.color = '#4caf50';
+      } else {
+          studentScore -= 3;
+          messageElement.textContent = "😢 Sorry! You failed the task. -3 points deducted.";
+          messageElement.style.color = '#f44336';
+      }
+
+      scoreElement.textContent = studentScore;
+  }
 
 function submitTask1() {
   var answer = document.getElementById('task1Answer').value;
@@ -338,6 +403,14 @@ function checkMazeCompletion() {
       document.getElementById('mazeCompletion').style.display = 'block';
   }
 }
+function animateFeedback(element, success) {
+  element.style.backgroundColor = success ? 'green' : 'red';
+  setTimeout(() => {
+      element.style.backgroundColor = '';
+  }, 1000);
+}
+
+
 </script>
 </section>
 

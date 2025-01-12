@@ -43,7 +43,15 @@
 
     <div class="the-container">
         <h2>Login</h2>
-        <form>
+        {% if messages %}
+        <ul>
+            {% for message in messages %}
+                <li>{{ message }}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+        <form action="" method="POST">
+            {% csrf_token %}
             <div class="form-group">
                 <label for="username">Username:</label>
                 <input type="text" id="username" name="username" required>
