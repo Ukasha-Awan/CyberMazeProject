@@ -95,7 +95,7 @@
     <hr> <br>
     <button style="width: fit-content; background-color: yellowgreen; color: black;" onclick="showHint()">
          Show Hint </button>
-         <i onclick="showHint()" style="color: yellow;" class="fas fa-lightbulb"></i>
+         <i onclick="showHint2()" style="color: yellow;" class="fas fa-lightbulb"></i>
     <p id="hintMessage"></p>
 
     <br>
@@ -174,6 +174,7 @@
     </form>
     <br>
               
+
       <div id="mazeCompletion" style="display: none;">
         <h3>Level completed!</h3>
         <button style="width: fit-content;" onclick="goToNextMaze()"> Go to Next Level</button>
@@ -283,7 +284,9 @@
     function showHint() {
             document.getElementById('hintMessage').textContent = '     || Alice send a message to Bob: Eve Intercept and found this Encrypted Message: PHHW DW GDZQ. Eve tried Multiple Shift and Modular Methods finally, When he used a key "3" he Got this Message :MEET AT DAWN || ';
         }
-
+        function showHint2() {
+            document.getElementById('hintMessage').textContent = '     || Alice send a message to Bob: Eve Intercept and found this Encrypted Message: PHHW DW GDZQ. Eve tried Multiple Shift and Modular Methods finally, When he used a key "3" he Got this Message :MEET AT DAWN || ';
+        }
 </script>
  
 </body>
