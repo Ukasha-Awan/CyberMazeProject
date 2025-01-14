@@ -24,5 +24,5 @@ urlpatterns = [
     path('NS6',views.NS6,name="NS6"),
     path('crypt2',views.crypt2,name="crypt2"),
     path('crypt3',views.crypt3,name="crypt3"),
-    path('crypt3',views.crypt4,name="crypt4"),
+    path('crypt4',views.crypt4,name="crypt4"),
 ]
