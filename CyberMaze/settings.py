@@ -51,6 +51,8 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'CyberMaze.urls'
+#AUTH_USER_MODEL = 'CyberMazeapp.User'
+
 
 TEMPLATES = [
     {
