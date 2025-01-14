@@ -54,8 +54,11 @@
     
 
     <h3>Encrypted Messages:</h3>
+    <br>
     <p><span>Alex</span>, an expert hacker, intercepts their hashed data. Alex knows how to use powerful online tools like CrackStation and Xorbin to crack weak hashes.</p> 
+    <br> 
 
+    
     <p><strong>Hash 1 :</strong>e99a18c428cb38d5f260853678922e03</p>
     <p><strong>Hash 2 :</strong>185160cde4162679eac934d1f307db6a3c4510e1bd9ba106f77cbd25852dcc22</p>
     <p><strong>Hash 3 :</strong>TWF6ZXBsYXllcjQyNQ==</p>
@@ -86,17 +89,12 @@
     <p id="hintMessage"></p>
 
     <form id="task1Form">
-      <label for="task1Answer">What is the <span>the origional message in Hash 1</span>?</label>
+      <label for="task1Answer">What is the <span>the Secret </span> that Mike wallet hold in Hash 1?</label>
       <input type="text" id="task1Answer" name="task1Answer">
       <button type="button" onclick="submitTask1()">Submit</button>
       <span id="task1Result"></span>
     </form>
     <br>
-    <hr> <br>
-    <button style="width: fit-content; background-color: yellowgreen; color: black;" onclick="showHint2()">
-         Show Hint </button>
-         <i onclick="showHint2()" style="color: yellow;" class="fas fa-lightbulb"></i>
-    <p id="hintMessage2"></p>
 
     <br>
     <form id="task2Form">
@@ -107,24 +105,19 @@
       </form>
     <br>
     <hr> <br>
-    <button style="width: fit-content; background-color: yellowgreen; color: black;" onclick="showHint()">
+    <button style="width: fit-content; background-color: yellowgreen; color: black;" onclick="showHint2()">
          Show Hint </button>
-         <i onclick="showHint()" style="color: yellow;" class="fas fa-lightbulb"></i>
-    <p id="hintMessage"></p>
+         <i onclick="showHint2()" style="color: yellow;" class="fas fa-lightbulb"></i>
+    <p id="hintMessage2"></p>
     <br>
     <form id="task3Form">
-        <label for="task3Answer">What is the <span>the origional message in Hash 2</span>?</label>
+        <label for="task3Answer"> "John’s wallet key isn’t too creative. Guess <span>the origional Wallet name in Hash 2</span>?</label>
         <input type="text" id="task3Answer" name="task3Answer">
         <button type="button" onclick="submitTask3()">Submit</button>
         <span id="task3Result"></span>
       </form>
     <br>
-    <hr> <br>
-    <button style="width: fit-content; background-color: yellowgreen; color: black;" onclick="showHint()">
-         Show Hint </button>
-         <i onclick="showHint()" style="color: yellow;" class="fas fa-lightbulb"></i>
-    <p id="hintMessage"></p>
-
+    
     <br>
     <form id="task4Form">
           <label for="task4Answer">Write the <span>name of the Hash 2 used</span>?</label>
@@ -134,24 +127,20 @@
     </form>
     <br>
     <hr> <br>
-    <button style="width: fit-content; background-color: yellowgreen; color: black;" onclick="showHint()">
+    <button style="width: fit-content; background-color: yellowgreen; color: black;" onclick="showHint3()">
          Show Hint </button>
-         <i onclick="showHint()" style="color: yellow;" class="fas fa-lightbulb"></i>
-    <p id="hintMessage"></p>
+         <i onclick="showHint3()" style="color: yellow;" class="fas fa-lightbulb"></i>
+    <p id="hintMessage3"></p>
 
     <br>
     <form id="task5Form">
-        <label for="task5Answer">What is the <span>the origional message in Hash 3</span>?</label>
+        <label for="task5Answer">Find the <span>Game account Name  </span> in Hash 3?</label>
         <input type="text" id="task5Answer" name="task5Answer">
         <button type="button" onclick="submitTask5()">Submit</button>
         <span id="task5Result"></span>
     </form>
     <br>
-    <hr> <br>
-    <button style="width: fit-content; background-color: yellowgreen; color: black;" onclick="showHint()">
-         Show Hint </button>
-         <i onclick="showHint()" style="color: yellow;" class="fas fa-lightbulb"></i>
-    <p id="hintMessage"></p>
+   
     <br>
     <form id="task6Form">
         <label for="task6Answer">Write the <span>name of the Hash 3 used</span>?</label>
@@ -161,13 +150,13 @@
    </form>
    <br>
    <hr> <br>
-    <button style="width: fit-content; background-color: yellowgreen; color: black;" onclick="showHint()">
+    <button style="width: fit-content; background-color: yellowgreen; color: black;" onclick="showHint4()">
          Show Hint </button>
-         <i onclick="showHint()" style="color: yellow;" class="fas fa-lightbulb"></i>
-    <p id="hintMessage"></p>
+         <i onclick="showHint4()" style="color: yellow;" class="fas fa-lightbulb"></i>
+    <p id="hintMessage4"></p>
    <br>
     <form id="task7Form">
-        <label for="task7Answer">What is the <span>the origional message in Hash 4</span>? Just write the name as well</label>
+        <label for="task7Answer">sha1 Hash used to get last mesaage. <span>Find the origional message in Hash 4</span>?</label>
         <input type="text" id="task7Answer" name="task7Answer">
         <button type="button" onclick="submitTask7()">Submit</button>
         <span id="task7Result"></span>
@@ -254,7 +243,7 @@
             checkMazeCompletion();
         }function submitTask7() {
             var answer = document.getElementById('task7Answer').value;
-            if (answer.toLowerCase() === 'solved sha1') {
+            if (answer.toLowerCase() === 'solved') {
                 document.getElementById('task7Result').textContent = 'Solved';
                 document.getElementById('task7Result').dataset.solved = 'true';
             } else {
@@ -282,11 +271,17 @@
         window.location.href = 'crypt5'; 
     }
     function showHint() {
-            document.getElementById('hintMessage').textContent = '     || Alice send a message to Bob: Eve Intercept and found this Encrypted Message: PHHW DW GDZQ. Eve tried Multiple Shift and Modular Methods finally, When he used a key "3" he Got this Message :MEET AT DAWN || ';
+            document.getElementById('hintMessage').textContent = ' [  Mike's wallet holds a simple secret. It's a mix of letters and numbers—think secure but obvious.]';
         }
         
     function showHint2() {
-            document.getElementById('hintMessage2').textContent = '     || John’s wallet key isn’t too creative either. Combine his name with something generic|| ';
+            document.getElementById('hintMessage2').textContent = ' [ John’s wallet key isn’t too creative either. Combine his name with something generic like Cyber] ';
+        }
+    function showHint3() {
+            document.getElementById('hintMessage3').textContent = ' [ This hash represents the game account they’re paying to. Think of a basic username for an online account.like Mazeplayer etc] ';
+        }
+    function showHint4() {
+            document.getElementById('hintMessage3').textContent = ' [ Alex’s actions always end with this phrase, i.e (completed or solved) a signal of his victory within the CyberMaze] ';
         }
 </script>
  
