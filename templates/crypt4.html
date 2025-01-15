@@ -88,6 +88,7 @@
          <i onclick="showHint1()" style="color: yellow;" class="fas fa-lightbulb"></i>
     <p id="hintMessage1"></p>
 
+
     <form id="task1Form">
       <label for="task1Answer">What is the <span>the Secret </span> that Mike wallet hold in Hash 1?</label>
       <input type="text" id="task1Answer" name="task1Answer">
@@ -267,19 +268,19 @@
             }
         }
 
-    function goToNextMaze() {
+        function goToNextMaze() {
         window.location.href = 'crypt5'; 
-    }
-    function showHint1() {
-            document.getElementById('hintMessage1').textContent = ' [  Mike's wallet holds a simple secret. It's a mix of letters and numbers—think secure but obvious.]';
         }
-    function showHint2() {
+        function showHint1() {
+            document.getElementById('hintMessage1').textContent = ' [  Mikes wallet holds a simple secret. Its a mix of letters and numbers—think secure but obvious.]';
+        }
+        function showHint2() {
             document.getElementById('hintMessage2').textContent = ' [ John’s wallet key isn’t too creative either. Combine his name with something generic like Cyber] ';
         }
-    function showHint3() {
+        function showHint3() {
             document.getElementById('hintMessage3').textContent = ' [ This hash represents the game account they’re paying to. Think of a basic username for an online account.like Mazeplayer etc] ';
         }
-    function showHint4() {
+        function showHint4() {
             document.getElementById('hintMessage4').textContent = ' [ Alex’s actions always end with this phrase, i.e (completed or solved) a signal of his victory within the CyberMaze] ';
         }
 </script>
