@@ -1,7 +1,7 @@
 /* About section styles */
 
 #about{
-    background-image: url("pexels-paul-loh-233698.jpg");
+    background-image: url("../images/pexels-paul-loh-233698.jpg");
     background-size: cover; /* Cover the entire section */
     background-position: center; /* Center the image */
     position: relative;
@@ -12,18 +12,40 @@
 }
 #about .container {
     width: 55%; /* Half the width of the section */
-    background-color: rgba(69, 1, 42, 0.5); /* Background color with opacity */
+    background-color: rgba(69, 1, 42, 0.8); /* Background color with opacity */
     position: absolute; /* Position relative to the .background-section */
     right: 45%; /* Align to the horizontal center */
     height: 100%;
-    padding: 170px 30px;
+    padding: 70px 30px;
 }
+.double {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Two columns */
+    gap: 20px; /* Space between grid items */
+}
+
+.level-list {
+    flex: 1;
+    padding: 10px; /* Adds space inside the div */
+    background-color: rgba(0, 0, 0, 0.4);
+    border: 2px solid #67013e; /* Light border for definition */
+    border-radius: 5px; /* Rounded corners */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    text-align: left; /* Aligns the text to the left */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effect */
+    margin-bottom: 5px;
+    margin-top: 5px;
+}
+
+.level-list:hover {
+    transform: translateY(-5px); /* Slight lift on hover */
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2); /* More pronounced shadow */
+}
+
 
 /* Media Queries */
 @media only screen and (max-width: 568px) {
-    #about{
-        
-    }
+
     #about .container {
         width: 75%; /* Half the width of the section */
         background-color: rgba(69, 1, 42, 0.5); /* Background color with opacity */

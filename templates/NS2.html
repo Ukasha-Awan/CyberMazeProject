@@ -41,6 +41,14 @@
             </nav>
 
     </nav>
+
+    {% comment %} ===================================================================== {% endcomment %}
+<div class="score-container">
+  Current Score: <span id="studentScore">0</span>
+</div>
+
+<div id="message" class="notification"></div>
+
   
     <!-- Contact Section -->
     <section id="contact" class="contact">
@@ -191,8 +199,10 @@
       var answer = document.getElementById('task1aAnswer').value;
       if (answer.toLowerCase=== 'sqlmap -u testphp.vulnweb.com') {
         document.getElementById('task1aResult').textContent = 'Solved';
+        updateScore(true); 
       } else {
         document.getElementById('task1aResult').textContent = 'Solved';
+        updateScore(false); 
       }
             checkMazeCompletion();
     }
@@ -200,8 +210,10 @@
       var answer = document.getElementById('task1bAnswer').value;
       if (answer=== 'www.site.com/index.php?id=1') {
         document.getElementById('task1bResult').textContent = 'Solved';
+        updateScore(true); 
       } else {
         document.getElementById('task1bResult').textContent = 'Try again';
+        updateScore(false); 
       }
             checkMazeCompletion();
     }
@@ -210,8 +222,10 @@
       var answer = document.getElementById('task2aAnswer').value;
       if (answer === '--crawl 2') {
         document.getElementById('task2aResult').textContent = 'Solved';
+        updateScore(true); 
       } else {
         document.getElementById('task2aResult').textContent = 'Try again';
+        updateScore(false); 
       }
             checkMazeCompletion();
     }
@@ -219,8 +233,10 @@
       var answer = document.getElementById('task2bAnswer').value;
       if (answer === 'http://testphp.vulnweb.com/artist.php?artist=1') {
         document.getElementById('task2bResult').textContent = 'Solved';
+        updateScore(true); 
       } else {
         document.getElementById('task2bResult').textContent = 'Try again';
+        updateScore(false); 
       }
             checkMazeCompletion();
     }
@@ -230,8 +246,10 @@
       // Placeholder for task 3, replace with actual logic
       if (answer === '--batch') {
         document.getElementById('task3Result').textContent = 'Solved';
+        updateScore(true); 
       } else {
         document.getElementById('task3Result').textContent = 'Try again';
+        updateScore(false); 
       }
             checkMazeCompletion();
     }
@@ -240,8 +258,10 @@
       var answer = document.getElementById('task4aAnswer').value;
       if (answer === '--dbs') {
         document.getElementById('task4aResult').textContent = 'Solved';
+        updateScore(true); 
       } else {
         document.getElementById('task4aResult').textContent = 'Try again';
+        updateScore(false); 
       }
             checkMazeCompletion();
     }
@@ -254,8 +274,10 @@
       // Example validation logic
       if (answer1 === 'accurat' && answer2 === 'information schema') {
           resultElement.textContent = 'Solved';
+          updateScore(true); 
       } else {
           resultElement.textContent = 'Try again';
+          updateScore(false); 
       }
       checkMazeCompletion();
   }
@@ -264,8 +286,10 @@
       var answer = document.getElementById('task5aAnswer').value;
       if (answer === '--tables') {
         document.getElementById('task5aResult').textContent = 'Solved';
+        updateScore(true); 
       } else {
         document.getElementById('task5aResult').textContent = 'Try again';
+        updateScore(false); 
       }
             checkMazeCompletion();
     }
@@ -274,8 +298,10 @@
       var answer = document.getElementById('task5bAnswer').value;
       if (answer === '8') {
         document.getElementById('task5bResult').textContent = 'Solved';
+        updateScore(true); 
       } else {
         document.getElementById('task5bResult').textContent = 'Try again';
+        updateScore(false); 
       }
             checkMazeCompletion();
     }
@@ -285,8 +311,10 @@
       // Placeholder for task 6a, replace with actual logic
       if (answer === '--columns') {
         document.getElementById('task6aResult').textContent = 'Solved';
+        updateScore(true); 
       } else {
         document.getElementById('task6aResult').textContent = 'Try again';
+        updateScore(false); 
       }
             checkMazeCompletion();
     }
@@ -296,8 +324,10 @@
       // Placeholder for task 7ba, replace with actual logic
       if (answer === '-C uname --dump') {
         document.getElementById('task7aResult').textContent = 'Solved';
+        updateScore(true); 
       } else {
         document.getElementById('task7aResult').textContent = 'Try again';
+        updateScore(false); 
       }
             checkMazeCompletion();
     }
@@ -307,8 +337,10 @@
       // Placeholder for task 7b, replace with actual logic
       if (answer === 'test') {
         document.getElementById('task7bResult').textContent = 'Solved';
+        updateScore(true); 
       } else {
         document.getElementById('task7bResult').textContent = 'Try again';
+        updateScore(false); 
       }
             checkMazeCompletion();
     }
@@ -318,8 +350,10 @@
       // Placeholder for task 18a, replace with actual logic
       if (answer === '-c Pass --dump') {
         document.getElementById('task8aResult').textContent = 'Solved';
+        updateScore(true); 
       } else {
         document.getElementById('task8aResult').textContent = 'Try again';
+        updateScore(false); 
       }
             checkMazeCompletion();
     }
@@ -329,11 +363,15 @@
       // Placeholder for task 8b, replace with actual logic
       if (answer === 'test') {
         document.getElementById('task8bResult').textContent = 'Solved';
+        updateScore(true); 
       } else {
         document.getElementById('task8bResult').textContent = 'Try again';
+        updateScore(false); 
       }
             checkMazeCompletion();
     }
+
+
 
 
     function checkMazeCompletion() {
@@ -354,6 +392,32 @@
             if (task7bSolved && task8bSolved) {
                 document.getElementById('mazeCompletion').style.display = 'block';
             }
+        }
+
+        let studentScore = 0;
+
+        function showMessage(message, success) {
+            const messageElement = document.getElementById('message');
+            messageElement.textContent = message;
+            messageElement.classList.add(success ? 'success' : 'fail', 'show');
+      
+            setTimeout(() => {
+                messageElement.classList.remove('show');
+            }, 3000); // Disappears after 3 seconds
+        }
+      
+        function updateScore(success) {
+            const scoreElement = document.getElementById('studentScore');
+      
+            if (success) {
+                studentScore += 5;
+                showMessage("🎉 Congratulations! You passed the task. +5 points added.", true);
+            } else {
+                studentScore -= 3;
+                showMessage("😢 Sorry! You failed the task. -3 points deducted.", false);
+            }
+      
+            scoreElement.textContent = studentScore;
         }
   </script>
 

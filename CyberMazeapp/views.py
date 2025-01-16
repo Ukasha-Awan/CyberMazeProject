@@ -15,6 +15,14 @@ def about(request):
     return render(request,"about.html")
 def domains(request):
     return render(request,"domains.html")
+def levelList1(request):
+    return render(request,"levelList1.html")
+def levelList2(request):
+    return render(request,"levelList2.html")
+def levelList3(request):
+    return render(request,"levelList3.html")
+def levelList4(request):
+    return render(request,"levelList4.html")
 
 def contact(request):
     if request.method == 'POST':

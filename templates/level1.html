@@ -15,55 +15,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Protest+Guerrilla&display=swap" rel="stylesheet">
     <link rel="icon" href="{% static 'assets/images/CM Logo 2.png' %}" type="image/png">
 
-    <style>
-      body {
-          font-family: Arial, sans-serif;
-          background-color: #f3f4f6;
-          text-align: center;
-          padding: 20px;
-          
-      }
-      .score-container {
-          background-color: #ffffff;
-          padding: 20px;
-          border-radius: 10px;
-          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-          display: inline-block;
-      }
-      .score {
-          font-size: 24px;
-          color: #4caf50;
-          margin: 10px 0;
-      }
-      .message {
-          font-size: 18px;
-          margin: 10px 0;
-      }
-      .button-container button {
-          padding: 10px 20px;
-          margin: 10px;
-          font-size: 16px;
-          border: none;
-          border-radius: 5px;
-          cursor: pointer;
-          transition: background-color 0.3s ease;
-      }
-      .success-btn {
-          background-color: #4caf50;
-          color: white;
-      }
-      .success-btn:hover {
-          background-color: #45a049;
-      }
-      .fail-btn {
-          background-color: #f44336;
-          color: white;
-      }
-      .fail-btn:hover {
-          background-color: #e53935;
-      }
-  </style> 
-
 </head>
 
 <body>
@@ -93,10 +44,11 @@
 
 {% comment %} ===================================================================== {% endcomment %}
 <div class="score-container">
-  <h1><span class="first-letter"> {{ user.username }} </span> Score</h1>
-  <p class="score">Current Score: <span id="studentScore">0</span></p>
-  <p class="message" id="message">Solve a task to update your score!</p>
-</div> 
+  Current Score: <span id="studentScore" style="color: #333 !important;">0</span>
+</div>
+
+<div id="message" class="notification"></div>
+
 
 <!-- Contact Section -->
 <section id="contact" class="contact">
@@ -217,21 +169,27 @@
 </div>
 
 <script>
-
   let studentScore = 0;
+
+  function showMessage(message, success) {
+      const messageElement = document.getElementById('message');
+      messageElement.textContent = message;
+      messageElement.classList.add(success ? 'success' : 'fail', 'show');
+
+      setTimeout(() => {
+          messageElement.classList.remove('show');
+      }, 3000); // Disappears after 3 seconds
+  }
 
   function updateScore(success) {
       const scoreElement = document.getElementById('studentScore');
-      const messageElement = document.getElementById('message');
 
       if (success) {
           studentScore += 5;
-          messageElement.textContent = "🎉 Congratulations! You passed the task. +5 points added.";
-          messageElement.style.color = '#4caf50';
+          showMessage("🎉 Congratulations! You passed the task. +5 points added.", true);
       } else {
           studentScore -= 3;
-          messageElement.textContent = "😢 Sorry! You failed the task. -3 points deducted.";
-          messageElement.style.color = '#f44336';
+          showMessage("😢 Sorry! You failed the task. -3 points deducted.", false);
       }
 
       scoreElement.textContent = studentScore;

@@ -25,4 +25,8 @@ urlpatterns = [
     path('crypt2',views.crypt2,name="crypt2"),
     path('crypt3',views.crypt3,name="crypt3"),
     path('crypt4',views.crypt4,name="crypt4"),
+    path('levelList1',views.levelList1,name="levelList1"),
+    path('levelList2',views.levelList2,name="levelList2"),
+    path('levelList3',views.levelList3,name="levelList3"),
+    path('levelList4',views.levelList4,name="levelList4"),
 ]
