@@ -15,6 +15,14 @@ def about(request):
     return render(request,"about.html")
 def domains(request):
     return render(request,"domains.html")
+def levelList1(request):
+    return render(request,"levelList1.html")
+def levelList2(request):
+    return render(request,"levelList2.html")
+def levelList3(request):
+    return render(request,"levelList3.html")
+def levelList4(request):
+    return render(request,"levelList4.html")
 
 def contact(request):
     if request.method == 'POST':
@@ -80,6 +88,8 @@ def crypt2(request):
     return render(request,"crypt2.html")
 def crypt3(request):
     return render(request,"crypt3.html")
+def crypt4(request):
+    return render(request,"crypt4.html")
 def trailoftroubles(request):
     return render(request,"trailoftroubles.html")
 

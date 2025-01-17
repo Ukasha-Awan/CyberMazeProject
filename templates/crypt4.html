@@ -1,0 +1,289 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CyberMaze - Learn Cyber Security Through Real-Time Simulations</title>
+    <link rel="stylesheet" href="{% static '/assets/css/contact.css' %}">
+    <link rel="stylesheet" href="{% static '/assets/css/styles.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <script src="index.js"></script>
+    <!-- Google Font embed -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Protest+Guerrilla&display=swap" rel="stylesheet">
+    <link rel="icon" href="{% static 'assets/images/CM Logo 2.png' %}" type="image/png">
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="logo">
+            <img src="{% static '/assets/images/CM Logo 2.png' %}" alt="Logo Image">
+            <h1>CyberMaze</h1>
+        </div>
+        <ul class="nav-links">
+            <li><a href="/">Home</a></li>
+            <li><a href="/domains">Domains</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/blog">Blogs</a></li>
+            <li><a href="/contact">Contact</a></li>
+        </ul>
+        <a href="#register" class="btn">Log In</a>
+        <!-- HTML for the hamburger menu -->
+        <button class="hamburger-menu-btn">&#9776;
+            <nav class="nav-links">
+            <!-- Your navigation links here -->
+            <a href="#">Link 1</a>
+            <a href="#">Link 2</a>
+            <a href="#">Link 3</a>
+            </nav>
+    </nav>
+
+
+    <h1 style="margin-top: 65px;">Cryptography Beginner Maze <hr> <br> Level 4: <span>Hash Cracking </span></h1>
+    <p>In this mind-bending mission, you will step into the role of a budding cybersecurity expert. Your task is to unravel the secrets of intercepted hashed messages. These messages, encoded with algorithms like MD5, SHA-256, or Base64, hide crucial information. Can you use your skills to decode the mystery and reveal the plaintext? Gear up to tackle cryptic clues, leverage powerful tools, and embrace the challenge of cracking the code!</p>
+    
+    <h3>Introduction:</h3>
+    <p>John and Mike are two friends who aren't very tech-savvy. They want to share a secret message online but think using hashed passwords will protect their conversation. They don’t know much about hash functions, so they pick one they found on a random website to "secure" their messages</p> 
+
+    <h3>Hashing:</h3>
+    <p><strong>Encryption Method:</strong> MD5, SHA-256, and Base64 Hashing</p>
+    
+
+    <h3>Encrypted Messages:</h3>
+    <br>
+    <p><span>Alex</span>, an expert hacker, intercepts their hashed data. Alex knows how to use powerful online tools like CrackStation and Xorbin to crack weak hashes.</p> 
+    <br> 
+
+
+    <p><strong>Hash 1 :</strong>e99a18c428cb38d5f260853678922e03</p>
+    <p><strong>Hash 2 :</strong>185160cde4162679eac934d1f307db6a3c4510e1bd9ba106f77cbd25852dcc22</p>
+    <p><strong>Hash 3 :</strong>TWF6ZXBsYXllcjQyNQ==</p>
+    <p><strong>Hash 4 :</strong>a0ac741932997e28bf972a4c4a50c9533ab50008</p>
+
+    <h3>Objective:</h3>
+    <p>Your objective is to understand the vulnerabilities of using weak hashing algorithms like MD5 and how they can be cracked using online tools. By completing this challenge, you will enhance your understanding of hash functions and their security risks.</p>
+    
+    <h3>Prerequisites:</h3>
+    <ul>
+        <li>Basic knowledge of cryptographic functions, particularly hashing algorithms</li>
+        <li>Familiarity with online hash-cracking tools like CrackStation and Xorbin</li>
+    </ul>
+    
+    <h3>Assignment:</h3>
+    <ol>
+        <li><strong>Learn about Hashing Algorithms</strong>: Understand what a hash function is and how different algorithms like MD5 are used to "secure" messages.</li>
+        <li><strong>Crack the Hash</strong>: Using online tools like CrackStation or Xorbin, decrypt the provided hashes</li>
+        <li><strong>Understand the Risks</strong>: Reflect on the ease with which online tools can crack weak hashes and why stronger encryption methods should be used for sensitive data.</li>
+    </ol>
+    
+
+    <h3>Task: Your Answer</h3>
+    <hr> <br>
+    <button style="width: fit-content; background-color: yellowgreen; color: black;" onclick="showHint1()">
+         Show Hint 1 </button>
+         <i onclick="showHint1()" style="color: yellow;" class="fas fa-lightbulb"></i>
+    <p id="hintMessage1"></p>
+
+
+    <form id="task1Form">
+      <label for="task1Answer">What is the <span>the Secret </span> that Mike wallet hold in Hash 1?</label>
+      <input type="text" id="task1Answer" name="task1Answer">
+      <button type="button" onclick="submitTask1()">Submit</button>
+      <span id="task1Result"></span>
+    </form>
+    <br>
+
+    <br>
+    <form id="task2Form">
+        <label for="task2Answer">Write the <span>name of the Hash 1 used</span>?</label>
+        <input type="text" id="task2Answer" name="task2Answer">
+        <button type="button" onclick="submitTask2()">Submit</button>
+        <span id="task2Result"></span>
+      </form>
+    <br>
+    <hr> <br>
+    <button style="width: fit-content; background-color: yellowgreen; color: black;" onclick="showHint2()">
+         Show Hint 2</button>
+         <i onclick="showHint2()" style="color: yellow;" class="fas fa-lightbulb"></i>
+    <p id="hintMessage2"></p>
+    <br>
+    <form id="task3Form">
+        <label for="task3Answer"> "John’s wallet key isn’t too creative. Guess <span>the origional Wallet name in Hash 2</span>?</label>
+        <input type="text" id="task3Answer" name="task3Answer">
+        <button type="button" onclick="submitTask3()">Submit</button>
+        <span id="task3Result"></span>
+      </form>
+    <br>
+    
+    <br>
+    <form id="task4Form">
+          <label for="task4Answer">Write the <span>name of the Hash 2 used</span>?</label>
+          <input type="text" id="task4Answer" name="task4Answer">
+          <button type="button" onclick="submitTask4()">Submit</button>
+          <span id="task4Result"></span>
+    </form>
+    <br>
+    <hr> <br>
+    <button style="width: fit-content; background-color: yellowgreen; color: black;" onclick="showHint3()">
+         Show Hint 3</button>
+         <i onclick="showHint3()" style="color: yellow;" class="fas fa-lightbulb"></i>
+    <p id="hintMessage3"></p>
+
+    <br>
+    <form id="task5Form">
+        <label for="task5Answer">Find the <span>Game account Name  </span> in Hash 3?</label>
+        <input type="text" id="task5Answer" name="task5Answer">
+        <button type="button" onclick="submitTask5()">Submit</button>
+        <span id="task5Result"></span>
+    </form>
+    <br>
+   
+    <br>
+    <form id="task6Form">
+        <label for="task6Answer">Write the <span>name of the Hash 3 used</span>?</label>
+        <input type="text" id="task6Answer" name="task6Answer">
+        <button type="button" onclick="submitTask6()">Submit</button>
+        <span id="task6Result"></span>   
+   </form>
+   <br>
+   <hr> <br>
+    <button style="width: fit-content; background-color: yellowgreen; color: black;" onclick="showHint4()">
+         Show Hint 4 </button>
+         <i onclick="showHint4()" style="color: yellow;" class="fas fa-lightbulb"></i>
+    <p id="hintMessage4"></p>
+   <br>
+    <form id="task7Form">
+        <label for="task7Answer">sha1 Hash used to get last mesaage. <span>Find the origional message in Hash 4</span>?</label>
+        <input type="text" id="task7Answer" name="task7Answer">
+        <button type="button" onclick="submitTask7()">Submit</button>
+        <span id="task7Result"></span>
+    </form>
+    <br>
+              
+
+      <div id="mazeCompletion" style="display: none;">
+        <h3>Level completed!</h3>
+        <button style="width: fit-content;" onclick="goToNextMaze()"> Go to Next Level</button>
+    </div>
+    <br>
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 CyberMaze. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        function submitTask1() {
+            var answer = document.getElementById('task1Answer').value;
+            if (answer.toLowerCase() === 'abc123') {
+                document.getElementById('task1Result').textContent = 'Solved';
+                document.getElementById('task1Result').dataset.solved = 'true';
+            } else {
+                document.getElementById('task1Result').textContent = 'Try again';
+                document.getElementById('task1Result').dataset.solved = 'false';
+            }
+            checkMazeCompletion();
+        }
+    
+        function submitTask2() {
+            var answer = document.getElementById('task2Answer').value;
+            if (answer.toLowerCase() === 'md5') {
+                document.getElementById('task2Result').textContent = 'Solved';
+                document.getElementById('task2Result').dataset.solved = 'true';
+            } else {
+                document.getElementById('task2Result').textContent = 'Try again';
+                document.getElementById('task2Result').dataset.solved = 'false';
+            }
+            checkMazeCompletion();
+        }
+        function submitTask3() {
+            var answer = document.getElementById('task3Answer').value;
+            if (answer.toLowerCase() === 'cyber123') {
+                document.getElementById('task3Result').textContent = 'Solved';
+                document.getElementById('task3Result').dataset.solved = 'true';
+            } else {
+                document.getElementById('task3Result').textContent = 'Try again';
+                document.getElementById('task3Result').dataset.solved = 'false';
+            }
+            checkMazeCompletion();
+        }
+        function submitTask4() {
+            var answer = document.getElementById('task4Answer').value;
+            if (answer.toLowerCase() === 'sha256') {
+                document.getElementById('task4Result').textContent = 'Solved';
+                document.getElementById('task4Result').dataset.solved = 'true';
+            } else {
+                document.getElementById('task4Result').textContent = 'Try again';
+                document.getElementById('task4Result').dataset.solved = 'false';
+            }
+            checkMazeCompletion();
+        }function submitTask5() {
+            var answer = document.getElementById('task5Answer').value;
+            if (answer.toLowerCase() === 'mazeplayer425') {
+                document.getElementById('task5Result').textContent = 'Solved';
+                document.getElementById('task5Result').dataset.solved = 'true';
+            } else {
+                document.getElementById('task5Result').textContent = 'Try again';
+                document.getElementById('task5Result').dataset.solved = 'false';
+            }
+            checkMazeCompletion();
+        }function submitTask6() {
+            var answer = document.getElementById('task6Answer').value;
+            if (answer.toLowerCase() === 'base64') {
+                document.getElementById('task6Result').textContent = 'Solved';
+                document.getElementById('task6Result').dataset.solved = 'true';
+            } else {
+                document.getElementById('task6Result').textContent = 'Try again';
+                document.getElementById('task6Result').dataset.solved = 'false';
+            }
+            checkMazeCompletion();
+        }function submitTask7() {
+            var answer = document.getElementById('task7Answer').value;
+            if (answer.toLowerCase() === 'solved') {
+                document.getElementById('task7Result').textContent = 'Solved';
+                document.getElementById('task7Result').dataset.solved = 'true';
+            } else {
+                document.getElementById('task7Result').textContent = 'Try again';
+                document.getElementById('task7Result').dataset.solved = 'false';
+            }
+            checkMazeCompletion();
+        }
+    
+        function checkMazeCompletion() {
+            var task1Solved = document.getElementById('task1Result').dataset.solved === 'true';
+            var task2Solved = document.getElementById('task2Result').dataset.solved === 'true';
+            var task3Solved = document.getElementById('task3Result').dataset.solved === 'true';
+            var task3Solved = document.getElementById('task4Result').dataset.solved === 'true';
+            var task3Solved = document.getElementById('task5Result').dataset.solved === 'true';
+            var task3Solved = document.getElementById('task6Result').dataset.solved === 'true';
+            var task3Solved = document.getElementById('task7Result').dataset.solved === 'true';
+
+            if (task1Solved && task2Solved) {
+                document.getElementById('mazeCompletion').style.display = 'block';
+            }
+        }
+
+        function goToNextMaze() {
+        window.location.href = 'crypt5'; 
+        }
+        function showHint1() {
+            document.getElementById('hintMessage1').textContent = ' [  Mikes wallet holds a simple secret. Its a mix of letters and numbers—think secure but obvious.]';
+        }
+        function showHint2() {
+            document.getElementById('hintMessage2').textContent = ' [ John’s wallet key isn’t too creative either. Combine his name with something generic like Cyber] ';
+        }
+        function showHint3() {
+            document.getElementById('hintMessage3').textContent = ' [ This hash represents the game account they’re paying to. Think of a basic username for an online account.like Mazeplayer etc] ';
+        }
+        function showHint4() {
+            document.getElementById('hintMessage4').textContent = ' [ Alex’s actions always end with this phrase, i.e (completed or solved) a signal of his victory within the CyberMaze] ';
+        }
+</script>
+ 
+</body>
+</html>
