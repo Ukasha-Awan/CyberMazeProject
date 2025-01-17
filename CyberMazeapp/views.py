@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from django.contrib.auth import authenticate, login
+from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
 from django.contrib.auth.models import User
 from .forms import ContactForm
@@ -46,12 +46,18 @@ def user_login(request):
                 new_user = User.objects.create_user(username=username, password=password)
                 new_user.save()
                 login(request, new_user)
-                messages.success(request, 'New user created and logged in successfully')
+                # messages.success(request, 'New user created and logged in successfully')
                 return redirect('/')  # Replace 'home' with the actual name of your view or URL
             except Exception as e:
                 messages.error(request, f"Error: {str(e)}")
 
     return render(request, 'login.html')
+
+def user_logout(request):
+    if request.method == 'POST':  # Logout should be triggered via POST for security
+        logout(request)  # Logs the user out
+        messages.success(request, "Logged out successfully!")
+        return redirect('/login')  # Redirect to the home page or login page
 
 def level1(request):
     return render(request,"level1.html")
@@ -77,6 +83,26 @@ def crypt3(request):
 def trailoftroubles(request):
     return render(request,"trailoftroubles.html")
 
+#===========================================================
+from django.http import JsonResponse
+from django.contrib.auth.decorators import login_required
+from .models import UserScore
+
+@login_required
+def update_score(request):
+    if request.method == 'POST':
+        success = request.POST.get('success') == 'true'
+        userscore = UserScore.objects.get(user=request.user)
+        
+        if success:
+            userscore.score += 5
+        else:
+            userscore.score -= 3
+
+        userscore.save()
+        return JsonResponse({'score': userscore.score})
+
+    return JsonResponse({'error': 'Invalid request'}, status=400)
 
 
 
