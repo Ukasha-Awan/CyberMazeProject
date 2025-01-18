@@ -10,18 +10,6 @@ class Contact(models.Model):
     def __str__(self):
         return self.subject
 
-
-#==================================================
-
-
-# class UserScore(models.Model):
-#     user = models.OneToOneField(User, on_delete=models.CASCADE)
-#     score = models.PositiveIntegerField(default=0)
-#     result = models.CharField(max_length=10, choices=[('pass', 'Pass'), ('fail', 'Fail')], default='fail')
-
-#     def __str__(self):
-#         return f"{self.user.username} - Score: {self.score} - Result: {self.result}"
-
 class UserScore(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     score = models.IntegerField(default=0)
