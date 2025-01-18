@@ -48,11 +48,8 @@
   <p class="score">Current Score: <span id="studentScore">0</span></p>
   <p class="message" id="message">Solve a task to update your score!</p>
 </div>
-
-
   Current Score: <span id="studentScore" style="color: #333 !important;">0</span>
 </div>
-
 <div id="message" class="notification"></div>
 
 
@@ -215,7 +212,7 @@
     .then(response => response.json())
     .then(data => {
         if (data.score !== undefined) {
-            scoreElement.textContent = data.score;
+          document.getElementById('studentScore').textContent = data.score;
         }
     })
     .catch(error => console.error('Error updating score:', error));

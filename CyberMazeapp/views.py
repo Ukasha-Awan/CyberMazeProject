@@ -94,25 +94,73 @@ def trailoftroubles(request):
     return render(request,"trailoftroubles.html")
 
 #===========================================================
+from django.shortcuts import get_object_or_404
 from django.http import JsonResponse
-from django.contrib.auth.decorators import login_required
 from .models import UserScore
+from django.contrib.auth.decorators import login_required
+from django.views.decorators.csrf import csrf_exempt
+import json
 
+
+@csrf_exempt
 @login_required
 def update_score(request):
-    if request.method == 'POST':
-        success = request.POST.get('success') == 'true'
-        userscore = UserScore.objects.get(user=request.user)
-        
-        if success:
-            userscore.score += 5
-        else:
-            userscore.score -= 3
+    if request.method == "POST":
+        try:
+            data = json.loads(request.body)
+            success = data.get("success")  # Boolean indicating task success
 
-        userscore.save()
-        return JsonResponse({'score': userscore.score})
+            # Debugging: Log received data
+            print(f"Received data: {data}")
 
-    return JsonResponse({'error': 'Invalid request'}, status=400)
+            if success is None:
+                return JsonResponse({"error": "Invalid input"}, status=400)
+
+            # Fetch or create user score object
+            user_score, _ = UserScore.objects.get_or_create(user=request.user)
+
+            # Update score based on success
+            if success:
+                user_score.score += 5
+            else:
+                user_score.score -= 3  # Penalty for failure
+
+            # Ensure score doesn't drop below zero
+            if user_score.score < 0:
+                user_score.score = 0
+
+            # Determine pass or fail based on score
+            if user_score.score > 30:
+                user_score.result = 'pass'
+                user_score.level = (user_score.level or 1) + 1  # Increment level if undefined set it to 1
+            else:
+                user_score.result = 'fail'
+                if user_score.level > 1:
+                    user_score.level = 1  # Reset level to 1 if failed
+
+            user_score.save()
+
+            # Debugging: Log updated user score
+            print(f"Updated user score: {user_score.score}, result: {user_score.result}, level: {user_score.level}")
+
+            return JsonResponse({
+                "message": "Score updated!",
+                "score": user_score.score,
+                "result": user_score.result,
+                "level": user_score.level
+            })
+
+        except (ValueError, KeyError) as e:
+            return JsonResponse({"error": f"Invalid data format: {str(e)}"}, status=400)
+
+    return JsonResponse({"error": "Invalid request method"}, status=405)
+
+
+@login_required
+def get_score(request):
+    user_score = get_object_or_404(UserScore, user=request.user)
+    return JsonResponse({"username": request.user.username, "score": user_score.score})
+
 
 
 
