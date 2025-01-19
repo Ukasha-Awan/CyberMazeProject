@@ -148,7 +148,7 @@
   {% block script %}
     function submitTask1a() {
       var answer = document.getElementById('task1aAnswer').value;
-      if (answer.toLowerCase=== 'sqlmap -u testphp.vulnweb.com') {
+      if (answer == 'sqlmap -u testphp.vulnweb.com') {
         document.getElementById('task1aResult').textContent = 'Solved';
         updateScore(true); 
       } else {
@@ -171,7 +171,7 @@
 
     function submitTask2a() {
       var answer = document.getElementById('task2aAnswer').value;
-      if (answer === '--crawl 2') {
+      if (answer == '--crawl 2') {
         document.getElementById('task2aResult').textContent = 'Solved';
         updateScore(true); 
       } else {
@@ -182,7 +182,7 @@
     }
     function submitTask2b() {
       var answer = document.getElementById('task2bAnswer').value;
-      if (answer === 'http://testphp.vulnweb.com/artist.php?artist=1') {
+      if (answer == 'http://testphp.vulnweb.com/artist.php?artist=1') {
         document.getElementById('task2bResult').textContent = 'Solved';
         updateScore(true); 
       } else {
@@ -195,7 +195,7 @@
     function submitTask3() {
       var answer = document.getElementById('task3Answer').value;
       // Placeholder for task 3, replace with actual logic
-      if (answer === '--batch') {
+      if (answer == '--batch') {
         document.getElementById('task3Result').textContent = 'Solved';
         updateScore(true); 
       } else {
@@ -207,7 +207,7 @@
 
     function submitTask4a() {
       var answer = document.getElementById('task4aAnswer').value;
-      if (answer === '--dbs') {
+      if (answer == '--dbs') {
         document.getElementById('task4aResult').textContent = 'Solved';
         updateScore(true); 
       } else {
@@ -223,7 +223,7 @@
       var resultElement = document.getElementById('task4bResult');
   
       // Example validation logic
-      if (answer1 === 'accurat' && answer2 === 'information schema') {
+      if (answer1 == 'accurat' && answer2 === 'information schema') {
           resultElement.textContent = 'Solved';
           updateScore(true); 
       } else {
@@ -235,7 +235,7 @@
 
     function submitTask5a() {
       var answer = document.getElementById('task5aAnswer').value;
-      if (answer === '--tables') {
+      if (answer == '--tables') {
         document.getElementById('task5aResult').textContent = 'Solved';
         updateScore(true); 
       } else {
@@ -247,7 +247,7 @@
 
     function submitTask5b() {
       var answer = document.getElementById('task5bAnswer').value;
-      if (answer === '8') {
+      if (answer == '8') {
         document.getElementById('task5bResult').textContent = 'Solved';
         updateScore(true); 
       } else {
@@ -260,7 +260,7 @@
     function submitTask6a() {
       var answer = document.getElementById('task6aAnswer').value;
       // Placeholder for task 6a, replace with actual logic
-      if (answer === '--columns') {
+      if (answer == '--columns') {
         document.getElementById('task6aResult').textContent = 'Solved';
         updateScore(true); 
       } else {
@@ -273,7 +273,7 @@
     function submitTask7a() {
       var answer = document.getElementById('task7aAnswer').value;
       // Placeholder for task 7ba, replace with actual logic
-      if (answer === '-C uname --dump') {
+      if (answer == '-C uname --dump') {
         document.getElementById('task7aResult').textContent = 'Solved';
         updateScore(true); 
       } else {
@@ -286,7 +286,7 @@
     function submitTask7b() {
       var answer = document.getElementById('task7bAnswer').value;
       // Placeholder for task 7b, replace with actual logic
-      if (answer === 'test') {
+      if (answer == 'test') {
         document.getElementById('task7bResult').textContent = 'Solved';
         updateScore(true); 
       } else {
@@ -299,7 +299,7 @@
     function submitTask8a() {
       var answer = document.getElementById('task8aAnswer').value;
       // Placeholder for task 18a, replace with actual logic
-      if (answer === '-c Pass --dump') {
+      if (answer == '-c Pass --dump') {
         document.getElementById('task8aResult').textContent = 'Solved';
         updateScore(true); 
       } else {
@@ -312,7 +312,7 @@
     function submitTask8b() {
       var answer = document.getElementById('task8bAnswer').value;
       // Placeholder for task 8b, replace with actual logic
-      if (answer === 'test') {
+      if (answer == 'test') {
         document.getElementById('task8bResult').textContent = 'Solved';
         updateScore(true); 
       } else {
