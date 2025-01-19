@@ -1,6 +1,7 @@
 from django.urls import path
 #from django.contrib.auth import views as auth_views
 from . import views
+#from .views import (TeamListView)
 
 
 urlpatterns = [
@@ -35,5 +36,7 @@ urlpatterns = [
     path('levelList4',views.levelList4,name="levelList4"),
 
     path('base',views.base,name="base"),
+    
+    #path("teams/", TeamListView.as_view(), name="team_members"),
 
 ]

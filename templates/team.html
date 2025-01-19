@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+{% block title %}Capture the Flag{% endblock %}
+{% load static %}
+{% block content %}
+
+<h1>Team</h1>
+<div class="teams">
+    {% for team in teams %}
+    <div class="team">
+        <h2>{{ team.project_title }}</h2>
+        <div class="supervisor">
+            <img src="{{ team.supervisor.image.url }}" alt="{{ team.supervisor.name }}">
+            <h3>Supervisor</h3>
+            <p><strong>Name:</strong> {{ team.supervisor.name }}</p>
+            <p><strong>Phone Number:</strong> {{ team.supervisor.phone_number }}</p>
+            <p><strong>Email:</strong> {{ team.supervisor.email }}</p>
+        </div>
+        <div class="students">
+            <div class="student">
+                <h3>Student 1</h3>
+                <img src="{{ team.student1.image.url }}" alt="{{ team.student1.name }}">
+                <p><strong>Name:</strong> {{ team.student1.name }}</p>
+                <p><strong>Roll Number:</strong> {{ team.student1.roll_number }}</p>
+                <p><strong>Phone Number:</strong> {{ team.student1.phone_number }}</p>
+                <p><strong>Email:</strong> {{ team.student1.email }}</p>
+            </div>
+            <div class="student">
+                <h3>Student 2</h3>
+                <img src="{{ team.student2.image.url }}" alt="{{ team.student2.name }}">
+                <p><strong>Name:</strong> {{ team.student2.name }}</p>
+                <p><strong>Roll Number:</strong> {{ team.student2.roll_number }}</p>
+                <p><strong>Phone Number:</strong> {{ team.student2.phone_number }}</p>
+                <p><strong>Email:</strong> {{ team.student2.email }}</p>
+            </div>
+            <div class="student">
+                <h3>Student 3</h3>
+                <img src="{{ team.student3.image.url }}" alt="{{ team.student3.name }}">
+                <p><strong>Name:</strong> {{ team.student3.name }}</p>
+                <p><strong>Roll Number:</strong> {{ team.student3.roll_number }}</p>
+                <p><strong>Phone Number:</strong> {{ team.student3.phone_number }}</p>
+                <p><strong>Email:</strong> {{ team.student3.email }}</p>
+            </div>
+        </div>
+        <div class="description">
+            <h3>Description</h3>
+            <p>{{ team.description }}</p>
+        </div>
+    </div>
+    {% empty %}
+    <p>No teams available.</p>
+    {% endfor %}
+</div>
+
+{% endblock content %}

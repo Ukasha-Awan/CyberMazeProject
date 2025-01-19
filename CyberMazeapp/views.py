@@ -166,4 +166,14 @@ def get_score(request):
 
 
 
+#==========================================================================
+# class TeamListView(LoginRequiredMixin, ListView):
+#     model = Team
+#     template_name = "team_list.html"
+#     context_object_name = "teams"
+#     login_url = "login/"
+
+
+
+
 
