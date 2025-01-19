@@ -44,21 +44,52 @@
     
     <main>
         <article>
-          <h2>Web App Security top trends</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos dolorum praesentium eaque? Dolorum cupiditate eligendi repellendus iusto quas assumenda repellat esse inventore modi explicabo praesentium suscipit enim aliquam beatae, dolorem nesciunt odit asperiores itaque rerum provident saepe deserunt dolore architecto quia? Rem nostrum voluptas omnis exercitationem. Ipsum placeat quibusdam minima nesciunt non iste odio id dolorem atque dolore? Ipsam, repellendus. Id, dolor et assumenda iusto labore omnis incidunt perspiciatis illo doloribus excepturi voluptatibus accusamus vitae in, aperiam dolores. Ullam fuga voluptatibus blanditiis unde, eaque id doloremque suscipit modi rerum voluptate cupiditate, perspiciatis atque dolore exercitationem officia, qui ipsum molestiae quae assumenda. Ut sed ducimus esse obcaecati, quasi totam quia deserunt neque? Exercitationem mollitia dicta facilis eius minima qui maiores a, magni, veniam est obcaecati natus eaque quod amet eos tenetur accusantium nemo, optio laudantium.</p>
-          <a href="#">Read more</a>
+            <img src="{% static '/assets/images/pexels-tima-miroshnichenko-5380664.jpg' %}"  alt="can't load image">
+          <div class="info">
+            <span>By Samiullah</span>
+            <span>January 18, 2025</span>
+          </div>
+          <div class="content">
+            <h4>The Evolution of Web Application Security</h4>
+            <p>Web application security has undergone significant transformation over the past decade. In 2025, businesses are focusing on proactive threat detection, secure development lifecycles, and zero-trust architecture. The integration of AI and machine learning has revolutionized security systems, enabling real-time threat analysis and adaptive defenses.
+                However, the rise in sophisticated attacks like supply chain breaches and API vulnerabilities highlights the need for constant vigilance. Organizations must emphasize cybersecurity awareness among employees and adopt robust tools to combat threats effectively.
+                By prioritizing web application security, businesses can ensure user trust, regulatory compliance, and overall resilience in the digital landscape.</p>
+          </div>
         </article>
+    
         <article>
-            <h2>Top 5 Cybersecurity Threats Facing Businesses in 2024</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos dolorum praesentium eaque? Dolorum cupiditate eligendi repellendus iusto quas assumenda repellat esse inventore modi explicabo praesentium suscipit enim aliquam beatae, dolorem nesciunt odit asperiores itaque rerum provident saepe deserunt dolore architecto quia? Rem nostrum voluptas omnis exercitationem. Ipsum placeat quibusdam minima nesciunt non iste odio id dolorem atque dolore? Ipsam, repellendus. Id, dolor et assumenda iusto labore omnis incidunt perspiciatis illo doloribus excepturi voluptatibus accusamus vitae in, aperiam dolores. Ullam fuga voluptatibus blanditiis unde, eaque id doloremque suscipit modi rerum voluptate cupiditate, perspiciatis atque dolore exercitationem officia, qui ipsum molestiae quae assumenda. Ut sed ducimus esse obcaecati, quasi totam quia deserunt neque? Exercitationem mollitia dicta facilis eius minima qui maiores a, magni, veniam est obcaecati natus eaque quod amet eos tenetur accusantium nemo, optio laudantium.</p>
-            <a href="#">Read more</a>
-          </article>
-          <article>
-            <h2>The Rise of Ransomware Attacks: Strategies for Prevention and Recovery</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos dolorum praesentium eaque? Dolorum cupiditate eligendi repellendus iusto quas assumenda repellat esse inventore modi explicabo praesentium suscipit enim aliquam beatae, dolorem nesciunt odit asperiores itaque rerum provident saepe deserunt dolore architecto quia? Rem nostrum voluptas omnis exercitationem. Ipsum placeat quibusdam minima nesciunt non iste odio id dolorem atque dolore? Ipsam, repellendus. Id, dolor et assumenda iusto labore omnis incidunt perspiciatis illo doloribus excepturi voluptatibus accusamus vitae in, aperiam dolores. Ullam fuga voluptatibus blanditiis unde, eaque id doloremque suscipit modi rerum voluptate cupiditate, perspiciatis atque dolore exercitationem officia, qui ipsum molestiae quae assumenda. Ut sed ducimus esse obcaecati, quasi totam quia deserunt neque? Exercitationem mollitia dicta facilis eius minima qui maiores a, magni, veniam est obcaecati natus eaque quod amet eos tenetur accusantium nemo, optio laudantium.</p>
-            <a href="#">Read more</a>
-          </article>
+            <img src="{% static '/assets/images/pexels-devon-pankiw-4315997.jpg' %}"  alt="can't load image">
+          <div class="info">
+            <span>By Ukasha Awan</span>
+            <span>January 18, 2025</span>
+          </div>
+          <div class="content">
+            <h4>5 Cybersecurity Threats Businesses Can’t Ignore in 2024</h4>
+            <p>The cybersecurity landscape in 2024 has introduced new threats that demand immediate attention. Among the top risks are ransomware attacks, insider threats, and cloud misconfigurations. Cybercriminals are now leveraging advanced techniques like AI to bypass traditional defenses, making it crucial for businesses to stay ahead.
+                Phishing remains a dominant attack vector, with email scams becoming more convincing than ever. Additionally, the Internet of Things (IoT) has expanded the attack surface, leaving connected devices vulnerable.
+                To combat these threats, businesses must adopt a layered security approach, invest in employee training, and maintain regular system updates. Staying proactive is the key to safeguarding your digital assets.
+                
+                </p>
+          </div>
+        </article>
       </main>
+
+      <script>
+        function toggleContent(button) {
+            const summaryDiv = button.closest('.summary');
+            const fullContentDiv = button.closest('article').querySelector('.full-content');
+    
+            if (summaryDiv.style.display === 'none') {
+                // Close full content
+                summaryDiv.style.display = '';
+                fullContentDiv.style.display = 'none';
+            } else {
+                // Open full content
+                summaryDiv.style.display = 'none';
+                fullContentDiv.style.display = '';
+            }
+        }
+    </script>
 
     <!-- Footer -->
     <footer>
