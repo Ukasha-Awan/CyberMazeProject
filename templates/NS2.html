@@ -3,7 +3,7 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-9b">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CyberMaze - Learn Cyber Security Through Real-Time Simulations</title>
     <link rel="stylesheet" href="{% static '/assets/css/contact.css' %}">
@@ -19,66 +19,58 @@
 <body>
     <!-- Navbar -->
     <nav class="navbar">
-        <div class="logo">
+      <div class="logo">
           <img src="{% static '/assets/images/CM Logo 2.png' %}" alt="Logo Image">
           <h1>CyberMaze</h1>
-        </div>
-        <ul class="nav-links">
+      </div>
+      <ul class="nav-links">
           <li><a href="/">Home</a></li>
           <li><a href="/domains">Domains</a></li>
           <li><a href="/about">About</a></li>
           <li><a href="/blog">Blogs</a></li>
           <li><a href="/contact">Contact</a></li>
-        </ul>
-        <a href="/login" class="btn">Log In</a>
-        <!-- HTML for the hamburger menu -->
-        <button class="hamburger-menu-btn">&#9b7b7b6a;
-            <nav class="nav-links">
-            <!-- Your navigation links here -->
-            <a href="#">Link 1</a>
-            <a href="#">Link 2</a>
-            <a href="#">Link 3</a>
-            </nav>
+      </ul>
+      <a href="/login" class="btn">Log In</a>
+  </nav>
 
-    </nav>
-
-    {% comment %} ===================================================================== {% endcomment %}
 <div class="score-container">
-  Current Score: <span id="studentScore">0</span>
+  <h1><span class="first-letter"> {{ user.username }} </span> Score</h1>
+  <p class="score">Current Score: <span id="studentScore">0</span></p>
+  <p class="message" id="message">Solve a task to update your score!</p>
 </div>
-
+  Current Score: <span id="studentScore" style="color: #333 !important;">0</span>
+</div>
 <div id="message" class="notification"></div>
 
   
     <!-- Contact Section -->
-    <section id="contact" class="contact">
-        <div class="container">
-        <h1>Beginner Maze - Network Security</h1>
-        <h1>Level 2 - <span>Sql injection </span></h1>
-  <p>Are you ready to put your cybersecurity skills to the test? Follow the instructions below to complete the tasks.</p>
-  <p>Note: Access the mentioned website for educational purpose only.</p>
-  <br>
-  <p>Perform sql injection on vulnerable site. Target website: <b> <span> testphp.vulnweb.com </span></b></p>
+<section id="contact" class="contact">
+  <div class="container">
+  <h1>Beginner Maze - Network Security</h1>
+  <h1>Level 2 - <span>Sql injection </span></h1>
+<p>Are you ready to put your cybersecurity skills to the test? Follow the instructions below to complete the tasks.</p>
+<p>Note: Access the mentioned website for educational purpose only.</p>
+<br>
+<p>Perform sql injection on vulnerable site. Target website: <b> <span> testphp.vulnweb.com </span></b></p>
 
   <!-- Task 1: Port Status Check -->
-
-  <h3>Task 1: Vulnerable link</h3>
-  <form id="task1aForm">
-    <label for="task1aAnswer">Find <span>vulnerable link </span>to provide the path to enter in the <span>database </span>of the vulnerable website:-</label>
-    <input type="text" id="task1aAnswer" name="task1aAnswer">
-    <button type="button" onclick="submitTask1a()">Submit</button>
-    <span id="task1aResult"></span>
-  </form>
+<h3>Task 1: Vulnerable link</h3>
+ <form id="task1aForm">
+ <label for="task1aAnswer">Find <span>vulnerable link </span>to provide the path to enter in the <span>database </span>of the vulnerable website:-</label>
+ <input type="text" id="task1aAnswer" name="task1aAnswer">
+ <button type="button" onclick="submitTask1a()">Submit</button>
+ <span id="task1aResult"></span>
+</form>
   <br>
-  <form id="task1bForm">
-    <label for="task1bAnswer">Copy vulnerable link and post it. Which will help us to access database:</label>
-    <input type="text" id="task1bAnswer" name="task1bAnswer">
-    <button type="button" onclick="submitTask1b()">Submit</button>
-    <span id="task1bResult"></span>
-  </form>
+<form id="task1bForm">
+  <label for="task1bAnswer">Copy vulnerable link and post it. Which will help us to access database:</label>
+  <input type="text" id="task1bAnswer" name="task1bAnswer">
+  <button type="button" onclick="submitTask1b()">Submit</button>
+  <span id="task1bResult"></span>
+</form>
 
   <!-- Task 2: Service Identification -->
-  <h3>Task 2: Vulnerable ID's</h3>
+<h3>Task 2: Vulnerable ID's</h3>
   <form id="task2aForm">
     <label for="task2aAnswer">Write the command to find all the vulnerable IDs in the page?</label>
     <input type="text" id="task2aAnswer" name="task2aAnswer">
@@ -182,33 +174,86 @@
     </form>
 
      
-    <div id="mazeCompletion">
-      <h3>Level UP!</h3>
-      <button style="width: fit-content;"><a href="/NS3">Go to next level</a></button>
-    </div>
+<div id="mazeCompletion">
+  <h3>Level UP!</h3>
+  <button style="width: fit-content;"><a href="/NS3">Go to next level</a></button>
+</div>
 
     
 </div>
-<footer>
-  <div class="container">
-      <p>&copy; 2024 CyberMaze. All rights reserved.</p>
-  </div>
-</footer>
-  <script>
-    function submitTask1a() {
-      var answer = document.getElementById('task1aAnswer').value;
-      if (answer.toLowerCase=== 'sqlmap -u testphp.vulnweb.com') {
-        document.getElementById('task1aResult').textContent = 'Solved';
-        updateScore(true); 
-      } else {
-        document.getElementById('task1aResult').textContent = 'Solved';
-        updateScore(false); 
-      }
-            checkMazeCompletion();
+
+<script>
+
+  
+  let studentScore = 0;
+
+  function showMessage(message, success) {
+      const messageElement = document.getElementById('message');
+      messageElement.textContent = message;
+      messageElement.classList.add(success ? 'success' : 'fail', 'show');
+
+      setTimeout(() => {
+          messageElement.classList.remove('show');
+      }, 3000); // Disappears after 3 seconds
+  }
+
+  function updateScore(success) {
+    const scoreElement = document.getElementById('studentScore');
+
+    if (success) {
+        studentScore += 5;
+        showMessage("🎉 Congratulations! You passed the task. +5 points added.", true);
+    } else {
+        studentScore -= 3;
+        showMessage("😢 Sorry! You failed the task. -3 points deducted.", false);
     }
+
+    scoreElement.textContent = studentScore;
+
+    // Update score on the backend
+    fetch('/update-score/', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'X-CSRFToken': getCookie('csrftoken') // Ensure CSRF token is included
+        },
+        body: JSON.stringify({ success })
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.score !== undefined) {
+          document.getElementById('studentScore').textContent = data.score;
+        }
+    })
+    .catch(error => console.error('Error updating score:', error));
+}
+  
+  // Function to get CSRF token
+  function getCookie(name) {
+    const cookies = document.cookie.split(';');
+    for (let i = 0; i < cookies.length; i++) {
+        const cookie = cookies[i].trim();
+        if (cookie.startsWith(name + '=')) {
+            return cookie.substring(name.length + 1);
+        }
+    }
+    return null;
+}
+
+function submitTask1a() {
+  var answer = document.getElementById('task1aAnswer').value;
+  if (answer === 'sqlmap -u testphp.vulnweb.com') {
+    document.getElementById('task1aResult').textContent = 'Solved';
+    updateScore(true); 
+  } else {
+    document.getElementById('task1aResult').textContent = 'Solved';
+    updateScore(false); 
+  }
+  checkMazeCompletion();
+}
     function submitTask1b() {
       var answer = document.getElementById('task1bAnswer').value;
-      if (answer=== 'www.site.com/index.php?id=1') {
+      if (answer === 'www.site.com/index.php?id=1') {
         document.getElementById('task1bResult').textContent = 'Solved';
         updateScore(true); 
       } else {
@@ -393,33 +438,21 @@
                 document.getElementById('mazeCompletion').style.display = 'block';
             }
         }
-
-        let studentScore = 0;
-
-        function showMessage(message, success) {
-            const messageElement = document.getElementById('message');
-            messageElement.textContent = message;
-            messageElement.classList.add(success ? 'success' : 'fail', 'show');
-      
-            setTimeout(() => {
-                messageElement.classList.remove('show');
-            }, 3000); // Disappears after 3 seconds
+        function animateFeedback(element, success) {
+          element.style.backgroundColor = success ? 'green' : 'red';
+          setTimeout(() => {
+              element.style.backgroundColor = '';
+          }, 1000);
         }
-      
-        function updateScore(success) {
-            const scoreElement = document.getElementById('studentScore');
-      
-            if (success) {
-                studentScore += 5;
-                showMessage("🎉 Congratulations! You passed the task. +5 points added.", true);
-            } else {
-                studentScore -= 3;
-                showMessage("😢 Sorry! You failed the task. -3 points deducted.", false);
-            }
-      
-            scoreElement.textContent = studentScore;
-        }
-  </script>
+</script>
+</section>
+
+    <!-- Footer -->
+    <footer>
+      <div class="container">
+          <p>&copy; 2025 CyberMaze. All rights reserved.</p>
+      </div>
+  </footer>
 
 </body>
 

@@ -8,7 +8,7 @@
     <title>CyberMaze - Learn Cyber Security Through Real-Time Simulations</title>
     <link rel="stylesheet" href="{% static '/assets/css/login.css' %}">
     <link rel="stylesheet" href="{% static '/assets/css/styles.css' %}">
-    <script src="index.js"></script>
+    <script src="{% static 'assets/js/index.js' %}"></script>
     <!-- Google Font embed -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="icon" href="{% static 'assets/images/CM Logo 2.png' %}" type="image/png">
 </head>
+
 <body>
     <!-- Navbar -->
     <nav class="navbar">
@@ -30,45 +31,51 @@
             <li><a href="/blog">Blogs</a></li>
             <li><a href="/contact">Contact</a></li>
         </ul>
-        <a href="#register" class="btn">Log In</a>
-        <!-- HTML for the hamburger menu -->
-        <button class="hamburger-menu-btn">&#9776;
-            <nav class="nav-links">
-                <!-- Your navigation links here -->
-                <a href="#">Link 1</a>
-                <a href="#">Link 2</a>
-                <a href="#">Link 3</a>
-            </nav>
+        <!-- Dynamic Login/Logout Button -->
+        <div class="auth-button">
+            {% if user.is_authenticated %}
+                <form method="POST" action="{% url 'logout' %}">
+                    {% csrf_token %}
+                    <button type="submit" class="btn">Logout</button>
+                </form>
+            {% else %}
+                <a href="{% url 'login' %}" class="btn">LogIn</a>
+            {% endif %}
+        </div>
+        <!-- Hamburger Menu -->
+        <button class="hamburger-menu-btn">&#9776;</button>
     </nav>
 
     <div class="the-container">
-        <h2>Login</h2>
-        {% if messages %}
-        <ul>
-            {% for message in messages %}
-                <li>{{ message }}</li>
-            {% endfor %}
-        </ul>
+        {% if not user.is_authenticated %}
+            <h2>Login</h2>
+            {% if messages %}
+            <ul>
+                {% for message in messages %}
+                    <li>{{ message }}</li>
+                {% endfor %}
+            </ul>
+            {% endif %}
+            <form action="" method="POST">
+                {% csrf_token %}
+                <div class="form-group">
+                    <label for="username">Username:</label>
+                    <input type="text" id="username" name="username" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                <button class="the-button" type="submit">Login</button>
+            </form>
         {% endif %}
-        <form action="" method="POST">
-            {% csrf_token %}
-            <div class="form-group">
-                <label for="username">Username:</label>
-                <input type="text" id="username" name="username" required>
-            </div>
-            <div class="form-group">
-                <label for="password">Password:</label>
-                <input type="password" id="password" name="password" required>
-            </div>
-            <button class="the-button" type="submit">Login</button>
-        </form>
     </div>
+
     <footer>
         <div class="container">
             <p>&copy; 2024 CyberMaze. All rights reserved.</p>
         </div>
     </footer>
-
 </body>
 
 </html>

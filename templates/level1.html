@@ -14,7 +14,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Protest+Guerrilla&display=swap" rel="stylesheet">
     <link rel="icon" href="{% static 'assets/images/CM Logo 2.png' %}" type="image/png">
-
 </head>
 
 <body>
@@ -33,21 +32,19 @@
       </ul>
       <a href="/login" class="btn">Log In</a>
       <!-- HTML for the hamburger menu -->
-      <button class="hamburger-menu-btn">&#9776;
-          <nav class="nav-links">
-          <!-- Your navigation links here -->
-          <a href="#">Link 1</a>
-          <a href="#">Link 2</a>
-          <a href="#">Link 3</a>
-          </nav>
   </nav>
 
-{% comment %} ===================================================================== {% endcomment %}
+<!-- user score show -->
 <div class="score-container">
+
+  <h1><span class="first-letter"> {{ user.username }} </span> Score</h1>
+  <p class="score">Current Score: <span id="studentScore">0</span></p>
+  <p class="message" id="message">Solve a task to update your score!</p>
+</div>
   Current Score: <span id="studentScore" style="color: #333 !important;">0</span>
 </div>
-
 <div id="message" class="notification"></div>
+
 
 
 <!-- Contact Section -->
@@ -169,6 +166,8 @@
 </div>
 
 <script>
+
+  
   let studentScore = 0;
 
   function showMessage(message, success) {
@@ -182,18 +181,47 @@
   }
 
   function updateScore(success) {
-      const scoreElement = document.getElementById('studentScore');
+    const scoreElement = document.getElementById('studentScore');
 
-      if (success) {
-          studentScore += 5;
-          showMessage("🎉 Congratulations! You passed the task. +5 points added.", true);
-      } else {
-          studentScore -= 3;
-          showMessage("😢 Sorry! You failed the task. -3 points deducted.", false);
-      }
+    if (success) {
+        studentScore += 5;
+        showMessage("🎉 Congratulations! You passed the task. +5 points added.", true);
+    } else {
+        studentScore -= 3;
+        showMessage("😢 Sorry! You failed the task. -3 points deducted.", false);
+    }
 
-      scoreElement.textContent = studentScore;
-  }
+    scoreElement.textContent = studentScore;
+
+    // Update score on the backend
+    fetch('/update-score/', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'X-CSRFToken': getCookie('csrftoken') // Ensure CSRF token is included
+        },
+        body: JSON.stringify({ success })
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.score !== undefined) {
+          document.getElementById('studentScore').textContent = data.score;
+        }
+    })
+    .catch(error => console.error('Error updating score:', error));
+}
+  
+  // Function to get CSRF token
+  function getCookie(name) {
+    const cookies = document.cookie.split(';');
+    for (let i = 0; i < cookies.length; i++) {
+        const cookie = cookies[i].trim();
+        if (cookie.startsWith(name + '=')) {
+            return cookie.substring(name.length + 1);
+        }
+    }
+    return null;
+}
 
 function submitTask1() {
   var answer = document.getElementById('task1Answer').value;
@@ -376,7 +404,7 @@ function animateFeedback(element, success) {
     <!-- Footer -->
     <footer>
         <div class="container">
-            <p>&copy; 2024 CyberMaze. All rights reserved.</p>
+            <p>&copy; 2025 CyberMaze. All rights reserved.</p>
         </div>
     </footer>
 </body>
