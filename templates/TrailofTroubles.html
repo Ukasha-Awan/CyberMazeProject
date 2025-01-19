@@ -1,46 +1,7 @@
+{% extends 'base.html' %}
+{% block title %}Cryptography{% endblock %}
 {% load static %}
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CyberMaze - Learn Cyber Security Through Real-Time Simulations</title>
-    <link rel="stylesheet" href="{% static '/assets/css/contact.css' %}">
-    <link rel="stylesheet" href="{% static '/assets/css/styles.css' %}">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <script src="index.js"></script>
-    <!-- Google Font embed -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Protest+Guerrilla&display=swap" rel="stylesheet">
-    <link rel="icon" href="{% static 'assets/images/CM Logo 2.png' %}" type="image/png">
-</head>
-
-<body style="padding: 20px;">
-    <!-- Navbar -->
-    <nav class="navbar">
-        <div class="logo">
-            <img src="{% static '/assets/images/CM Logo 2.png' %}" alt="Logo Image">
-            <h1>CyberMaze</h1>
-        </div>
-        <ul class="nav-links">
-            <li><a href="/">Home</a></li>
-            <li><a href="/domains">Domains</a></li>
-            <li><a href="/about">About</a></li>
-            <li><a href="/blog">Blogs</a></li>
-            <li><a href="/contact">Contact</a></li>
-        </ul>
-        <a href="/login" class="btn">Log In</a>
-        <!-- HTML for the hamburger menu -->
-        <button class="hamburger-menu-btn">&#9776;
-            <nav class="nav-links">
-            <!-- Your navigation links here -->
-            <a href="#">Link 1</a>
-            <a href="#">Link 2</a>
-            <a href="#">Link 3</a>
-            </nav>
-    </nav>
+{% block content %}
 
 
     <h1 style="margin-top: 65px;">AWS level 2 - Analyze the Logs! <hr> <br> <span>TRAIL OF TROUBLES</span></h1>
@@ -80,21 +41,22 @@
     </form>
     <br>
     
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <p>&copy; 2024 CyberMaze. All rights reserved.</p>
-        </div>
-    </footer>
+    <div id="mazeCompletion">
+        <h3>Level UP!</h3>
+        <button style="width: fit-content;"><a href="/levelList3">View Other Levels</a></button>
+    </div>
+    {%endblock%}
 
-    <script>
+    {% block script %}
         function submitTask1() {
             var answer = document.getElementById('task1Answer').value;
             if (answer.toLowerCase() === 'flag{unauth0r!zed_accezs_detecte3!}') {
                 document.getElementById('task1Result').textContent = 'Solved';
+        updateScore(true); 
                 document.getElementById('task1Result').dataset.solved = 'true';
             } else {
                 document.getElementById('task1Result').textContent = 'Try again';
+        updateScore(false); 
                 document.getElementById('task1Result').dataset.solved = 'false';
             }
             checkMazeCompletion();
@@ -114,8 +76,4 @@
     }
 
 
-</script>
-
-
-</body>
-</html>
+    {% endblock %}

@@ -34,4 +34,6 @@ urlpatterns = [
     path('levelList3',views.levelList3,name="levelList3"),
     path('levelList4',views.levelList4,name="levelList4"),
 
+    path('base',views.base,name="base"),
+
 ]

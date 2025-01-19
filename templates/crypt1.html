@@ -1,51 +1,7 @@
+{% extends 'base.html' %}
+{% block title %}Cryptography{% endblock %}
 {% load static %}
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CyberMaze - Learn Cyber Security Through Real-Time Simulations</title>
-    <link rel="stylesheet" href="{% static '/assets/css/contact.css' %}">
-    <link rel="stylesheet" href="{% static '/assets/css/styles.css' %}">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <script src="index.js"></script>
-    <script src="{% static '/assets/js/cryptographyMaze.js' %}"></script>
-    <!-- Google Font embed -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Protest+Guerrilla&display=swap" rel="stylesheet">
-    <link rel="icon" href="{% static 'assets/images/CM Logo 2.png' %}" type="image/png">
-</head>
-
-<body>
-    <!-- Navbar -->
-    <nav class="navbar">
-        <div class="logo">
-            <img src="{% static '/assets/images/CM Logo 2.png' %}" alt="Logo Image">
-            <h1>CyberMaze</h1>
-        </div>
-        <ul class="nav-links">
-            <li><a href="/">Home</a></li>
-            <li><a href="/domains">Domains</a></li>
-            <li><a href="/about">About</a></li>
-            <li><a href="/blog">Blogs</a></li>
-            <li><a href="/contact">Contact</a></li>
-        </ul>
-        <a href="/login" class="btn">Log In</a>
-    </nav>
-
-<!-- user score show -->
-<div class="score-container">
-
-    <h1><span class="first-letter"> {{ user.username }} </span> Score</h1>
-    <p class="score">Current Score: <span id="studentScore">0</span></p>
-    <p class="message" id="message">Solve a task to update your score!</p>
-  </div>
-    Current Score: <span id="studentScore" style="color: #333 !important;">0</span>
-  </div>
-  <div id="message" class="notification"></div>
-
+{% block content %}
 
     <h1 style="margin-top: 65px;">Cryptography Beginner Maze <hr> <br> Level 1: <span>The XOR Cipher Challenge!</span></h1>
     <p>In this exciting level, you will step into the shoes of a modern-day cryptographer. Your mission, should you choose to accept it, involves decrypting a secret message using the XOR cipher. Get ready to unleash your inner codebreaker and embark on a journey full of puzzles and cryptic clues.</p>
@@ -121,106 +77,26 @@
     <br>
     <div id="mazeCompletion">
         <h3>Level UP!</h3>
-        <button style="width: fit-content;"><a href="/crypt2">Go to next level</a></button>
+        <button style="width: fit-content;"><a href="/levelList2">View Other Levels</a></button>
     </div>
+    {%endblock%}
 
-<script>
-
-    let studentScore = 0;
-
-    function showMessage(message, success) {
-        const messageElement = document.getElementById("message");
-        messageElement.textContent = message;
-        messageElement.classList.add(success ? "success" : "fail", "show");
-    
-        setTimeout(() => {
-            messageElement.classList.remove("show");
-        }, 3000);
-    }
-    
-    function updateScore(success) {
-        const scoreElement = document.getElementById("studentScore");
-    
-        if (success) {
-            studentScore += 5;
-            showMessage("🎉 Congratulations! You passed the task. +5 points added.", true);
-        } else {
-            studentScore -= 3;
-            showMessage("😢 Sorry! You failed the task. -3 points deducted.", false);
-        }
-    
-        scoreElement.textContent = studentScore;
-    
-        // Backend update
-        fetch("/update-score/", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-                "X-CSRFToken": getCookie("csrftoken"),
-            },
-            body: JSON.stringify({ success }),
-        })
-            .then((response) => response.json())
-            .then((data) => {
-                if (data.score !== undefined) {
-                    document.getElementById("studentScore").textContent = data.score;
-                }
-            })
-            .catch((error) => {
-                console.error("Error updating score:", error);
-                showMessage("⚠️ Could not update the score. Please try again.", false);
-            });
-    }
-    
-    function getCookie(name) {
-        const cookies = document.cookie.split(";");
-        for (let cookie of cookies) {
-            cookie = cookie.trim();
-            if (cookie.startsWith(name + "=")) {
-                return cookie.substring(name.length + 1);
-            }
-        }
-        return null;
-    }
+    {% block script %}
     
     // Add hint
     function showHint() {
         document.getElementById("hintMessage").textContent = "Anna adores the cute and loyal companion in her life.";
     }
-    
-    // Check task results
-    function checkTask(answerId, correctAnswer) {
-        const answer = document.getElementById(answerId).value.trim().toLowerCase();
-        const resultElement = document.getElementById(answerId + "Result");
-    
-        if (answer === correctAnswer.toLowerCase()) {
-            resultElement.textContent = "Solved";
-            resultElement.dataset.solved = "true";
-        } else {
-            resultElement.textContent = "Try again";
-            resultElement.dataset.solved = "false";
-        }
-    
-        checkMazeCompletion();
-    }
-    
-    function checkMazeCompletion() {
-        const task1Solved = document.getElementById("task1Result").dataset.solved === "true";
-        const task2Solved = document.getElementById("task2Result").dataset.solved === "true";
-    
-        if (task1Solved && task2Solved) {
-            document.getElementById("mazeCompletion").style.display = "block";
-        }
-    }
-
 
 function submitTask1() {
     var answer = document.getElementById('task1Answer').value;
     if (answer == 'meet me at dawn') {
         document.getElementById('task1Result').textContent = 'Solved';
+        updateScore(true); 
         document.getElementById('task1Result').dataset.solved = 'true';
     } else {
         document.getElementById('task1Result').textContent = 'Try again';
+        updateScore(false); 
         document.getElementById('task1Result').dataset.solved = 'false';
     }
     checkMazeCompletion();
@@ -230,9 +106,11 @@ function submitTask2() {
     var answer = document.getElementById('task2Answer').value;
     if (answer.toLowerCase() === 'fluffy15') {
         document.getElementById('task2Result').textContent = 'Solved';
+        updateScore(true); 
         document.getElementById('task2Result').dataset.solved = 'true';
     } else {
         document.getElementById('task2Result').textContent = 'Try again';
+        updateScore(false); 
         document.getElementById('task2Result').dataset.solved = 'false';
     }
     checkMazeCompletion();
@@ -254,22 +132,4 @@ function showHint() {
     document.getElementById('hintMessage').textContent = '     ||     Anna adores the cute and loyal companion in her life.     ||     ';
 }
 
-function animateFeedback(element, success) {
-    element.style.backgroundColor = success ? 'green' : 'red';
-    setTimeout(() => {
-        element.style.backgroundColor = '';
-    }, 1000);
-}
-
-</script>
-</section>
-<br>
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <p>&copy; 2025 CyberMaze. All rights reserved.</p>
-        </div>
-    </footer>
-
-</body>
-</html>
+{% endblock %}

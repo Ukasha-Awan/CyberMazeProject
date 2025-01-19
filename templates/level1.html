@@ -1,51 +1,7 @@
+{% extends 'base.html' %}
+{% block title %}Network Security{% endblock %}
 {% load static %}
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CyberMaze - Learn Cyber Security Through Real-Time Simulations</title>
-    <link rel="stylesheet" href="{% static '/assets/css/contact.css' %}">
-    <link rel="stylesheet" href="{% static '/assets/css/styles.css' %}">
-    <script src="index.js"></script>
-    <!-- Google Font embed -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Protest+Guerrilla&display=swap" rel="stylesheet">
-    <link rel="icon" href="{% static 'assets/images/CM Logo 2.png' %}" type="image/png">
-</head>
-
-<body>
-    <!-- Navbar -->
-    <nav class="navbar">
-      <div class="logo">
-          <img src="{% static '/assets/images/CM Logo 2.png' %}" alt="Logo Image">
-          <h1>CyberMaze</h1>
-      </div>
-      <ul class="nav-links">
-          <li><a href="/">Home</a></li>
-          <li><a href="/domains">Domains</a></li>
-          <li><a href="/about">About</a></li>
-          <li><a href="/blog">Blogs</a></li>
-          <li><a href="/contact">Contact</a></li>
-      </ul>
-      <a href="/login" class="btn">Log In</a>
-      <!-- HTML for the hamburger menu -->
-  </nav>
-
-<!-- user score show -->
-<div class="score-container">
-
-  <h1><span class="first-letter"> {{ user.username }} </span> Score</h1>
-  <p class="score">Current Score: <span id="studentScore">0</span></p>
-  <p class="message" id="message">Solve a task to update your score!</p>
-</div>
-  Current Score: <span id="studentScore" style="color: #333 !important;">0</span>
-</div>
-<div id="message" class="notification"></div>
-
-
+{% block content %}
 
 <!-- Contact Section -->
 <section id="contact" class="contact">
@@ -160,69 +116,14 @@
         <span id="task10Result"></span>
       </form>
 
-<div id="mazeCompletion">
+<div id="mazeCompletion" style="padding-bottom: 10px;">
   <h3>Level UP!</h3>
-  <button style="width: fit-content;"><a href="/NS2">Go to next level</a></button>
+  <button style="width: fit-content;"><a href="/levelList1">View Other Levels</a></button>
 </div>
 
-<script>
+{%endblock%}
 
-  
-  let studentScore = 0;
-
-  function showMessage(message, success) {
-      const messageElement = document.getElementById('message');
-      messageElement.textContent = message;
-      messageElement.classList.add(success ? 'success' : 'fail', 'show');
-
-      setTimeout(() => {
-          messageElement.classList.remove('show');
-      }, 3000); 
-  }
-
-  function updateScore(success) {
-    const scoreElement = document.getElementById('studentScore');
-
-    if (success) {
-        studentScore += 5;
-        showMessage("🎉 Congratulations! You passed the task. +5 points added.", true);
-    } else {
-        studentScore -= 3;
-        showMessage("😢 Sorry! You failed the task. -3 points deducted.", false);
-    }
-
-    scoreElement.textContent = studentScore;
-
-    // Update score on the backend
-    fetch('/update-score/', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-            'X-CSRFToken': getCookie('csrftoken') // Ensure CSRF token is included
-        },
-        body: JSON.stringify({ success })
-    })
-    .then(response => response.json())
-    .then(data => {
-        if (data.score !== undefined) {
-          document.getElementById('studentScore').textContent = data.score;
-        }
-    })
-    .catch(error => console.error('Error updating score:', error));
-}
-  
-  // Function to get CSRF token
-  function getCookie(name) {
-    const cookies = document.cookie.split(';');
-    for (let i = 0; i < cookies.length; i++) {
-        const cookie = cookies[i].trim();
-        if (cookie.startsWith(name + '=')) {
-            return cookie.substring(name.length + 1);
-        }
-    }
-    return null;
-}
-
+  {% block script %}
 function submitTask1() {
   var answer = document.getElementById('task1Answer').value;
   if (answer.toLowerCase() === 'open') {
@@ -358,7 +259,6 @@ function submitTask9b() {
   }
   checkMazeCompletion();
 }
-
 function submitTask10() {
   var answer = document.getElementById('task10Answer').value;
   // Placeholder for task 10, replace with actual logic
@@ -371,42 +271,6 @@ function submitTask10() {
   }
   checkMazeCompletion();
 }
-function checkMazeCompletion() {
-  var task1Solved = document.getElementById('task1Result').dataset.solved === 'true';
-  var task2Solved = document.getElementById('task2Result').dataset.solved === 'true';
-  var task3Solved = document.getElementById('task3Result').dataset.solved === 'true';
-  var task4Solved = document.getElementById('task4Result').dataset.solved === 'true';
-  var task5aSolved = document.getElementById('task5aResult').dataset.solved === 'true';
-  var task5aSolved = document.getElementById('task5bResult').dataset.solved === 'true';
-  var task5bSolved = document.getElementById('task6Result').dataset.solved === 'true';
-  var task6Solved = document.getElementById('task7Result').dataset.solved === 'true';
-  var task7Solved = document.getElementById('task8Result').dataset.solved === 'true';
-  var task8Solved = document.getElementById('task9aResult').dataset.solved === 'true';
-  var task8Solved = document.getElementById('task9bResult').dataset.solved === 'true';
-  var task9aSolved = document.getElementById('task10Result').dataset.solved === 'true';
-
-  if (task1Solved && task2Solved && task3Solved && task4Solved && task5aSolved && task5bSolved && task6Solved && task7Solved && task8Solved && task9aSolved && task9bSolved && task210Solved) {
-      document.getElementById('mazeCompletion').style.display = 'block';
-  }
-}
-function animateFeedback(element, success) {
-  element.style.backgroundColor = success ? 'green' : 'red';
-  setTimeout(() => {
-      element.style.backgroundColor = '';
-  }, 1000);
-}
 
 
-</script>
-</section>
-
-
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <p>&copy; 2025 CyberMaze. All rights reserved.</p>
-        </div>
-    </footer>
-</body>
-
-</html>
+{% endblock %}

@@ -23,6 +23,8 @@ def levelList3(request):
     return render(request,"levelList3.html")
 def levelList4(request):
     return render(request,"levelList4.html")
+def base(request):
+    return render(request,"base.html")
 
 def contact(request):
     if request.method == 'POST':

@@ -88,6 +88,15 @@ margin-bottom: 20px;
 color: coral;
 }
 
+h4{
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+  color: rgb(237, 65, 2);
+  }
+
 span{
 color: aqua;
 }
