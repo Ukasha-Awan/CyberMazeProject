@@ -2,35 +2,36 @@
 {% block title %}Network Security{% endblock %}
 {% load static %}
 {% block content %}
-  
+
     <!-- Contact Section -->
-<section id="contact" class="contact">
-  <div class="container">
-  <h1>Beginner Maze - Network Security</h1>
-  <h1>Level 2 - <span>Sql injection </span></h1>
-<p>Are you ready to put your cybersecurity skills to the test? Follow the instructions below to complete the tasks.</p>
-<p>Note: Access the mentioned website for educational purpose only.</p>
-<br>
-<p>Perform sql injection on vulnerable site. Target website: <b> <span> testphp.vulnweb.com </span></b></p>
+    <section id="contact" class="contact">
+        <div class="container">
+        <h1>Beginner Maze - Network Security</h1>
+        <h1>Level 2 - <span>Sql injection </span></h1>
+  <p>Are you ready to put your cybersecurity skills to the test? Follow the instructions below to complete the tasks.</p>
+  <p>Note: Access the mentioned website for educational purpose only.</p>
+  <br>
+  <p>Perform sql injection on vulnerable site. Target website: <b> <span> testphp.vulnweb.com </span></b></p>
 
   <!-- Task 1: Port Status Check -->
-<h3>Task 1: Vulnerable link</h3>
- <form id="task1aForm">
- <label for="task1aAnswer">Find <span>vulnerable link </span>to provide the path to enter in the <span>database </span>of the vulnerable website:-</label>
- <input type="text" id="task1aAnswer" name="task1aAnswer">
- <button type="button" onclick="submitTask1a()">Submit</button>
- <span id="task1aResult"></span>
-</form>
+
+  <h3>Task 1: Vulnerable link</h3>
+  <form id="task1aForm">
+    <label for="task1aAnswer">Find <span>vulnerable link </span>to provide the path to enter in the <span>database </span>of the vulnerable website:-</label>
+    <input type="text" id="task1aAnswer" name="task1aAnswer">
+    <button type="button" onclick="submitTask1a()">Submit</button>
+    <span id="task1aResult"></span>
+  </form>
   <br>
-<form id="task1bForm">
-  <label for="task1bAnswer">Copy vulnerable link and post it. Which will help us to access database:</label>
-  <input type="text" id="task1bAnswer" name="task1bAnswer">
-  <button type="button" onclick="submitTask1b()">Submit</button>
-  <span id="task1bResult"></span>
-</form>
+  <form id="task1bForm">
+    <label for="task1bAnswer">Copy vulnerable link and post it. Which will help us to access database:</label>
+    <input type="text" id="task1bAnswer" name="task1bAnswer">
+    <button type="button" onclick="submitTask1b()">Submit</button>
+    <span id="task1bResult"></span>
+  </form>
 
   <!-- Task 2: Service Identification -->
-<h3>Task 2: Vulnerable ID's</h3>
+  <h3>Task 2: Vulnerable ID's</h3>
   <form id="task2aForm">
     <label for="task2aAnswer">Write the command to find all the vulnerable IDs in the page?</label>
     <input type="text" id="task2aAnswer" name="task2aAnswer">
@@ -134,31 +135,31 @@
     </form>
 
      
-<div id="mazeCompletion">
-  <h3>Level UP!</h3>
-  <button style="width: fit-content;"><a href="/levelList1">View Other Levels</a></button>
-</div>
+    <div id="mazeCompletion">
+      <h3>Level UP!</h3>
+      <button style="width: fit-content;"><a href="/NS3">Go to next level</a></button>
+    </div>
 
     
 </div>
+
 {%endblock%}
 
   {% block script %}
-
-function submitTask1a() {
-  var answer = document.getElementById('task1aAnswer').value;
-  if (answer === 'sqlmap -u testphp.vulnweb.com') {
-    document.getElementById('task1aResult').textContent = 'Solved';
-    updateScore(true); 
-  } else {
-    document.getElementById('task1aResult').textContent = 'Solved';
-    updateScore(false); 
-  }
-  checkMazeCompletion();
-}
+    function submitTask1a() {
+      var answer = document.getElementById('task1aAnswer').value;
+      if (answer.toLowerCase=== 'sqlmap -u testphp.vulnweb.com') {
+        document.getElementById('task1aResult').textContent = 'Solved';
+        updateScore(true); 
+      } else {
+        document.getElementById('task1aResult').textContent = 'Solved';
+        updateScore(false); 
+      }
+            checkMazeCompletion();
+    }
     function submitTask1b() {
       var answer = document.getElementById('task1bAnswer').value;
-      if (answer === 'www.site.com/index.php?id=1') {
+      if (answer=== 'www.site.com/index.php?id=1') {
         document.getElementById('task1bResult').textContent = 'Solved';
         updateScore(true); 
       } else {
@@ -320,6 +321,8 @@ function submitTask1a() {
       }
             checkMazeCompletion();
     }
-}
 
-{% endblock %}
+
+
+
+    {% endblock %}
