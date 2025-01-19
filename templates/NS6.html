@@ -93,7 +93,7 @@
                 document.getElementById('task1Result').textContent = 'Solved';
         updateScore(true); 
             } else {
-                document.getElementById('task1Result').dataset.solved = 'Try again';
+                document.getElementById('task1Result').textContent = 'Try again';
         updateScore(false); 
             }
             checkMazeCompletion();
@@ -104,7 +104,7 @@
                 document.getElementById('task2Result').textContent = 'Solved';
         updateScore(true); 
             } else {
-                document.getElementById('task2Result').dataset.solved = 'Try again';
+                document.getElementById('task2Result').textContent = 'Try again';
         updateScore(false); 
             }
             checkMazeCompletion();
@@ -115,7 +115,7 @@
                 document.getElementById('task3Result').textContent = 'Solved';
         updateScore(true); 
             } else {
-                document.getElementById('task3Result').dataset.solved = 'Try again';
+                document.getElementById('task3Result').textContent = 'Try again';
         updateScore(false); 
             }
             checkMazeCompletion();
@@ -126,7 +126,7 @@
                 document.getElementById('task4Result').textContent = 'Solved';
         updateScore(true); 
             } else {
-                document.getElementById('task4Result').dataset.solved = 'Try again';
+                document.getElementById('task4Result').textContent = 'Try again';
         updateScore(false); 
             }
             checkMazeCompletion();
@@ -137,17 +137,10 @@
                 document.getElementById('task5Result').textContent = 'Solved';
         updateScore(true); 
             } else {
-                document.getElementById('task5Result').dataset.solved = 'Try again';
+                document.getElementById('task5Result').textContent = 'Try again';
         updateScore(false); 
             }
             checkMazeCompletion();
         }
     
-        
-    
-
-
-    function goToNextMaze() {
-        window.location.href = 'NS6.html';
-    }
     {% endblock %}
