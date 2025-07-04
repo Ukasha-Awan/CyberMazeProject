@@ -88,8 +88,8 @@ The platform is built using <strong>Django (Backend)</strong> and <strong>HTML, 
 
 <p>
 CyberMaze is developed by: <br>
-Ukasha Awan, Sami Ullah, Haroon Atieeque, Muhammad Ali Qureshi, Iram Haider <br>
-<b>Email:</b> tamshoonawan@gmail.com | samikharzi786@gmail.com | haroonatieeq6@gmail.com | ali.qureshi@iub.edu.pk | iramhaider456@gmail.com
+Ukasha Awan, Sami Ullah, Haroon Atieeque <br>
+<b>Email:</b> tamshoonawan@gmail.com | samikharzi786@gmail.com | haroonatieeq6@gmail.com
 </p>
 
 <p align="center">
